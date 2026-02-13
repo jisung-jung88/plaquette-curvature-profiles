@@ -1,0 +1,11 @@
+# Core scientific computing
+numpy>=2.0.0
+pandas>=2.0.0
+matplotlib>=3.8.0
+
+# Configuration
+pyyaml>=6.0
+
+# Quantum computing (for QPU experiments)
+qiskit>=2.0.0
+qiskit-ibm-runtime>=0.40.0

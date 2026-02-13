@@ -1,0 +1,104 @@
+.
+├── LICENSE
+├── requirements.txt
+├── README.md
+├── tree_structure.txt
+│
+├── src
+│   ├── qpu
+│   │   ├── qiskit_runner.py
+│   │   ├── qiskit_runner.yaml
+│   │   ├── qiskit_runner_two_pairs.py
+│   │   ├── qiskit_runner_two_pairs.yaml
+│   │   ├── qiskit_runner_two_pairs_block.py
+│   │   ├── model_provider.py
+│   │   ├── diagonal_model_family_ibm_subgraph.py
+│   │   ├── ibm_fez_full_20251231_220523.json
+│   │   ├── models_ibm_fez_eta00
+│   │   │   ├── diagonal_model_ibm_fez_subgraph_n2.yaml
+│   │   │   ├── diagonal_model_ibm_fez_subgraph_n3.yaml
+│   │   │   ├── diagonal_model_ibm_fez_subgraph_n4.yaml
+│   │   │   ├── diagonal_model_ibm_fez_subgraph_n5.yaml
+│   │   │   ├── diagonal_model_ibm_fez_subgraph_n6.yaml
+│   │   │   └── diagonal_model_ibm_fez_subgraph_n7.yaml
+│   │   ├── models_ibm_fez_eta01
+│   │   │   ├── diagonal_model_ibm_fez_subgraph_n2.yaml
+│   │   │   ├── diagonal_model_ibm_fez_subgraph_n3.yaml
+│   │   │   ├── diagonal_model_ibm_fez_subgraph_n4.yaml
+│   │   │   ├── diagonal_model_ibm_fez_subgraph_n5.yaml
+│   │   │   ├── diagonal_model_ibm_fez_subgraph_n6.yaml
+│   │   │   └── diagonal_model_ibm_fez_subgraph_n7.yaml
+│   │   └── models_ibm_fez_eta02
+│   │       ├── diagonal_model_ibm_fez_subgraph_n2.yaml
+│   │       ├── diagonal_model_ibm_fez_subgraph_n3.yaml
+│   │       ├── diagonal_model_ibm_fez_subgraph_n4.yaml
+│   │       ├── diagonal_model_ibm_fez_subgraph_n5.yaml
+│   │       ├── diagonal_model_ibm_fez_subgraph_n6.yaml
+│   │       └── diagonal_model_ibm_fez_subgraph_n7.yaml
+│   └── sim
+│       ├── stats.py
+│       ├── diagonal_model_family_grid_BFS_Shell.py
+│       ├── model_provider.py
+│       ├── sim_runner.py
+│       ├── sim_runner.yaml
+│       ├── models_grid_BFS_Shell_eta00
+│       │   ├── diagonal_model_grid_BFS_Shell_n2.yaml
+│       │   ├── diagonal_model_grid_BFS_Shell_n3.yaml
+│       │   ├── diagonal_model_grid_BFS_Shell_n4.yaml
+│       │   ├── diagonal_model_grid_BFS_Shell_n5.yaml
+│       │   ├── diagonal_model_grid_BFS_Shell_n6.yaml
+│       │   └── diagonal_model_grid_BFS_Shell_n7.yaml
+│       ├── models_grid_BFS_Shell_eta01
+│       │   ├── diagonal_model_grid_BFS_Shell_n2.yaml
+│       │   ├── diagonal_model_grid_BFS_Shell_n3.yaml
+│       │   ├── diagonal_model_grid_BFS_Shell_n4.yaml
+│       │   ├── diagonal_model_grid_BFS_Shell_n5.yaml
+│       │   ├── diagonal_model_grid_BFS_Shell_n6.yaml
+│       │   └── diagonal_model_grid_BFS_Shell_n7.yaml
+│       └── models_grid_BFS_Shell_eta02
+│           ├── diagonal_model_grid_BFS_Shell_n2.yaml
+│           ├── diagonal_model_grid_BFS_Shell_n3.yaml
+│           ├── diagonal_model_grid_BFS_Shell_n4.yaml
+│           ├── diagonal_model_grid_BFS_Shell_n5.yaml
+│           ├── diagonal_model_grid_BFS_Shell_n6.yaml
+│           └── diagonal_model_grid_BFS_Shell_n7.yaml
+│
+├── figures
+│   ├── fig3
+│   │   ├── make_fig3.py
+│   │   ├── fig3_data.py
+│   │   └── fig3_plot.py
+│   ├── fig4
+│   │   ├── make_fig4.py
+│   │   ├── fig4_sim_data.py
+│   │   └── fig4_sim_plot.py
+│   ├── fig5
+│   │   ├── make_fig5.py
+│   │   ├── fig5_data.py
+│   │   └── fig5_plot.py
+│   ├── fig6
+│   │   ├── make_fig6.py
+│   │   ├── fig6_data.py
+│   │   └── fig6_plot.py
+│   ├── fig7
+│   │   ├── make_fig7.py
+│   │   ├── fig7_data.py
+│   │   └── fig7_plot.py
+│   └── fig8
+│       ├── make_fig8.py
+│       ├── fig8_data.py
+│       └── fig8_plot.py
+│
+└── data
+    ├── sim
+    │   ├── grid_BFS_Shell_trial_summary.csv
+    │   ├── grid_BFS_Shell_rows.csv
+    │   ├── grid_BFS_Shell_run_meta.json
+    │   └── grid_BFS_Shell_stats_meta.json
+    └── qpu
+        ├── ablation_interleaved_run_meta.json
+        ├── ablation_block_counts.json
+        ├── ablation_block_run_meta.json
+        ├── ablation_interleaved_counts.json
+        ├── qpu_counts.json
+        └── qpu_run_meta.json

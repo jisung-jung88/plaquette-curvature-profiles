@@ -1,0 +1,87 @@
+# ============================================================
+# sim_runner.yaml
+# Module 2: Simulation / Measurement Runner
+# ============================================================
+
+version: "sim_runner.v1"
+
+# ------------------------------------------------------------
+# Scan domain: what to probe
+# ------------------------------------------------------------
+scan:
+  # pair selection strategy
+  pair_mode: "fixed"        # fixed | list | all
+
+  # normalized representation (always a list of [i, j])
+  pairs:
+    - [0, 1]                # used if pair_mode == fixed (must contain exactly 1 pair)
+  
+  # if pair_mode == list, populate multiple pairs, e.g.
+  # pairs:
+  #   - [0, 1]
+  #   - [0, 9]
+
+  # context (z_rest) handling
+  context_mode: "exhaustive"   # exhaustive | sample
+
+  # used if context_mode == sample
+  context_samples: 64          # int, number of contexts
+  context_seed: 1234           # int, RNG seed for sampling
+
+# ------------------------------------------------------------
+# Shot noise (measurement statistics)
+# ------------------------------------------------------------
+shot:
+  enabled: true            # true | false
+  shots: 2048              # int, number of shots per setting
+  # Note:
+  #   Shot noise is always modeled as binomial (physical default).
+  #   No alternative models are exposed here.
+
+# ------------------------------------------------------------
+# Drift noise (systematic phase offsets)
+# ------------------------------------------------------------
+drift:
+  enabled: true            # true | false
+
+  sigma: 0.02              # float, std of drift offsets (radians)
+
+  # drift model
+  model: "piecewise_constant"   # piecewise_constant (default)
+
+  # time discretization (simulation-only)
+  # - chunk_shots: shots per measurement chunk (binomial sampled per chunk)
+  # - hold_chunks: number of consecutive chunks that share the same drift offset
+  #   => drift correlation length (in shots) = chunk_shots * hold_chunks
+  # if shots_per_setting is not divisible by chunk_shots, the final chunk is truncated (smaller)
+  chunk_shots: 32               # int, shots per chunk (>=1)
+  hold_chunks: 4                # int, chunks per drift segment (>=1)
+
+  # measurement order / mitigation strategy (applied at chunk granularity)
+  schedule: "interleave"           # blocked | interleave | randomize
+  #
+  # blocked:
+  #   all chunks of cos_a -> all chunks of sin_a -> all chunks of cos_b -> all chunks of sin_b
+  #
+  # interleave:
+  #   round-robin by chunk: cos_a -> sin_a -> cos_b -> sin_b (repeat)
+  #
+  # randomize:
+  #   balanced random permutation of all chunks (same total chunks per setting)
+  schedule_seed: 1234   # used only for interleave/randomize; ignored for blocked
+
+# ------------------------------------------------------------
+# Repetition
+# ------------------------------------------------------------
+trials:
+  count: 20                # int, number of independent runs
+  seed_base: 20251224      # int, base seed (run_id offset added internally)
+
+# ------------------------------------------------------------
+# Output configuration
+# ------------------------------------------------------------
+output:
+  dir: "runs"              # base output directory
+  run_id: "auto"           # auto | string
+  rows_file: "rows.csv"
+  meta_file: "run_meta.json"

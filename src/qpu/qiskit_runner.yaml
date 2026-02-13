@@ -1,0 +1,56 @@
+version: "qiskit_runner.v0.1"
+
+model_yaml: "Hamiltonian/models_ibm_fez/diagonal_model_ibm_fez_subgraph_n2.yaml"
+backend_snapshot_json: "ibm_fez_full_20251231_220523.json"
+
+mode: "qpu"
+shots: 1024
+seed: 1234
+
+ibm:
+  plans_preference: ["open"]
+  instance: null
+
+backend:
+  name: "ibm_fez"
+  auto_policy: "least_busy"
+  require_operational: true
+  min_num_qubits: "from_model"
+
+compile:
+  optimization_level: 1
+  seed_transpiler: 1234
+  layout:
+    policy: "from_model"
+  routing_method: "sabre"
+
+protocol:
+  name: "protocol_b"
+  pair: [0, 1]
+  context:
+    mode: "exhaustive"
+    samples: 32
+    seed: 20251225
+
+policies:
+  theta_rule: "-2c"
+  require_bit_order: "lsb"
+  require_physical_mapping:
+    when_mode_in: ["fake_backend", "qpu"]
+  model_backend_mismatch: "fail"
+  freeze_transpiled_circuits: true
+  reuse_frozen_circuits:
+    when_mode_in: ["fake_backend", "qpu"]
+
+job:
+  auto_split: true
+  max_circuits_per_job: 200
+  max_executions_per_job: 200000
+
+output:
+  dir: "runs_ibm"
+  run_id: "auto"
+  kappa_file: "kappa_results.csv"
+  counts_file: "counts.json"
+  meta_file: "run_meta.json"
+  circuits_dir: "circuits"

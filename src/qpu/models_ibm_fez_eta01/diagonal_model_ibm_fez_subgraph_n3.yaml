@@ -1,0 +1,44 @@
+version: '0.1'
+n: 3
+bit_order: lsb
+hardware_meta:
+  backend: ibm_fez
+  seed_edge_physical:
+  - 3
+  - 16
+  physical_qubits:
+  - 3
+  - 16
+  - 2
+  note: logical 0,1 correspond to the physical seed edge above
+family_meta:
+  family: ibm_subgraph_radius_r_v1
+  seed: 12345
+  J0: 0.25
+  sigma_J: 0.0
+  eta3: 0.1
+  lambda3: 0.8
+  alpha_dist: 1.0
+  radius_rule: log2
+  radius_fixed: 1
+  radius_cap: 999
+  n_max_base: 7
+diagonal_components:
+  source: analytic
+  analytic:
+    kind: pauli_z_sum
+    terms:
+    - c: 0.25
+      z:
+      - 0
+      - 1
+    - c: 0.25
+      z:
+      - 0
+      - 2
+    - c: 0.009151654422709614
+      z:
+      - 0
+      - 1
+      - 2
+  explicit: null

@@ -1,0 +1,289 @@
+# ============================================================================
+# qiskit_runner.yaml (κ-litmus)
+# Configuration for the IBM/Qiskit runner that executes Protocol B and produces
+# κ estimates (and optional raw counts + metadata) in a reproducible way.
+#
+# Design goals:
+#   1) Keep YAML as the *run-intent* (what to run) + *safety rails*.
+#   2) Put device-specific richness in backend_snapshot_json.
+#   3) Fail-fast on convention mismatches (theta sign, bit order, mapping).
+#   4) Make transpilation reproducible and (optionally) reusable across runs.
+# ============================================================================
+
+version: "qiskit_runner.v0.1"
+
+# =========================
+# INPUTS
+# =========================
+
+# Path to the diagonal-model YAML (your Hamiltonian/phase-field definition).
+# Expected to contain (minimum):
+#   - n: number of logical qubits
+#   - bit_order: "lsb" or "msb" (must match runner interpretation)
+#   - diagonal_components: terms for U = exp(+i * sum_S c_S Z_S) (your convention)
+#   - hardware_meta.physical_qubits: list[int] mapping logical->physical
+#     e.g., logical q=0 goes to physical qubit physical_qubits[0], etc.
+#
+# NOTE:
+#   - physical mapping is mandatory for fake_backend/qpu modes (see policies).
+model_yaml: "Hamiltonian/models_ibm_fez/diagonal_model_ibm_fez_subgraph_n7.yaml"
+
+# Path to a backend snapshot JSON (device profile).
+# Typically includes:
+#   - backend_name (string)
+#   - coupling_map / connectivity
+#   - basis_gates / supported instructions
+#   - gate error rates and/or durations
+#   - qubit T1/T2 and readout errors
+#   - limits such as max_shots, max_experiments, etc.
+#
+# Runner uses this snapshot to:
+#   - build a fake backend + noise model (fake_backend mode)
+#   - sanity-check that the intended backend matches (qpu mode)
+backend_snapshot_json: "ibm_fez_full_20251231_220523.json"
+
+# =========================
+# EXECUTION
+# =========================
+
+# Where to run the circuits.
+# Options:
+#   - "statevector": exact simulation (no sampling noise, no device noise)
+#                   intended for validation/debugging
+#   - "fake_backend": noisy simulation using backend_snapshot_json (pre-QPU rehearsal)
+#   - "qpu": execute on real IBM hardware
+mode: "qpu"
+
+# Measurement shots per circuit (per setting).
+# Protocol B uses multiple settings per context (typically 4),
+# so total shots per context ~= (num_settings * shots).
+shots: 1024
+
+# Random seed for local simulation (statevector/fake_backend).
+# Ignored on real QPU execution (qpu mode).
+seed: 1234
+
+# =========================
+# IBM (only used when mode=qpu; optionally used as metadata when fake_backend)
+# =========================
+
+ibm:
+  # Account/plan preference.
+  # For free-tier users, "open" is typically the usable plan.
+  # The runner should try plans in priority order.
+  plans_preference: ["open"]
+
+  # Optional IBM Quantum instance string (if applicable).
+  # If null, runner uses the default instance associated with the account.
+  instance: null
+
+backend:
+  # Backend target selection.
+  # Options:
+  #   - "auto": runner selects a backend using auto_policy (e.g., least_busy)
+  #   - explicit backend name: e.g., "ibm_fez"
+  #
+  # NOTE:
+  #   - In fake_backend mode, this name is mainly for consistency checks/logging;
+  #     the actual fake backend is built from backend_snapshot_json.
+  name: "ibm_fez"          # "auto" | explicit backend name
+
+  # Policy for backend selection when name == "auto".
+  # Options (runner-defined):
+  #   - "least_busy": choose a least-busy backend meeting constraints
+  #   - (you may add others later, e.g., "best_fidelity", "shortest_queue")
+  auto_policy: "least_busy"
+
+  # If true, runner should filter out non-operational backends in auto selection.
+  require_operational: true
+
+  # Minimum qubits required on the selected backend.
+  # Options:
+  #   - "from_model": use model_yaml.n
+  #   - integer: explicit minimum (e.g., 7)
+  min_num_qubits: "from_model"
+
+# =========================
+# COMPILE / TRANSPILE
+# =========================
+
+compile:
+  # Qiskit transpiler optimization level (typical range: 0..3).
+  # Higher levels may reduce depth/gate count but can:
+  #   - take longer to compile
+  #   - change circuit structure more aggressively
+  # Keep this fixed for reproducibility.
+  optimization_level: 1
+
+  # Seed for stochastic components of transpilation (layout/routing heuristics).
+  # Keep fixed if you want the "same input -> same transpiled circuit" behavior
+  # (assuming same Qiskit version + same backend constraints).
+  seed_transpiler: 1234
+
+  layout:
+    # How to choose initial mapping from logical qubits to physical qubits.
+    #
+    # Options:
+    #   - "from_model": use model_yaml.hardware_meta.physical_qubits as initial_layout
+    #                  (recommended for κ-litmus: you want the same physical subgraph)
+    #   - "automatic": let Qiskit choose mapping (can move your target pair!)
+    #
+    # Runner responsibility:
+    #   - if policy=="from_model", validate mapping length==n, no duplicates, in range
+    policy: "from_model"
+
+  # Routing algorithm when two-qubit operations violate device connectivity.
+  # Options:
+  #   - "sabre": heuristic SWAP insertion (common default)
+  #   - "basic": simpler routing (often worse depth)
+  #   - "none": do not route; only valid if the circuit already respects coupling
+  routing_method: "sabre"
+
+  # NOTE:
+  # If policies.freeze_transpiled_circuits == true,
+  # then (backend_snapshot_json + model_yaml + compile block + protocol signature)
+  # defines the "frozen artifact" identity for circuit caching/reuse.
+
+# =========================
+# PROTOCOL
+# =========================
+
+protocol:
+  # Protocol identifier.
+  # Currently expected:
+  #   - "protocol_b": hardware-friendly κ readout (multi-setting)
+  name: "protocol_b"
+
+  # Logical qubit pair(s) (i, j) to diagnose: measures κ_{i,j}(z_rest).
+  # Indices are logical (0..n-1), NOT physical indices.
+  #
+  # Backward compatible:
+  #   pair: [0, 1]
+  #
+  # NEW (multi-pair in the SAME run/job):
+  #   pair: [[0, 1], [2, 3]]
+  #
+  # Rationale: reviewers may complain if signal/control pairs were executed in
+  # different IBM Runtime jobs. Multi-pair lets you bundle them.
+  pair: [[0, 1], [1, 4]]
+
+  context:
+    # How to choose contexts z_rest (the remaining n-2 bits).
+    # Options:
+    #   - "exhaustive": iterate all 2^(n-2) contexts (for n=7 => 32)
+    #   - "sample": choose a subset of contexts (for larger n or quick tests)
+    mode: "exhaustive"     # exhaustive | sample
+
+    # Number of sampled contexts (used only when mode=="sample").
+    # If mode=="exhaustive", runner should ignore this (or warn and ignore).
+    samples: 32
+
+    # RNG seed for context sampling (used only when mode=="sample").
+    # Keep fixed for reproducibility across runs.
+    seed: 20251225
+
+# =========================
+# POLICIES (fail-fast safety rails)
+# =========================
+
+policies:
+  # Phase angle conversion rule.
+  #
+  # Our convention in model_yaml:
+  #   U = exp(+i * c * Z_S)  (and products thereof)
+  #
+  # Qiskit primitive for single-qubit Z rotation typically uses:
+  #   RZ(θ) = exp(-i * θ/2 * Z)
+  #
+  # Therefore to implement exp(+i * c * Z) via RZ:
+  #   θ = -2c
+  #
+  # IMPORTANT:
+  # Wrong sign => wrong κ sign (and potentially wrong magnitude after wrapping).
+  theta_rule: "-2c"
+
+  # Measurement bitstring interpretation.
+  # "lsb" means the rightmost bit in the classical bitstring corresponds to q0
+  # (common Qiskit convention). Must match model_yaml.bit_order.
+  require_bit_order: "lsb"
+
+  # Require physical mapping only when it matters.
+  # In fake_backend/qpu modes, we must pin the circuit to the intended physical
+  # qubits/subgraph, otherwise the target pair may drift across the chip.
+  require_physical_mapping:
+    when_mode_in: ["fake_backend", "qpu"]   # statevector can run without mapping
+
+  # If model_yaml declares a backend (or snapshot includes backend_name),
+  # decide what to do when they disagree.
+  # Options:
+  #   - "fail": raise error (recommended for reproducibility)
+  #   - "warn": continue but record warning in meta (risky)
+  model_backend_mismatch: "fail"
+
+  # Whether to persist transpiled circuits as reusable artifacts (e.g., .qpy files).
+  # true:
+  #   - transpile once, save artifacts, and reuse on future runs when compatible
+  # false:
+  #   - transpile every run (can produce different circuits; not ideal for comparisons)
+  freeze_transpiled_circuits: true
+
+  reuse_frozen_circuits:
+    # Modes in which reuse is allowed.
+    # Typically you want reuse for:
+    #   - fake_backend: rehearsal should use *the same transpiled circuit* as QPU
+    #   - qpu: avoid re-transpiling and accidentally changing the circuit
+    when_mode_in: ["fake_backend", "qpu"]
+
+    # Implementation note for the runner (NOT a YAML field requirement):
+    # Runner should only reuse if ALL of the following match:
+    #   - backend_name (or snapshot identity)
+    #   - coupling_map/basis constraints signature (snapshot hash)
+    #   - model_yaml content hash (including physical mapping)
+    #   - compile block signature (opt level, seed, layout policy, routing method, etc.)
+    #   - protocol circuit signature (protocol name, pair, context list)
+    # Otherwise, re-transpile and produce a new artifact.
+
+# =========================
+# JOB PACKING (qpu safety / scalability)
+# =========================
+
+job:
+  # If true, runner may split a large circuit batch into multiple jobs.
+  # Useful for:
+  #   - backend limits (max experiments per job)
+  #   - operational robustness (avoid huge single job failures)
+  auto_split: false
+
+  # Maximum number of circuits per job submission (upper bound).
+  # Runner should also respect backend limits if available in the snapshot.
+  max_circuits_per_job: 200
+
+  # Maximum number of executions per job (rough workload cap).
+  # executions ~= (num_circuits * shots).
+  # Runner should split if the batch exceeds this threshold.
+  max_executions_per_job: 200000
+
+# =========================
+# OUTPUT
+# =========================
+
+output:
+  # Base output directory for all runs.
+  dir: "runs_ibm"
+
+  # Run identifier.
+  # Options (runner-defined):
+  #   - "auto": generate timestamp-based or UUID-based run_id
+  #   - custom string: user-specified run tag
+  run_id: "auto"
+
+  # Output files (within runs_ibm/<run_id>/).
+  # Recommended contents:
+  #   - kappa_file: per-(context, trial) rows with cos/sin estimates + κ_hat + quality metrics
+  #   - counts_file: raw counts keyed by (context, setting) (may be large)
+  #   - meta_file: canonicalized config + hashes + qiskit versions + backend info + job ids
+  #   - circuits_dir: stored transpiled circuits (.qpy) OR a manifest pointing to cache
+  kappa_file: "kappa_results.csv"
+  counts_file: "counts.json"
+  meta_file: "run_meta.json"
+  circuits_dir: "circuits"

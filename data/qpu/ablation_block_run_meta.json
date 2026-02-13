@@ -1,0 +1,310 @@
+{
+  "run_id": "S1_blk_n7_eta00",
+  "version": "qiskit_runner.v0.1",
+  "mode": "qpu",
+  "start_time": "2026-01-02T20:00:43.763386+00:00",
+  "end_time": "2026-01-02T20:04:56.011302+00:00",
+  "duration_seconds": 252.247916,
+  "num_rows": 64,
+  "model": {
+    "path": "C:\\Users\\gsun2\\OneDrive\\Desktop\\kappa\\qpu\\ibm\\fez\\seed_03_16_hot01_cold14_eta00\\Hamiltonian\\models_ibm_fez\\diagonal_model_ibm_fez_subgraph_n7.yaml",
+    "n": 7,
+    "bit_order": "lsb",
+    "hardware_backend": "ibm_fez",
+    "physical_qubits": [
+      3,
+      16,
+      2,
+      4,
+      23,
+      1,
+      5
+    ],
+    "model_yaml_sha256": "4359ff532c5445e09587c521451fd316fc59d0713dfef622f120378fd9600a58"
+  },
+  "backend_snapshot": {
+    "path": "C:\\Users\\gsun2\\OneDrive\\Desktop\\kappa\\qpu\\ibm\\fez\\seed_03_16_hot01_cold14_eta00\\ibm_fez_full_20251231_220523.json",
+    "backend_name": "ibm_fez",
+    "selected_backend_name": "ibm_fez",
+    "num_qubits": 156,
+    "retrieved_at": "2025-12-31T22:05:23.402295",
+    "snapshot_sha256": "9a36cbca831059af718f6b267577abfe49c4ec30a2b3c0fd81c1c69e341b5881",
+    "limits": {
+      "max_experiments": 300,
+      "max_shots": 100000
+    }
+  },
+  "protocol": {
+    "name": "protocol_b",
+    "pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "context": {
+      "mode": "exhaustive",
+      "samples": 32,
+      "seed": 20251225
+    },
+    "num_contexts_total": 32,
+    "num_contexts_used": 32,
+    "contexts": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ]
+  },
+  "output": {
+    "rows_file_requested": "kappa_results.csv",
+    "rows_file_effective": "kappa_results.csv",
+    "counts_file": "counts.json",
+    "meta_file": "run_meta.json",
+    "rows_format": "csv"
+  },
+  "config": {
+    "version": "qiskit_runner.v0.1",
+    "model_yaml": "Hamiltonian/models_ibm_fez/diagonal_model_ibm_fez_subgraph_n7.yaml",
+    "backend_snapshot_json": "ibm_fez_full_20251231_220523.json",
+    "mode": "qpu",
+    "shots": 2048,
+    "seed": 1234,
+    "ibm": {
+      "plans_preference": [
+        "open"
+      ],
+      "instance": null
+    },
+    "backend": {
+      "name": "ibm_fez",
+      "auto_policy": "least_busy",
+      "require_operational": true,
+      "min_num_qubits": "from_model"
+    },
+    "compile": {
+      "optimization_level": 1,
+      "seed_transpiler": 1234,
+      "layout": {
+        "policy": "from_model"
+      },
+      "routing_method": "sabre"
+    },
+    "protocol": {
+      "name": "protocol_b",
+      "pair": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "context": {
+        "mode": "exhaustive",
+        "samples": 32,
+        "seed": 20251225
+      }
+    },
+    "policies": {
+      "theta_rule": "-2c",
+      "require_bit_order": "lsb",
+      "require_physical_mapping": {
+        "when_mode_in": [
+          "fake_backend",
+          "qpu"
+        ]
+      },
+      "model_backend_mismatch": "fail",
+      "freeze_transpiled_circuits": true,
+      "reuse_frozen_circuits": {
+        "when_mode_in": [
+          "fake_backend",
+          "qpu"
+        ]
+      }
+    },
+    "job": {
+      "auto_split": false,
+      "max_circuits_per_job": 200,
+      "max_executions_per_job": 200000
+    },
+    "output": {
+      "dir": "runs_ibm",
+      "run_id": "auto",
+      "kappa_file": "kappa_results.csv",
+      "counts_file": "counts.json",
+      "meta_file": "run_meta.json",
+      "circuits_dir": "circuits"
+    }
+  },
+  "versions": {
+    "qiskit": "2.2.3",
+    "qiskit-aer": "not_installed",
+    "qiskit-ibm-runtime": "0.44.0",
+    "numpy": "2.4.0",
+    "pyyaml": "6.0.3"
+  },
+  "cache": {
+    "cache_key": "13552e1015b260de267221ab08c1f4beaf05152b757d4b41b688cdf1433dedb0",
+    "cache_dir": "C:\\Users\\gsun2\\OneDrive\\Desktop\\kappa\\qpu\\ibm\\fez\\seed_03_16_hot01_cold14_eta00\\runs_ibm_fez\\_cache",
+    "cache_qpy_path": "C:\\Users\\gsun2\\OneDrive\\Desktop\\kappa\\qpu\\ibm\\fez\\seed_03_16_hot01_cold14_eta00\\runs_ibm_fez\\_cache\\13552e1015b260de267221ab08c1f4beaf05152b757d4b41b688cdf1433dedb0.qpy",
+    "cache_manifest_path": "C:\\Users\\gsun2\\OneDrive\\Desktop\\kappa\\qpu\\ibm\\fez\\seed_03_16_hot01_cold14_eta00\\runs_ibm_fez\\_cache\\13552e1015b260de267221ab08c1f4beaf05152b757d4b41b688cdf1433dedb0.json",
+    "run_qpy_path": "C:\\Users\\gsun2\\OneDrive\\Desktop\\kappa\\qpu\\ibm\\fez\\seed_03_16_hot01_cold14_eta00\\runs_ibm_fez\\S1_blk_n7_eta00\\circuits\\transpiled.qpy",
+    "run_manifest_path": "C:\\Users\\gsun2\\OneDrive\\Desktop\\kappa\\qpu\\ibm\\fez\\seed_03_16_hot01_cold14_eta00\\runs_ibm_fez\\S1_blk_n7_eta00\\circuits\\manifest.json",
+    "reused": true
+  },
+  "jobs": [
+    {
+      "batch_index": 0,
+      "start": 0,
+      "end": 64,
+      "num_circuits": 64,
+      "shots": 2048,
+      "job_id": "d5c284jht8fs73a75580",
+      "status_submitted_at": "2026-01-02T20:01:22.725617+00:00",
+      "schedule_mode": "blocked_by_setting",
+      "blocked_setting": "cos_a",
+      "blocked_phase": 0
+    },
+    {
+      "batch_index": 0,
+      "start": 0,
+      "end": 64,
+      "num_circuits": 64,
+      "shots": 2048,
+      "job_id": "d5c28j3ht8fs73a755p0",
+      "status_submitted_at": "2026-01-02T20:02:20.277418+00:00",
+      "schedule_mode": "blocked_by_setting",
+      "blocked_setting": "sin_a",
+      "blocked_phase": 1
+    },
+    {
+      "batch_index": 0,
+      "start": 0,
+      "end": 64,
+      "num_circuits": 64,
+      "shots": 2048,
+      "job_id": "d5c2919smlfc739mvrj0",
+      "status_submitted_at": "2026-01-02T20:03:17.366080+00:00",
+      "schedule_mode": "blocked_by_setting",
+      "blocked_setting": "cos_b",
+      "blocked_phase": 2
+    },
+    {
+      "batch_index": 0,
+      "start": 0,
+      "end": 64,
+      "num_circuits": 64,
+      "shots": 2048,
+      "job_id": "d5c29fbht8fs73a756qg",
+      "status_submitted_at": "2026-01-02T20:04:13.358381+00:00",
+      "schedule_mode": "blocked_by_setting",
+      "blocked_setting": "sin_b",
+      "blocked_phase": 3
+    }
+  ],
+  "validation": [
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "contexts_checked": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "max_err_u_a": 5.551115123125783e-16,
+      "max_err_u_b": 8.91375531049562e-16,
+      "max_err_u_kappa": 1.2994827337208943e-15,
+      "passed": true,
+      "tol": 1e-09
+    },
+    {
+      "pair": [
+        1,
+        4
+      ],
+      "contexts_checked": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "max_err_u_a": 7.771561172376096e-16,
+      "max_err_u_b": 1.790180836524724e-15,
+      "max_err_u_kappa": 1.336885555457667e-15,
+      "passed": true,
+      "tol": 1e-09
+    }
+  ],
+  "warnings": [
+    "protocol.context.samples is ignored because mode=='exhaustive'",
+    "Reused frozen transpiled circuits from cache_key=13552e1015b260de267221ab08c1f4beaf05152b757d4b41b688cdf1433dedb0"
+  ],
+  "errors": [],
+  "exit_code": 0,
+  "dropped_contexts": [],
+  "cli_args": {
+    "config": "qiskit_runner_two_pairs.yaml",
+    "dry_run": false,
+    "validate_only": false,
+    "skip_validation": false,
+    "output_dir": null,
+    "run_id": "S1_blk_n7_eta00",
+    "enable_gate_noise": false,
+    "schedule_mode": "blocked_by_setting",
+    "blocked_order": "cos_a,sin_a,cos_b,sin_b",
+    "job_timeout_s": null,
+    "global_timeout_s": null,
+    "verbose": false,
+    "quiet": false
+  },
+  "schedule": {
+    "mode": "blocked_by_setting",
+    "order": [
+      "cos_a",
+      "sin_a",
+      "cos_b",
+      "sin_b"
+    ],
+    "shots_per_circuit": 2048,
+    "num_phases": 4
+  }
+}

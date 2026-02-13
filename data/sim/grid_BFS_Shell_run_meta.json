@@ -1,0 +1,1232 @@
+[
+  {
+    "eta3": 0.1,
+    "run": 2,
+    "data": [
+      {
+        "run_id": "20260111_162814",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:28:14.531138+00:00",
+        "end_time": "2026-01-11T16:28:14.552562+00:00",
+        "duration_seconds": 0.021424,
+        "num_rows": 20,
+        "model": {
+          "n": 2
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "fixed",
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "num_pairs_used": 1,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 1,
+            "num_contexts_used": 1,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_162804",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:28:04.975822+00:00",
+        "end_time": "2026-01-11T16:28:05.005398+00:00",
+        "duration_seconds": 0.029576,
+        "num_rows": 40,
+        "model": {
+          "n": 3
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "fixed",
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "num_pairs_used": 1,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 2,
+            "num_contexts_used": 2,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_162739",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:27:39.677557+00:00",
+        "end_time": "2026-01-11T16:27:39.755339+00:00",
+        "duration_seconds": 0.077782,
+        "num_rows": 160,
+        "model": {
+          "n": 4
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "list",
+            "pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "num_pairs_used": 2,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 4,
+            "num_contexts_used": 4,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_162729",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:27:29.524004+00:00",
+        "end_time": "2026-01-11T16:27:29.679212+00:00",
+        "duration_seconds": 0.155208,
+        "num_rows": 320,
+        "model": {
+          "n": 5
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "list",
+            "pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "num_pairs_used": 2,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 8,
+            "num_contexts_used": 8,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_162717",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:27:17.305191+00:00",
+        "end_time": "2026-01-11T16:27:17.597939+00:00",
+        "duration_seconds": 0.292748,
+        "num_rows": 640,
+        "model": {
+          "n": 6
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "list",
+            "pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "num_pairs_used": 2,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 16,
+            "num_contexts_used": 16,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_162707",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:27:07.085289+00:00",
+        "end_time": "2026-01-11T16:27:07.640971+00:00",
+        "duration_seconds": 0.555682,
+        "num_rows": 1280,
+        "model": {
+          "n": 7
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "list",
+            "pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "num_pairs_used": 2,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 32,
+            "num_contexts_used": 32,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      }
+    ]
+  },
+  {
+    "eta3": 0.2,
+    "run": 2,
+    "data": [
+      {
+        "run_id": "20260111_161256",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:12:56.028527+00:00",
+        "end_time": "2026-01-11T16:12:56.046256+00:00",
+        "duration_seconds": 0.017729,
+        "num_rows": 20,
+        "model": {
+          "n": 2
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "fixed",
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "num_pairs_used": 1,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 1,
+            "num_contexts_used": 1,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_161244",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:12:44.564722+00:00",
+        "end_time": "2026-01-11T16:12:44.594680+00:00",
+        "duration_seconds": 0.029958,
+        "num_rows": 40,
+        "model": {
+          "n": 3
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "fixed",
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "num_pairs_used": 1,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 2,
+            "num_contexts_used": 2,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_161159",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:11:59.158471+00:00",
+        "end_time": "2026-01-11T16:11:59.240484+00:00",
+        "duration_seconds": 0.082013,
+        "num_rows": 160,
+        "model": {
+          "n": 4
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "list",
+            "pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "num_pairs_used": 2,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 4,
+            "num_contexts_used": 4,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_161147",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:11:47.178732+00:00",
+        "end_time": "2026-01-11T16:11:47.313215+00:00",
+        "duration_seconds": 0.134483,
+        "num_rows": 320,
+        "model": {
+          "n": 5
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "list",
+            "pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "num_pairs_used": 2,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 8,
+            "num_contexts_used": 8,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_161135",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:11:35.594347+00:00",
+        "end_time": "2026-01-11T16:11:35.855654+00:00",
+        "duration_seconds": 0.261307,
+        "num_rows": 640,
+        "model": {
+          "n": 6
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "list",
+            "pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "num_pairs_used": 2,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 16,
+            "num_contexts_used": 16,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_161119",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:11:19.094932+00:00",
+        "end_time": "2026-01-11T16:11:19.597931+00:00",
+        "duration_seconds": 0.502999,
+        "num_rows": 1280,
+        "model": {
+          "n": 7
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "list",
+            "pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "num_pairs_used": 2,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 32,
+            "num_contexts_used": 32,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      }
+    ]
+  },
+  {
+    "eta3": 0.0,
+    "run": 2,
+    "data": [
+      {
+        "run_id": "20260111_164046",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:40:46.196986+00:00",
+        "end_time": "2026-01-11T16:40:46.216302+00:00",
+        "duration_seconds": 0.019316,
+        "num_rows": 20,
+        "model": {
+          "n": 2
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "fixed",
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "num_pairs_used": 1,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 1,
+            "num_contexts_used": 1,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_164037",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:40:37.047745+00:00",
+        "end_time": "2026-01-11T16:40:37.075282+00:00",
+        "duration_seconds": 0.027537,
+        "num_rows": 40,
+        "model": {
+          "n": 3
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "fixed",
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "num_pairs_used": 1,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 2,
+            "num_contexts_used": 2,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_164017",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:40:17.517949+00:00",
+        "end_time": "2026-01-11T16:40:17.600241+00:00",
+        "duration_seconds": 0.082292,
+        "num_rows": 160,
+        "model": {
+          "n": 4
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "list",
+            "pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "num_pairs_used": 2,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 4,
+            "num_contexts_used": 4,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_164008",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:40:08.724060+00:00",
+        "end_time": "2026-01-11T16:40:08.892360+00:00",
+        "duration_seconds": 0.1683,
+        "num_rows": 320,
+        "model": {
+          "n": 5
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "list",
+            "pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "num_pairs_used": 2,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 8,
+            "num_contexts_used": 8,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_163959",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:39:59.262049+00:00",
+        "end_time": "2026-01-11T16:39:59.526306+00:00",
+        "duration_seconds": 0.264257,
+        "num_rows": 640,
+        "model": {
+          "n": 6
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "list",
+            "pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "num_pairs_used": 2,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 16,
+            "num_contexts_used": 16,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      },
+      {
+        "run_id": "20260111_163950",
+        "version": "sim_runner.v1",
+        "start_time": "2026-01-11T16:39:50.973596+00:00",
+        "end_time": "2026-01-11T16:39:51.443078+00:00",
+        "duration_seconds": 0.469482,
+        "num_rows": 1280,
+        "model": {
+          "n": 7
+        },
+        "output": {
+          "rows_file_requested": "rows.csv",
+          "rows_file_effective": "rows.csv",
+          "meta_file": "run_meta.json",
+          "rows_format": "csv"
+        },
+        "config": {
+          "scan": {
+            "pair_mode": "list",
+            "pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "resolved_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "num_pairs_used": 2,
+            "context_mode": "exhaustive",
+            "num_contexts_total": 32,
+            "num_contexts_used": 32,
+            "context_samples": null,
+            "context_seed": null,
+            "context_params_ignored_in_exhaustive": {
+              "ignored": true,
+              "context_samples_requested": 64,
+              "context_seed_requested": 1234
+            }
+          },
+          "shot": {
+            "enabled": true,
+            "shots": 2048
+          },
+          "drift": {
+            "enabled": true,
+            "sigma": 0.02,
+            "model": "piecewise_constant",
+            "chunk_shots": 32,
+            "hold_chunks": 4,
+            "schedule": "interleave",
+            "schedule_seed": 1234
+          },
+          "trials": {
+            "count": 20,
+            "seed_base": 20251224
+          }
+        }
+      }
+    ]
+  }
+]

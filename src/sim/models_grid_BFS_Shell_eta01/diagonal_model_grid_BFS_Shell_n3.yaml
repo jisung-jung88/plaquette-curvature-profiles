@@ -1,0 +1,33 @@
+version: '0.1'
+n: 3
+bit_order: lsb
+family_meta:
+  family: grid_radius_r_centered_growth_v2
+  grid_width: 3
+  indexing: centered-growth / BFS-shell around logical edge (0,1)
+  tie_break: sort by (dist, y, x)
+  anchor_edge_xy:
+  - - 1
+    - 1
+  - - 2
+    - 1
+  note: (0,1) is placed near grid center; G_n is prefix-induced in this order
+diagonal_components:
+  source: analytic
+  analytic:
+    kind: pauli_z_sum
+    terms:
+    - c: 0.25
+      z:
+      - 0
+      - 1
+    - c: 0.25
+      z:
+      - 0
+      - 2
+    - c: 0.009151654422709614
+      z:
+      - 0
+      - 1
+      - 2
+  explicit: null
