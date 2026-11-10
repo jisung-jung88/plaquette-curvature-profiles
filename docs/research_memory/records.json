@@ -1,0 +1,2837 @@
+{
+  "schema_version": 1,
+  "repository": "jisung-jung88/plaquette-curvature-profiles",
+  "peer_repository": "jisung-jung88/kappa-profile",
+  "recorded_on": "2026-11-10",
+  "record_origin": "retrospective recovery from exact archived observations and execution metadata; two storage locations for the same historical assets",
+  "main_base_commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+  "source_snapshot_commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+  "coverage_notes": [
+    "11개는 의미 있는 연구 묶음 수이며 실행 횟수·독립 표본 수가 아니다. 내부의 59개 보존 메타데이터를 별도 inventory로 연결했다.",
+    "공통 KP-R ID의 두 저장소 기록은 같은 과거 관측의 보관 위치다. 중복 사본을 독립적인 근거로 세지 않는다.",
+    "원 질문·동기가 별도 사전 일지에 없으면 README·설정·분석 코드를 근거로 사후 복원했다고 표시한다.",
+    "실제 runtime Git commit·dirty 상태와 일부 누적 QPU 실행 계보는 미확인이다. 보관 snapshot을 실행 commit으로 추정하지 않는다.",
+    "이번 수량·산술 검산과 figure 재생성은 기존 관측의 확인이다. 새 QPU 획득이나 simulation campaign을 수행하지 않았다."
+  ],
+  "records": [
+    {
+      "id": "KP-R001",
+      "title": "시뮬레이션 η3=0: n=2–7, 잡음·drift 아래 κ-profile sweep",
+      "workstream": "data/sim",
+      "kind": "simulation_campaign",
+      "summary": "η3=0인 보존 시뮬레이션 묶음이다. n=2–7의 실제 execution ID 6개, n별 20 trial, context 행 2,460개와 pair-trial 요약 200개를 연결했다. 원본 rows·summary·run/stats metadata가 서로 일치하며 실행 코드 identity와 model YAML hash는 원 기록에 없다.",
+      "question": "η3=0 조건에서 n과 context에 따른 κ의 분산이 signal pair와 control pair에 어떻게 나타나는가? 이 질문은 현재 README와 Fig.3/4 recipe에서 재구성한 것으로, 동시대 실험 일지의 직접 인용은 아니다.",
+      "motivation": "현재 README와 그림 처리 코드가 η3 sweep·signal/control 비교를 설명한다. 원 metadata는 조건·출력을 남기지만 이 시도의 선택 이유나 사전 가설은 별도로 보존하지 않는다.",
+      "change": "보존된 wrapper run=2의 η3=0 설정에서 n=2…7을 실행하고 동일 trial seed base로 shot noise와 piecewise-constant drift를 포함한다.",
+      "conditions": [
+        "η3=0, wrapper run=2; n=2…7의 execution 6개. 보존 timestamp는 2026-01-11 UTC, 한국시간 2026-01-12이다.",
+        "n별 20 trial, seed_base=20251224; 측정 설정당 2048 shots, shot.enabled=true.",
+        "drift.enabled=true, sigma=0.02, piecewise_constant, chunk_shots=32, hold_chunks=4, schedule=interleave, schedule_seed=1234.",
+        "pair (0,1)는 모든 n, control pair (2,3)는 n≥4; 각 pair에서 2^(n−2) context를 exhaustive하게 처리한다.",
+        "exhaustive 설정 때문에 요청된 context_samples=64와 context_seed=1234는 무시됐다는 원 metadata를 보존한다."
+      ],
+      "observed_results": [
+        "6개 metadata execution ID와 6개 stats input_run_dir가 일치한다. rows에는 run_id가 없으므로 고유한 η3/n 묶음과 trial_summary.run_id를 통해 연결했다.",
+        "보존된 2,460 context 행과200 pair-trial 요약이 전체 예상 pair/context/trial 조합과 일치한다. n별 20 trial을 합친 120개 trial 단위이며200개는 pair별 요약 수다.",
+        "이번 정리의 read-only 산술 검산에서 저장된 요약이 raw row 재집계와 일치했다. 작은 V 값의 과학적 표기 반올림을 포함한 오차 허용은 5e-8이다.",
+        "보존된 n=7 trial summary의 V_circ 평균: pair(0, 1)=0.00032383125, pair(2, 3)=0.00037509035. 이번 정리에서 기존 summary를 평균한 값이며 새 simulation 또는 과거 figure의 bootstrap point가 아니다."
+      ],
+      "interpretation": "같은 보존 조건의 η3 비교와 signal/control 재분석에 재사용할 수 있는 완료된 출력 묶음이다. 개별 trial 및 pair의 의존성을 유지하고, 다른 조건·장치로의 일반화나 원래 전체 탐색의 완전성을 이 묶음만으로 주장하지 않는다.",
+      "limits": [
+        "원 sim metadata에는 model YAML hash, 실행 코드 commit/dirty state, 환경 version, exit_code/errors가 없다. 현재 model/runner는 재현 후보이며 실제 실행 바이트로 확정할 수 없다.",
+        "원 raw rows에는 run_id가 없고 합쳐진 CSV가 반올림돼 있다. source hash와 η3/n/pair/trial selector를 함께 유지해야 한다.",
+        "같은 seed_base=20251224와 trial_id=0…19가 n·η3 조건들에서 반복된다. 120개 n별 trial 인스턴스나200개 pair summary를 모두 독립 표본으로 간주하지 않는다. 현재 runner recipe는 seed_base+trial_id를 사용하지만 실행 당시 코드 identity는 미확인이다.",
+        "wrapper run=2 이전의 run=1, 실패·중단 이력이나 누락된 시도가 있었다는 것을 이 자료에서 확정할 수 없다.",
+        "두 저장소에 동일 바이트가 존재하므로 같은 과거 실험을 두 번의 독립 반복으로 계산하지 않는다."
+      ],
+      "execution_status": "retained_outputs_and_metadata_reconciled",
+      "evidence_level": "retained_counts_or_rows_and_execution_metadata",
+      "scientific_status": "observed_dataset_with_explicit_provenance_limits",
+      "approval_status": "historical_execution_recorded_no_future_job_authorization",
+      "original_status_terms": [
+        "sim_runner.v1",
+        "stats.v1",
+        "run=2",
+        "num_rows",
+        "end_time"
+      ],
+      "status_basis": "원 run/stats metadata의 종료 시각과 실제 rows·trial_summary의 완전한 조합 대조를 근거로 보존 출력의 완결성을 기록한다. 기록되지 않은 exit status를 만들어 넣지 않는다.",
+      "provenance": {
+        "source_branch": "main",
+        "preparation_commits": [],
+        "code_commit": null,
+        "code_commit_note": "실행 당시 코드 commit·dirty state는 원 metadata에 없다. 현재 보관된 runner와 결과를 처음 올린 commit은 실행 checkout을 증명하지 않는다.",
+        "target_commit": null,
+        "result_commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+        "result_commit_note": "확인한 원 자료의 보관 snapshot이다. 데이터의 실제 실행 시각이나 runtime checkout을 뜻하지 않는다.",
+        "integration_commits": [
+          "00635d5d5ae3cf459cc3bde32b2524aab4352640"
+        ],
+        "original_run_ids": [
+          "20260111_164046",
+          "20260111_164037",
+          "20260111_164017",
+          "20260111_164008",
+          "20260111_163959",
+          "20260111_163950"
+        ],
+        "run_id_note": "원 metadata의 문자열을 그대로 보존한다. wrapper run 번호, n별 execution ID, QPU job ID와 trial/pair/context는 별개 단위다."
+      },
+      "relations": [
+        {
+          "id": "KP-R002",
+          "relation": "compared_with",
+          "note": "Same retained simulation pipeline, different η3; separate execution IDs and results."
+        },
+        {
+          "id": "KP-R003",
+          "relation": "compared_with",
+          "note": "Zero-η baseline compared with η3=0.2; preserve trial and pair units."
+        },
+        {
+          "id": "KP-R004",
+          "relation": "compared_with_hardware",
+          "note": "Same η3 label but simulation/control pair, hardware, dates and noise conditions differ; not identical executions."
+        }
+      ],
+      "keywords": [
+        "simulation",
+        "sim",
+        "BFS Shell",
+        "grid",
+        "η3",
+        "0",
+        "eta3=0",
+        "shot noise",
+        "drift",
+        "exhaustive",
+        "signal control",
+        "시뮬레이션",
+        "대조군",
+        "잡음",
+        "반복",
+        "2026-01-11",
+        "2026-01-12",
+        "20260111_164046",
+        "20260111_164037",
+        "20260111_164017",
+        "20260111_164008",
+        "20260111_163959",
+        "20260111_163950",
+        "failure history unknown",
+        "실패 이력 미확인",
+        "runtime provenance",
+        "duplicate archived evidence"
+      ],
+      "evidence": [
+        {
+          "label": "data/sim/grid_BFS_Shell_run_meta.json",
+          "role": "historical_execution_metadata",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/sim/grid_BFS_Shell_run_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_run_meta.json",
+          "blob_sha": "b74471f6a020ead3f1aea596c2978e21f6bd4028"
+        },
+        {
+          "label": "data/sim/grid_BFS_Shell_rows.csv",
+          "role": "historical_result",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/sim/grid_BFS_Shell_rows.csv",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_rows.csv",
+          "blob_sha": "4d7935d2ce152b2df8256d135a9862ba8020b767"
+        },
+        {
+          "label": "data/sim/grid_BFS_Shell_trial_summary.csv",
+          "role": "historical_result",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/sim/grid_BFS_Shell_trial_summary.csv",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_trial_summary.csv",
+          "blob_sha": "d40cb9cd19f7a2d681a07a907855955c98ba0ef5"
+        },
+        {
+          "label": "data/sim/grid_BFS_Shell_stats_meta.json",
+          "role": "historical_result",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/sim/grid_BFS_Shell_stats_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_stats_meta.json",
+          "blob_sha": "9581d43a7f1edce1bf46640764b227a56eaaeeaf"
+        },
+        {
+          "label": "src/sim/sim_runner.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/sim_runner.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/sim_runner.py",
+          "blob_sha": "99a041615a9660491835625080f32adac4568213"
+        },
+        {
+          "label": "src/sim/stats.py",
+          "role": "available_aggregation_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/stats.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/stats.py",
+          "blob_sha": "3f02a4897fe230f696abbcba20a77d8eaf6658a9"
+        },
+        {
+          "label": "src/sim/sim_runner.yaml",
+          "role": "available_configuration_example_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/sim_runner.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/sim_runner.yaml",
+          "blob_sha": "8d07b4f96c660987a808331132ffc92f6e99ffdc"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "blob_sha": "bdcb55a56878cc63e0ee71858996dc701dabadcc"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "blob_sha": "3f93e4717f45a26713cfaef87ddbadb3032dec11"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "blob_sha": "e74f7aa5e7291916a615d5520ad1fac6964012a3"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "blob_sha": "9adb558c3484a0943a05e5655d7da1b1fc123165"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "blob_sha": "826c895ccf30c2ad3673c086c41e5fa56f310d83"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "blob_sha": "43e8c42de1b23896ea051e0457b8f9c432ecc86c"
+        },
+        {
+          "label": "기존 실행 메타데이터와 관측값의 복원 목록",
+          "role": "retrospective_execution_inventory",
+          "path": "docs/research_memory/historical_run_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "31487a3d49a60f3edff1e0d1ce94e7a302d03942",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "원 데이터의 읽기 전용 복원·검산 코드",
+          "role": "retrospective_reconstruction_code",
+          "path": "scripts/reconstruct_run_inventory.py",
+          "commit": null,
+          "url": null,
+          "blob_sha": "e229a2d9d2fb7c1fdb29feac7dbd5ebf10bc2bf2",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "두 원본 snapshot의 전체 path·blob·SHA256 목록",
+          "role": "retrospective_source_inventory",
+          "path": "docs/research_memory/source_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d6d36e8f62eacddc166e9cd329317a122f750be9",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "기존 rows/counts의 현재 산술 검산 수치",
+          "role": "current_readonly_arithmetic",
+          "path": "docs/research_memory/verification/observed_metrics.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d42ba15744bedd8314c91d936be4b79e210436b3",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        }
+      ],
+      "artifacts": [],
+      "mirrors": [
+        {
+          "repository": "jisung-jung88/kappa-profile",
+          "id": "KP-R001",
+          "path": "docs/research_memory/entries/KP-R001.md"
+        }
+      ]
+    },
+    {
+      "id": "KP-R002",
+      "title": "시뮬레이션 η3=0.1: n=2–7, 잡음·drift 아래 κ-profile sweep",
+      "workstream": "data/sim",
+      "kind": "simulation_campaign",
+      "summary": "η3=0.1인 보존 시뮬레이션 묶음이다. n=2–7의 실제 execution ID 6개, n별 20 trial, context 행 2,460개와 pair-trial 요약 200개를 연결했다. 원본 rows·summary·run/stats metadata가 서로 일치하며 실행 코드 identity와 model YAML hash는 원 기록에 없다.",
+      "question": "η3=0.1 조건에서 n과 context에 따른 κ의 분산이 signal pair와 control pair에 어떻게 나타나는가? 이 질문은 현재 README와 Fig.3/4 recipe에서 재구성한 것으로, 동시대 실험 일지의 직접 인용은 아니다.",
+      "motivation": "현재 README와 그림 처리 코드가 η3 sweep·signal/control 비교를 설명한다. 원 metadata는 조건·출력을 남기지만 이 시도의 선택 이유나 사전 가설은 별도로 보존하지 않는다.",
+      "change": "보존된 wrapper run=2의 η3=0.1 설정에서 n=2…7을 실행하고 동일 trial seed base로 shot noise와 piecewise-constant drift를 포함한다.",
+      "conditions": [
+        "η3=0.1, wrapper run=2; n=2…7의 execution 6개. 보존 timestamp는 2026-01-11 UTC, 한국시간 2026-01-12이다.",
+        "n별 20 trial, seed_base=20251224; 측정 설정당 2048 shots, shot.enabled=true.",
+        "drift.enabled=true, sigma=0.02, piecewise_constant, chunk_shots=32, hold_chunks=4, schedule=interleave, schedule_seed=1234.",
+        "pair (0,1)는 모든 n, control pair (2,3)는 n≥4; 각 pair에서 2^(n−2) context를 exhaustive하게 처리한다.",
+        "exhaustive 설정 때문에 요청된 context_samples=64와 context_seed=1234는 무시됐다는 원 metadata를 보존한다."
+      ],
+      "observed_results": [
+        "6개 metadata execution ID와 6개 stats input_run_dir가 일치한다. rows에는 run_id가 없으므로 고유한 η3/n 묶음과 trial_summary.run_id를 통해 연결했다.",
+        "보존된 2,460 context 행과200 pair-trial 요약이 전체 예상 pair/context/trial 조합과 일치한다. n별 20 trial을 합친 120개 trial 단위이며200개는 pair별 요약 수다.",
+        "이번 정리의 read-only 산술 검산에서 저장된 요약이 raw row 재집계와 일치했다. 작은 V 값의 과학적 표기 반올림을 포함한 오차 허용은 5e-8이다.",
+        "보존된 n=7 trial summary의 V_circ 평균: pair(0, 1)=0.0022514619, pair(2, 3)=0.0003955617. 이번 정리에서 기존 summary를 평균한 값이며 새 simulation 또는 과거 figure의 bootstrap point가 아니다."
+      ],
+      "interpretation": "같은 보존 조건의 η3 비교와 signal/control 재분석에 재사용할 수 있는 완료된 출력 묶음이다. 개별 trial 및 pair의 의존성을 유지하고, 다른 조건·장치로의 일반화나 원래 전체 탐색의 완전성을 이 묶음만으로 주장하지 않는다.",
+      "limits": [
+        "원 sim metadata에는 model YAML hash, 실행 코드 commit/dirty state, 환경 version, exit_code/errors가 없다. 현재 model/runner는 재현 후보이며 실제 실행 바이트로 확정할 수 없다.",
+        "원 raw rows에는 run_id가 없고 합쳐진 CSV가 반올림돼 있다. source hash와 η3/n/pair/trial selector를 함께 유지해야 한다.",
+        "같은 seed_base=20251224와 trial_id=0…19가 n·η3 조건들에서 반복된다. 120개 n별 trial 인스턴스나200개 pair summary를 모두 독립 표본으로 간주하지 않는다. 현재 runner recipe는 seed_base+trial_id를 사용하지만 실행 당시 코드 identity는 미확인이다.",
+        "wrapper run=2 이전의 run=1, 실패·중단 이력이나 누락된 시도가 있었다는 것을 이 자료에서 확정할 수 없다.",
+        "두 저장소에 동일 바이트가 존재하므로 같은 과거 실험을 두 번의 독립 반복으로 계산하지 않는다."
+      ],
+      "execution_status": "retained_outputs_and_metadata_reconciled",
+      "evidence_level": "retained_counts_or_rows_and_execution_metadata",
+      "scientific_status": "observed_dataset_with_explicit_provenance_limits",
+      "approval_status": "historical_execution_recorded_no_future_job_authorization",
+      "original_status_terms": [
+        "sim_runner.v1",
+        "stats.v1",
+        "run=2",
+        "num_rows",
+        "end_time"
+      ],
+      "status_basis": "원 run/stats metadata의 종료 시각과 실제 rows·trial_summary의 완전한 조합 대조를 근거로 보존 출력의 완결성을 기록한다. 기록되지 않은 exit status를 만들어 넣지 않는다.",
+      "provenance": {
+        "source_branch": "main",
+        "preparation_commits": [],
+        "code_commit": null,
+        "code_commit_note": "실행 당시 코드 commit·dirty state는 원 metadata에 없다. 현재 보관된 runner와 결과를 처음 올린 commit은 실행 checkout을 증명하지 않는다.",
+        "target_commit": null,
+        "result_commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+        "result_commit_note": "확인한 원 자료의 보관 snapshot이다. 데이터의 실제 실행 시각이나 runtime checkout을 뜻하지 않는다.",
+        "integration_commits": [
+          "00635d5d5ae3cf459cc3bde32b2524aab4352640"
+        ],
+        "original_run_ids": [
+          "20260111_162814",
+          "20260111_162804",
+          "20260111_162739",
+          "20260111_162729",
+          "20260111_162717",
+          "20260111_162707"
+        ],
+        "run_id_note": "원 metadata의 문자열을 그대로 보존한다. wrapper run 번호, n별 execution ID, QPU job ID와 trial/pair/context는 별개 단위다."
+      },
+      "relations": [
+        {
+          "id": "KP-R001",
+          "relation": "compared_with",
+          "note": "Same retained simulation pipeline, different η3; separate execution IDs and results."
+        },
+        {
+          "id": "KP-R003",
+          "relation": "compared_with",
+          "note": "η3=0.1 versus0.2 under the retained simulation conditions."
+        },
+        {
+          "id": "KP-R005",
+          "relation": "compared_with_hardware",
+          "note": "Same η3 label but simulation/control pair, hardware, dates and noise conditions differ; not identical executions."
+        }
+      ],
+      "keywords": [
+        "simulation",
+        "sim",
+        "BFS Shell",
+        "grid",
+        "η3",
+        "0.1",
+        "eta3=0.1",
+        "shot noise",
+        "drift",
+        "exhaustive",
+        "signal control",
+        "시뮬레이션",
+        "대조군",
+        "잡음",
+        "반복",
+        "2026-01-11",
+        "2026-01-12",
+        "20260111_162814",
+        "20260111_162804",
+        "20260111_162739",
+        "20260111_162729",
+        "20260111_162717",
+        "20260111_162707",
+        "failure history unknown",
+        "실패 이력 미확인",
+        "runtime provenance",
+        "duplicate archived evidence"
+      ],
+      "evidence": [
+        {
+          "label": "data/sim/grid_BFS_Shell_run_meta.json",
+          "role": "historical_execution_metadata",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/sim/grid_BFS_Shell_run_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_run_meta.json",
+          "blob_sha": "b74471f6a020ead3f1aea596c2978e21f6bd4028"
+        },
+        {
+          "label": "data/sim/grid_BFS_Shell_rows.csv",
+          "role": "historical_result",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/sim/grid_BFS_Shell_rows.csv",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_rows.csv",
+          "blob_sha": "4d7935d2ce152b2df8256d135a9862ba8020b767"
+        },
+        {
+          "label": "data/sim/grid_BFS_Shell_trial_summary.csv",
+          "role": "historical_result",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/sim/grid_BFS_Shell_trial_summary.csv",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_trial_summary.csv",
+          "blob_sha": "d40cb9cd19f7a2d681a07a907855955c98ba0ef5"
+        },
+        {
+          "label": "data/sim/grid_BFS_Shell_stats_meta.json",
+          "role": "historical_result",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/sim/grid_BFS_Shell_stats_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_stats_meta.json",
+          "blob_sha": "9581d43a7f1edce1bf46640764b227a56eaaeeaf"
+        },
+        {
+          "label": "src/sim/sim_runner.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/sim_runner.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/sim_runner.py",
+          "blob_sha": "99a041615a9660491835625080f32adac4568213"
+        },
+        {
+          "label": "src/sim/stats.py",
+          "role": "available_aggregation_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/stats.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/stats.py",
+          "blob_sha": "3f02a4897fe230f696abbcba20a77d8eaf6658a9"
+        },
+        {
+          "label": "src/sim/sim_runner.yaml",
+          "role": "available_configuration_example_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/sim_runner.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/sim_runner.yaml",
+          "blob_sha": "8d07b4f96c660987a808331132ffc92f6e99ffdc"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "blob_sha": "bdcb55a56878cc63e0ee71858996dc701dabadcc"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "blob_sha": "7211f04a2067f879abefda8dda28dc548042b2cc"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "blob_sha": "4f6885d079fc8fda732b9bb0e74586dc741d832f"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "blob_sha": "72fd46a8774312465af98e8b7baf86b9ca88f948"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "blob_sha": "bb2dfa34f2a9ebf311086c31aa310ea52c9a7cc5"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "blob_sha": "f98994c0e1b0c4197db6d689eb8bc3adb7d08fdc"
+        },
+        {
+          "label": "기존 실행 메타데이터와 관측값의 복원 목록",
+          "role": "retrospective_execution_inventory",
+          "path": "docs/research_memory/historical_run_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "31487a3d49a60f3edff1e0d1ce94e7a302d03942",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "원 데이터의 읽기 전용 복원·검산 코드",
+          "role": "retrospective_reconstruction_code",
+          "path": "scripts/reconstruct_run_inventory.py",
+          "commit": null,
+          "url": null,
+          "blob_sha": "e229a2d9d2fb7c1fdb29feac7dbd5ebf10bc2bf2",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "두 원본 snapshot의 전체 path·blob·SHA256 목록",
+          "role": "retrospective_source_inventory",
+          "path": "docs/research_memory/source_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d6d36e8f62eacddc166e9cd329317a122f750be9",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "기존 rows/counts의 현재 산술 검산 수치",
+          "role": "current_readonly_arithmetic",
+          "path": "docs/research_memory/verification/observed_metrics.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d42ba15744bedd8314c91d936be4b79e210436b3",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        }
+      ],
+      "artifacts": [],
+      "mirrors": [
+        {
+          "repository": "jisung-jung88/kappa-profile",
+          "id": "KP-R002",
+          "path": "docs/research_memory/entries/KP-R002.md"
+        }
+      ]
+    },
+    {
+      "id": "KP-R003",
+      "title": "시뮬레이션 η3=0.2: n=2–7, 잡음·drift 아래 κ-profile sweep",
+      "workstream": "data/sim",
+      "kind": "simulation_campaign",
+      "summary": "η3=0.2인 보존 시뮬레이션 묶음이다. n=2–7의 실제 execution ID 6개, n별 20 trial, context 행 2,460개와 pair-trial 요약 200개를 연결했다. 원본 rows·summary·run/stats metadata가 서로 일치하며 실행 코드 identity와 model YAML hash는 원 기록에 없다.",
+      "question": "η3=0.2 조건에서 n과 context에 따른 κ의 분산이 signal pair와 control pair에 어떻게 나타나는가? 이 질문은 현재 README와 Fig.3/4 recipe에서 재구성한 것으로, 동시대 실험 일지의 직접 인용은 아니다.",
+      "motivation": "현재 README와 그림 처리 코드가 η3 sweep·signal/control 비교를 설명한다. 원 metadata는 조건·출력을 남기지만 이 시도의 선택 이유나 사전 가설은 별도로 보존하지 않는다.",
+      "change": "보존된 wrapper run=2의 η3=0.2 설정에서 n=2…7을 실행하고 동일 trial seed base로 shot noise와 piecewise-constant drift를 포함한다.",
+      "conditions": [
+        "η3=0.2, wrapper run=2; n=2…7의 execution 6개. 보존 timestamp는 2026-01-11 UTC, 한국시간 2026-01-12이다.",
+        "n별 20 trial, seed_base=20251224; 측정 설정당 2048 shots, shot.enabled=true.",
+        "drift.enabled=true, sigma=0.02, piecewise_constant, chunk_shots=32, hold_chunks=4, schedule=interleave, schedule_seed=1234.",
+        "pair (0,1)는 모든 n, control pair (2,3)는 n≥4; 각 pair에서 2^(n−2) context를 exhaustive하게 처리한다.",
+        "exhaustive 설정 때문에 요청된 context_samples=64와 context_seed=1234는 무시됐다는 원 metadata를 보존한다."
+      ],
+      "observed_results": [
+        "6개 metadata execution ID와 6개 stats input_run_dir가 일치한다. rows에는 run_id가 없으므로 고유한 η3/n 묶음과 trial_summary.run_id를 통해 연결했다.",
+        "보존된 2,460 context 행과200 pair-trial 요약이 전체 예상 pair/context/trial 조합과 일치한다. n별 20 trial을 합친 120개 trial 단위이며200개는 pair별 요약 수다.",
+        "이번 정리의 read-only 산술 검산에서 저장된 요약이 raw row 재집계와 일치했다. 작은 V 값의 과학적 표기 반올림을 포함한 오차 허용은 5e-8이다.",
+        "보존된 n=7 trial summary의 V_circ 평균: pair(0, 1)=0.00831291445, pair(2, 3)=0.0003892086. 이번 정리에서 기존 summary를 평균한 값이며 새 simulation 또는 과거 figure의 bootstrap point가 아니다."
+      ],
+      "interpretation": "같은 보존 조건의 η3 비교와 signal/control 재분석에 재사용할 수 있는 완료된 출력 묶음이다. 개별 trial 및 pair의 의존성을 유지하고, 다른 조건·장치로의 일반화나 원래 전체 탐색의 완전성을 이 묶음만으로 주장하지 않는다.",
+      "limits": [
+        "원 sim metadata에는 model YAML hash, 실행 코드 commit/dirty state, 환경 version, exit_code/errors가 없다. 현재 model/runner는 재현 후보이며 실제 실행 바이트로 확정할 수 없다.",
+        "원 raw rows에는 run_id가 없고 합쳐진 CSV가 반올림돼 있다. source hash와 η3/n/pair/trial selector를 함께 유지해야 한다.",
+        "같은 seed_base=20251224와 trial_id=0…19가 n·η3 조건들에서 반복된다. 120개 n별 trial 인스턴스나200개 pair summary를 모두 독립 표본으로 간주하지 않는다. 현재 runner recipe는 seed_base+trial_id를 사용하지만 실행 당시 코드 identity는 미확인이다.",
+        "wrapper run=2 이전의 run=1, 실패·중단 이력이나 누락된 시도가 있었다는 것을 이 자료에서 확정할 수 없다.",
+        "두 저장소에 동일 바이트가 존재하므로 같은 과거 실험을 두 번의 독립 반복으로 계산하지 않는다."
+      ],
+      "execution_status": "retained_outputs_and_metadata_reconciled",
+      "evidence_level": "retained_counts_or_rows_and_execution_metadata",
+      "scientific_status": "observed_dataset_with_explicit_provenance_limits",
+      "approval_status": "historical_execution_recorded_no_future_job_authorization",
+      "original_status_terms": [
+        "sim_runner.v1",
+        "stats.v1",
+        "run=2",
+        "num_rows",
+        "end_time"
+      ],
+      "status_basis": "원 run/stats metadata의 종료 시각과 실제 rows·trial_summary의 완전한 조합 대조를 근거로 보존 출력의 완결성을 기록한다. 기록되지 않은 exit status를 만들어 넣지 않는다.",
+      "provenance": {
+        "source_branch": "main",
+        "preparation_commits": [],
+        "code_commit": null,
+        "code_commit_note": "실행 당시 코드 commit·dirty state는 원 metadata에 없다. 현재 보관된 runner와 결과를 처음 올린 commit은 실행 checkout을 증명하지 않는다.",
+        "target_commit": null,
+        "result_commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+        "result_commit_note": "확인한 원 자료의 보관 snapshot이다. 데이터의 실제 실행 시각이나 runtime checkout을 뜻하지 않는다.",
+        "integration_commits": [
+          "00635d5d5ae3cf459cc3bde32b2524aab4352640"
+        ],
+        "original_run_ids": [
+          "20260111_161256",
+          "20260111_161244",
+          "20260111_161159",
+          "20260111_161147",
+          "20260111_161135",
+          "20260111_161119"
+        ],
+        "run_id_note": "원 metadata의 문자열을 그대로 보존한다. wrapper run 번호, n별 execution ID, QPU job ID와 trial/pair/context는 별개 단위다."
+      },
+      "relations": [
+        {
+          "id": "KP-R001",
+          "relation": "compared_with",
+          "note": "Zero-η baseline compared with η3=0.2; preserve trial and pair units."
+        },
+        {
+          "id": "KP-R002",
+          "relation": "compared_with",
+          "note": "η3=0.1 versus0.2 under the retained simulation conditions."
+        },
+        {
+          "id": "KP-R006",
+          "relation": "compared_with_hardware",
+          "note": "Same η3 label but simulation/control pair, hardware, dates and noise conditions differ; not identical executions."
+        }
+      ],
+      "keywords": [
+        "simulation",
+        "sim",
+        "BFS Shell",
+        "grid",
+        "η3",
+        "0.2",
+        "eta3=0.2",
+        "shot noise",
+        "drift",
+        "exhaustive",
+        "signal control",
+        "시뮬레이션",
+        "대조군",
+        "잡음",
+        "반복",
+        "2026-01-11",
+        "2026-01-12",
+        "20260111_161256",
+        "20260111_161244",
+        "20260111_161159",
+        "20260111_161147",
+        "20260111_161135",
+        "20260111_161119",
+        "failure history unknown",
+        "실패 이력 미확인",
+        "runtime provenance",
+        "duplicate archived evidence"
+      ],
+      "evidence": [
+        {
+          "label": "data/sim/grid_BFS_Shell_run_meta.json",
+          "role": "historical_execution_metadata",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/sim/grid_BFS_Shell_run_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_run_meta.json",
+          "blob_sha": "b74471f6a020ead3f1aea596c2978e21f6bd4028"
+        },
+        {
+          "label": "data/sim/grid_BFS_Shell_rows.csv",
+          "role": "historical_result",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/sim/grid_BFS_Shell_rows.csv",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_rows.csv",
+          "blob_sha": "4d7935d2ce152b2df8256d135a9862ba8020b767"
+        },
+        {
+          "label": "data/sim/grid_BFS_Shell_trial_summary.csv",
+          "role": "historical_result",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/sim/grid_BFS_Shell_trial_summary.csv",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_trial_summary.csv",
+          "blob_sha": "d40cb9cd19f7a2d681a07a907855955c98ba0ef5"
+        },
+        {
+          "label": "data/sim/grid_BFS_Shell_stats_meta.json",
+          "role": "historical_result",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/sim/grid_BFS_Shell_stats_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_stats_meta.json",
+          "blob_sha": "9581d43a7f1edce1bf46640764b227a56eaaeeaf"
+        },
+        {
+          "label": "src/sim/sim_runner.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/sim_runner.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/sim_runner.py",
+          "blob_sha": "99a041615a9660491835625080f32adac4568213"
+        },
+        {
+          "label": "src/sim/stats.py",
+          "role": "available_aggregation_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/stats.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/stats.py",
+          "blob_sha": "3f02a4897fe230f696abbcba20a77d8eaf6658a9"
+        },
+        {
+          "label": "src/sim/sim_runner.yaml",
+          "role": "available_configuration_example_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/sim_runner.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/sim_runner.yaml",
+          "blob_sha": "8d07b4f96c660987a808331132ffc92f6e99ffdc"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "blob_sha": "bdcb55a56878cc63e0ee71858996dc701dabadcc"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "blob_sha": "411b8317f5bc49ceda9719a1b93f30d2350545a4"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "blob_sha": "0697f2ed8abac4ce5fbdc54586a8c6cb8f05af13"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "blob_sha": "a84f86414a5b7edf56a668b2807866117beec6b0"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "blob_sha": "6481e14f9c84b697667ff8d19d26dd0a7c104647"
+        },
+        {
+          "label": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "role": "available_model_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "blob_sha": "1bef46e950926a451567fb3ff87a98fb7572e1b3"
+        },
+        {
+          "label": "기존 실행 메타데이터와 관측값의 복원 목록",
+          "role": "retrospective_execution_inventory",
+          "path": "docs/research_memory/historical_run_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "31487a3d49a60f3edff1e0d1ce94e7a302d03942",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "원 데이터의 읽기 전용 복원·검산 코드",
+          "role": "retrospective_reconstruction_code",
+          "path": "scripts/reconstruct_run_inventory.py",
+          "commit": null,
+          "url": null,
+          "blob_sha": "e229a2d9d2fb7c1fdb29feac7dbd5ebf10bc2bf2",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "두 원본 snapshot의 전체 path·blob·SHA256 목록",
+          "role": "retrospective_source_inventory",
+          "path": "docs/research_memory/source_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d6d36e8f62eacddc166e9cd329317a122f750be9",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "기존 rows/counts의 현재 산술 검산 수치",
+          "role": "current_readonly_arithmetic",
+          "path": "docs/research_memory/verification/observed_metrics.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d42ba15744bedd8314c91d936be4b79e210436b3",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        }
+      ],
+      "artifacts": [],
+      "mirrors": [
+        {
+          "repository": "jisung-jung88/kappa-profile",
+          "id": "KP-R003",
+          "path": "docs/research_memory/entries/KP-R003.md"
+        }
+      ]
+    },
+    {
+      "id": "KP-R004",
+      "title": "IBM Fez Day 1, η3=0·run=6: 누적 counts와 마지막 R8 metadata",
+      "workstream": "data/qpu",
+      "kind": "qpu_campaign",
+      "summary": "Day 1의 η3=0, wrapper run=6 묶음이다. n=2–7의 누적 histogram 476개는 각각 2048 shots이고, 보존된 execution metadata 6개는 마지막 RR_R8의 256-shot job을 설명한다. 같은 원문 안의 서로 다른 확인 범위를 분리해 재사용한다.",
+      "question": "IBM Fez의 고정 mapping에서 η3=0인 κ-profile이 n에 따라 어떻게 관찰되며 다른 η3·날짜의 묶음과 어떻게 비교되는가? 현재 README의 Fig.5/6/8 선택과 코드에서 재구성한 질문이다.",
+      "motivation": "현재 저장소는 시뮬레이션 진단을 QPU에서 비교하고 acquisition time을 바꾼 반복을 분석하도록 구성돼 있다. 이 특정 wrapper를 고른 동시대 의사결정 일지는 보존돼 있지 않다.",
+      "change": "현재 README가 Day 1에 지정한 η3=0, run=6을 선택해 n=2…7의 signal/control 측정 결과를 연결한다. 이 run 번호는 R8 subrun label 및 Git commit과 서로 다른 식별자다.",
+      "conditions": [
+        "보존된 마지막-R8 metadata 날짜: UTC 2026-01-02, 한국시간 2026-01-03. 누적 histogram에 기여한 모든 subrun 시각을 이 최종 metadata로 대체하지 않는다.",
+        "η3=0, outer wrapper run=6; inner run은 문자열 \"6\"이다. n=2…7, IBM Fez, model bit_order=lsb.",
+        "physical qubits는 [3,16,2,4,23,1,5]의 n개 prefix. pair(0,1)는 모든 n, control pair(1,4)는 n≥5이다.",
+        "4 measurement settings cos_a/sin_a/cos_b/sin_b, 각 pair에서 exhaustive 2^(n−2) contexts.",
+        "retained count entry와 histogram 합은 설정당 2048 shots. object header shots_per_circuit, 마지막-R8 config와 job metadata는 256 shots.",
+        "18개 η3/n model YAML 중 해당 6개의 현재 보존 바이트 SHA256과 backend snapshot SHA256이 원 execution metadata의 값과 정확히 일치한다."
+      ],
+      "observed_results": [
+        "누적 count entry 476개, pair/context 조합 119개, histogram 측정 합974,848 shots를 보존한다. 모든 선언된 pair/context/4-setting 조합이 있고 entry shots와 histogram 합이 일치한다.",
+        "보존된 6개 RR_R8 metadata와 6개 job ID는 exit_code=0, errors=[], dropped_contexts=[]이고 기록된 noiseless validation이 통과했다. 이는 이 최종 subrun 기록의 상태다.",
+        "metadata는 frozen transpiled circuit cache 재사용을 기록한다. 정확한 QPY/cache manifest 파일 자체는 현재 저장소에 없다.",
+        "이번 정리의 raw-count 산술 점추정(n=7, bootstrap·필터 없음): pair(0, 1) V_circ=0.0003322794182, pair(1, 4) V_circ=0.0002281464328. 과거 figure의 bootstrap-median 결과로 표시하지 않는다."
+      ],
+      "interpretation": "η3·날짜별 누적 counts는 실제 관찰 자산이고 마지막-R8 metadata는 그 일부 실행의 근거다. 재분석할 때 명시적 η3/run 선택과 effective 2048-shot histogram을 사용하고, 누적 실행의 모든 단계가 검증됐다고 확대하지 않는다.",
+      "limits": [
+        "2048/256=8은 누적과 부합하지만 선행 R1–R7 metadata 및 전체 count-merge manifest가 보존돼 있지 않다. 누락된 실행 ID·job·시각·상태를 만들어 넣지 않는다.",
+        "정확한 model YAML와 backend snapshot 확인은 runtime runner commit, dirty state, transpiled QPY 동일성을 증명하지 않는다.",
+        "현재 README의 Day 1/2 선택과 원 timestamp를 구분한다. 원 run label에 들어간 숫자 시각을 metadata start_time의 대용으로 사용하지 않는다.",
+        "현재 Fig.5/6 recipe와 원 counts는 과거 figure 출력·승인·독립 감사 기록을 대신하지 않는다. 본 정리는 QPU를 재실행하지 않았다.",
+        "두 저장소의 동일 counts·metadata 사본은 독립 반복이 아니다. 별도 날짜의 다른 wrapper는 별도 관찰 묶음이다."
+      ],
+      "execution_status": "accumulated_counts_retained_final_R8_metadata_completed",
+      "evidence_level": "retained_counts_or_rows_and_execution_metadata",
+      "scientific_status": "observed_dataset_with_explicit_provenance_limits",
+      "approval_status": "historical_execution_recorded_no_future_job_authorization",
+      "original_status_terms": [
+        "qiskit_runner.v0.1",
+        "mode=qpu",
+        "RR_R8",
+        "exit_code=0",
+        "errors=[]",
+        "dropped_contexts=[]",
+        "counts.v1",
+        "counts.v2"
+      ],
+      "status_basis": "원 counts와 nested run metadata의 η3/run/n을 대조했다. 실행 성공 표시는 보존된 마지막-R8 metadata 범위이며 accumulated histogram의 전체 실행 lineage가 완전하다는 표시는 아니다.",
+      "provenance": {
+        "source_branch": "main",
+        "preparation_commits": [],
+        "code_commit": null,
+        "code_commit_note": "실행 당시 코드 commit·dirty state는 원 metadata에 없다. 현재 보관된 runner와 결과를 처음 올린 commit은 실행 checkout을 증명하지 않는다.",
+        "target_commit": null,
+        "result_commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+        "result_commit_note": "확인한 원 자료의 보관 snapshot이다. 데이터의 실제 실행 시각이나 runtime checkout을 뜻하지 않는다.",
+        "integration_commits": [
+          "00635d5d5ae3cf459cc3bde32b2524aab4352640"
+        ],
+        "original_run_ids": [
+          "RR_R8_n2_20260103_041030",
+          "RR_R8_n3_20260103_041030",
+          "RR_R8_n4_20260103_041030",
+          "RR_R8_n5_20260103_041030",
+          "RR_R8_n6_20260103_041030",
+          "RR_R8_n7_20260103_041030"
+        ],
+        "run_id_note": "원 metadata의 문자열을 그대로 보존한다. wrapper run 번호, n별 execution ID, QPU job ID와 trial/pair/context는 별개 단위다."
+      },
+      "relations": [
+        {
+          "id": "KP-R001",
+          "relation": "compared_with_simulation",
+          "note": "Same η3 label but simulation/control pair, hardware, dates and noise conditions differ; not identical executions."
+        },
+        {
+          "id": "KP-R007",
+          "relation": "followed_by_repeat",
+          "note": "Separate Day1/Day2 acquisition family with the same exact model hashes; retained final-R8 metadata and accumulated count lineage limits apply."
+        },
+        {
+          "id": "KP-R005",
+          "relation": "compared_with",
+          "note": "Same README day selection, distinct η3/run datasets; choose explicit wrappers during analysis."
+        },
+        {
+          "id": "KP-R006",
+          "relation": "compared_with",
+          "note": "Same README day selection, distinct η3/run datasets; choose explicit wrappers during analysis."
+        },
+        {
+          "id": "KP-R010",
+          "relation": "related_schedule_probe",
+          "note": "Both η3=0 on IBM Fez; distinct executions and different effective shot/metadata scope."
+        },
+        {
+          "id": "KP-R011",
+          "relation": "related_schedule_probe",
+          "note": "Both η3=0 on IBM Fez; blocked four-setting execution has its own counts/job IDs."
+        }
+      ],
+      "keywords": [
+        "QPU",
+        "IBM Fez",
+        "Day 1",
+        "day1",
+        "η3",
+        "0",
+        "eta3=0",
+        "run=6",
+        "RR_R8",
+        "round robin",
+        "2048",
+        "256",
+        "누적",
+        "메타데이터",
+        "재현",
+        "day-to-day",
+        "signal control",
+        "2026-01-02",
+        "2026-01-03",
+        "RR_R8_n2_20260103_041030",
+        "RR_R8_n3_20260103_041030",
+        "RR_R8_n4_20260103_041030",
+        "RR_R8_n5_20260103_041030",
+        "RR_R8_n6_20260103_041030",
+        "RR_R8_n7_20260103_041030",
+        "failure history unknown",
+        "실패 이력 미확인",
+        "runtime provenance",
+        "duplicate archived evidence"
+      ],
+      "evidence": [
+        {
+          "label": "data/qpu/qpu_run_meta.json",
+          "role": "retained_final_R8_execution_metadata",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/qpu_run_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_run_meta.json",
+          "blob_sha": "bce6f72a3980f57c48d0fa48b1b78b505cf80383"
+        },
+        {
+          "label": "data/qpu/qpu_counts.json",
+          "role": "accumulated_raw_histograms",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/qpu_counts.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_counts.json",
+          "blob_sha": "1ec96689c3c80e8a86b824e09258e23492500d41"
+        },
+        {
+          "label": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "role": "exact_runtime_snapshot_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/ibm_fez_full_20251231_220523.json",
+          "blob_sha": "0c9919f4889d55addea9f9bbb753ccf68934fdf4"
+        },
+        {
+          "label": "src/qpu/qiskit_runner.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner.py",
+          "blob_sha": "04d523f45cbbe12a11d9990955103fba08256180"
+        },
+        {
+          "label": "src/qpu/qiskit_runner_two_pairs.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner_two_pairs.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner_two_pairs.py",
+          "blob_sha": "11767a7f7c84c9a093336dc19cedbcfbdea4a8ce"
+        },
+        {
+          "label": "figures/fig5/fig5_data.py",
+          "role": "available_analysis_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "figures/fig5/fig5_data.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig5/fig5_data.py",
+          "blob_sha": "8b7f438b0236a2ba606b2b731cb2e6c35d8067c8"
+        },
+        {
+          "label": "README.md",
+          "role": "current_day_run_selection_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "README.md",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/README.md",
+          "blob_sha": "60062daffb17e1d50204f6a75a739cdb208844a6"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "blob_sha": "4f577f321eedf8cf0e54cddae8f538bfdde1270d"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "blob_sha": "601e9901abc09848f94d1926c15fe9d616524dc0"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "blob_sha": "f971dd6ed7e75e1a28d855ae90525b80a8d6f155"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "blob_sha": "6d21fe08a89fd38d9b453063ba73785321b52504"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "blob_sha": "4d0753a7d309ebd3bc0faacadc9bd625ef76b5c7"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "blob_sha": "e609d5dfad8e27c6c5358cbe310e16bfd5af5c1d"
+        },
+        {
+          "label": "기존 실행 메타데이터와 관측값의 복원 목록",
+          "role": "retrospective_execution_inventory",
+          "path": "docs/research_memory/historical_run_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "31487a3d49a60f3edff1e0d1ce94e7a302d03942",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "원 데이터의 읽기 전용 복원·검산 코드",
+          "role": "retrospective_reconstruction_code",
+          "path": "scripts/reconstruct_run_inventory.py",
+          "commit": null,
+          "url": null,
+          "blob_sha": "e229a2d9d2fb7c1fdb29feac7dbd5ebf10bc2bf2",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "두 원본 snapshot의 전체 path·blob·SHA256 목록",
+          "role": "retrospective_source_inventory",
+          "path": "docs/research_memory/source_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d6d36e8f62eacddc166e9cd329317a122f750be9",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "기존 rows/counts의 현재 산술 검산 수치",
+          "role": "current_readonly_arithmetic",
+          "path": "docs/research_memory/verification/observed_metrics.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d42ba15744bedd8314c91d936be4b79e210436b3",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        }
+      ],
+      "artifacts": [],
+      "mirrors": [
+        {
+          "repository": "jisung-jung88/kappa-profile",
+          "id": "KP-R004",
+          "path": "docs/research_memory/entries/KP-R004.md"
+        }
+      ]
+    },
+    {
+      "id": "KP-R005",
+      "title": "IBM Fez Day 1, η3=0.1·run=8: 누적 counts와 마지막 R8 metadata",
+      "workstream": "data/qpu",
+      "kind": "qpu_campaign",
+      "summary": "Day 1의 η3=0.1, wrapper run=8 묶음이다. n=2–7의 누적 histogram 476개는 각각 2048 shots이고, 보존된 execution metadata 6개는 마지막 RR_R8의 256-shot job을 설명한다. 같은 원문 안의 서로 다른 확인 범위를 분리해 재사용한다.",
+      "question": "IBM Fez의 고정 mapping에서 η3=0.1인 κ-profile이 n에 따라 어떻게 관찰되며 다른 η3·날짜의 묶음과 어떻게 비교되는가? 현재 README의 Fig.5/6/8 선택과 코드에서 재구성한 질문이다.",
+      "motivation": "현재 저장소는 시뮬레이션 진단을 QPU에서 비교하고 acquisition time을 바꾼 반복을 분석하도록 구성돼 있다. 이 특정 wrapper를 고른 동시대 의사결정 일지는 보존돼 있지 않다.",
+      "change": "현재 README가 Day 1에 지정한 η3=0.1, run=8을 선택해 n=2…7의 signal/control 측정 결과를 연결한다. 이 run 번호는 R8 subrun label 및 Git commit과 서로 다른 식별자다.",
+      "conditions": [
+        "보존된 마지막-R8 metadata 날짜: UTC 2026-01-02, 한국시간 2026-01-03. 누적 histogram에 기여한 모든 subrun 시각을 이 최종 metadata로 대체하지 않는다.",
+        "η3=0.1, outer wrapper run=8; inner run은 문자열 \"8\"이다. n=2…7, IBM Fez, model bit_order=lsb.",
+        "physical qubits는 [3,16,2,4,23,1,5]의 n개 prefix. pair(0,1)는 모든 n, control pair(1,4)는 n≥5이다.",
+        "4 measurement settings cos_a/sin_a/cos_b/sin_b, 각 pair에서 exhaustive 2^(n−2) contexts.",
+        "retained count entry와 histogram 합은 설정당 2048 shots. object header shots_per_circuit, 마지막-R8 config와 job metadata는 256 shots.",
+        "18개 η3/n model YAML 중 해당 6개의 현재 보존 바이트 SHA256과 backend snapshot SHA256이 원 execution metadata의 값과 정확히 일치한다."
+      ],
+      "observed_results": [
+        "누적 count entry 476개, pair/context 조합 119개, histogram 측정 합974,848 shots를 보존한다. 모든 선언된 pair/context/4-setting 조합이 있고 entry shots와 histogram 합이 일치한다.",
+        "보존된 6개 RR_R8 metadata와 6개 job ID는 exit_code=0, errors=[], dropped_contexts=[]이고 기록된 noiseless validation이 통과했다. 이는 이 최종 subrun 기록의 상태다.",
+        "metadata는 frozen transpiled circuit cache 재사용을 기록한다. 정확한 QPY/cache manifest 파일 자체는 현재 저장소에 없다.",
+        "이번 정리의 raw-count 산술 점추정(n=7, bootstrap·필터 없음): pair(0, 1) V_circ=0.003483690143, pair(1, 4) V_circ=0.0003226663776. 과거 figure의 bootstrap-median 결과로 표시하지 않는다."
+      ],
+      "interpretation": "η3·날짜별 누적 counts는 실제 관찰 자산이고 마지막-R8 metadata는 그 일부 실행의 근거다. 재분석할 때 명시적 η3/run 선택과 effective 2048-shot histogram을 사용하고, 누적 실행의 모든 단계가 검증됐다고 확대하지 않는다.",
+      "limits": [
+        "2048/256=8은 누적과 부합하지만 선행 R1–R7 metadata 및 전체 count-merge manifest가 보존돼 있지 않다. 누락된 실행 ID·job·시각·상태를 만들어 넣지 않는다.",
+        "정확한 model YAML와 backend snapshot 확인은 runtime runner commit, dirty state, transpiled QPY 동일성을 증명하지 않는다.",
+        "현재 README의 Day 1/2 선택과 원 timestamp를 구분한다. 원 run label에 들어간 숫자 시각을 metadata start_time의 대용으로 사용하지 않는다.",
+        "현재 Fig.5/6 recipe와 원 counts는 과거 figure 출력·승인·독립 감사 기록을 대신하지 않는다. 본 정리는 QPU를 재실행하지 않았다.",
+        "두 저장소의 동일 counts·metadata 사본은 독립 반복이 아니다. 별도 날짜의 다른 wrapper는 별도 관찰 묶음이다."
+      ],
+      "execution_status": "accumulated_counts_retained_final_R8_metadata_completed",
+      "evidence_level": "retained_counts_or_rows_and_execution_metadata",
+      "scientific_status": "observed_dataset_with_explicit_provenance_limits",
+      "approval_status": "historical_execution_recorded_no_future_job_authorization",
+      "original_status_terms": [
+        "qiskit_runner.v0.1",
+        "mode=qpu",
+        "RR_R8",
+        "exit_code=0",
+        "errors=[]",
+        "dropped_contexts=[]",
+        "counts.v1",
+        "counts.v2"
+      ],
+      "status_basis": "원 counts와 nested run metadata의 η3/run/n을 대조했다. 실행 성공 표시는 보존된 마지막-R8 metadata 범위이며 accumulated histogram의 전체 실행 lineage가 완전하다는 표시는 아니다.",
+      "provenance": {
+        "source_branch": "main",
+        "preparation_commits": [],
+        "code_commit": null,
+        "code_commit_note": "실행 당시 코드 commit·dirty state는 원 metadata에 없다. 현재 보관된 runner와 결과를 처음 올린 commit은 실행 checkout을 증명하지 않는다.",
+        "target_commit": null,
+        "result_commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+        "result_commit_note": "확인한 원 자료의 보관 snapshot이다. 데이터의 실제 실행 시각이나 runtime checkout을 뜻하지 않는다.",
+        "integration_commits": [
+          "00635d5d5ae3cf459cc3bde32b2524aab4352640"
+        ],
+        "original_run_ids": [
+          "RR_R8_n2_20260103_032552",
+          "RR_R8_n3_20260103_032552",
+          "RR_R8_n4_20260103_032552",
+          "RR_R8_n5_20260103_032552",
+          "RR_R8_n6_20260103_032552",
+          "RR_R8_n7_20260103_032552"
+        ],
+        "run_id_note": "원 metadata의 문자열을 그대로 보존한다. wrapper run 번호, n별 execution ID, QPU job ID와 trial/pair/context는 별개 단위다."
+      },
+      "relations": [
+        {
+          "id": "KP-R002",
+          "relation": "compared_with_simulation",
+          "note": "Same η3 label but simulation/control pair, hardware, dates and noise conditions differ; not identical executions."
+        },
+        {
+          "id": "KP-R008",
+          "relation": "followed_by_repeat",
+          "note": "Separate Day1/Day2 acquisition family with the same exact model hashes; retained final-R8 metadata and accumulated count lineage limits apply."
+        },
+        {
+          "id": "KP-R004",
+          "relation": "compared_with",
+          "note": "Same README day selection, distinct η3/run datasets; choose explicit wrappers during analysis."
+        },
+        {
+          "id": "KP-R006",
+          "relation": "compared_with",
+          "note": "Same README day selection, distinct η3/run datasets; choose explicit wrappers during analysis."
+        }
+      ],
+      "keywords": [
+        "QPU",
+        "IBM Fez",
+        "Day 1",
+        "day1",
+        "η3",
+        "0.1",
+        "eta3=0.1",
+        "run=8",
+        "RR_R8",
+        "round robin",
+        "2048",
+        "256",
+        "누적",
+        "메타데이터",
+        "재현",
+        "day-to-day",
+        "signal control",
+        "2026-01-02",
+        "2026-01-03",
+        "RR_R8_n2_20260103_032552",
+        "RR_R8_n3_20260103_032552",
+        "RR_R8_n4_20260103_032552",
+        "RR_R8_n5_20260103_032552",
+        "RR_R8_n6_20260103_032552",
+        "RR_R8_n7_20260103_032552",
+        "failure history unknown",
+        "실패 이력 미확인",
+        "runtime provenance",
+        "duplicate archived evidence"
+      ],
+      "evidence": [
+        {
+          "label": "data/qpu/qpu_run_meta.json",
+          "role": "retained_final_R8_execution_metadata",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/qpu_run_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_run_meta.json",
+          "blob_sha": "bce6f72a3980f57c48d0fa48b1b78b505cf80383"
+        },
+        {
+          "label": "data/qpu/qpu_counts.json",
+          "role": "accumulated_raw_histograms",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/qpu_counts.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_counts.json",
+          "blob_sha": "1ec96689c3c80e8a86b824e09258e23492500d41"
+        },
+        {
+          "label": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "role": "exact_runtime_snapshot_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/ibm_fez_full_20251231_220523.json",
+          "blob_sha": "0c9919f4889d55addea9f9bbb753ccf68934fdf4"
+        },
+        {
+          "label": "src/qpu/qiskit_runner.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner.py",
+          "blob_sha": "04d523f45cbbe12a11d9990955103fba08256180"
+        },
+        {
+          "label": "src/qpu/qiskit_runner_two_pairs.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner_two_pairs.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner_two_pairs.py",
+          "blob_sha": "11767a7f7c84c9a093336dc19cedbcfbdea4a8ce"
+        },
+        {
+          "label": "figures/fig5/fig5_data.py",
+          "role": "available_analysis_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "figures/fig5/fig5_data.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig5/fig5_data.py",
+          "blob_sha": "8b7f438b0236a2ba606b2b731cb2e6c35d8067c8"
+        },
+        {
+          "label": "README.md",
+          "role": "current_day_run_selection_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "README.md",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/README.md",
+          "blob_sha": "60062daffb17e1d50204f6a75a739cdb208844a6"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "blob_sha": "7a59fa69284766dbbba73bb7bcb3b643fd00a3f1"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "blob_sha": "3c15716a6a29a458a6162e6ad46ab77c16f3040f"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "blob_sha": "316dca48639b545e3a36df4d7e87688a1ec435b2"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "blob_sha": "0c62c432a56eee180491394c8eef05ca177388b8"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "blob_sha": "9043f90088ef7fb4bca2eb9612e13b01e45d64a4"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "blob_sha": "09f4e84c2e63d98a199ba1bab1e6f712ec8f6012"
+        },
+        {
+          "label": "기존 실행 메타데이터와 관측값의 복원 목록",
+          "role": "retrospective_execution_inventory",
+          "path": "docs/research_memory/historical_run_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "31487a3d49a60f3edff1e0d1ce94e7a302d03942",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "원 데이터의 읽기 전용 복원·검산 코드",
+          "role": "retrospective_reconstruction_code",
+          "path": "scripts/reconstruct_run_inventory.py",
+          "commit": null,
+          "url": null,
+          "blob_sha": "e229a2d9d2fb7c1fdb29feac7dbd5ebf10bc2bf2",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "두 원본 snapshot의 전체 path·blob·SHA256 목록",
+          "role": "retrospective_source_inventory",
+          "path": "docs/research_memory/source_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d6d36e8f62eacddc166e9cd329317a122f750be9",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "기존 rows/counts의 현재 산술 검산 수치",
+          "role": "current_readonly_arithmetic",
+          "path": "docs/research_memory/verification/observed_metrics.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d42ba15744bedd8314c91d936be4b79e210436b3",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        }
+      ],
+      "artifacts": [],
+      "mirrors": [
+        {
+          "repository": "jisung-jung88/kappa-profile",
+          "id": "KP-R005",
+          "path": "docs/research_memory/entries/KP-R005.md"
+        }
+      ]
+    },
+    {
+      "id": "KP-R006",
+      "title": "IBM Fez Day 1, η3=0.2·run=5: 누적 counts와 마지막 R8 metadata",
+      "workstream": "data/qpu",
+      "kind": "qpu_campaign",
+      "summary": "Day 1의 η3=0.2, wrapper run=5 묶음이다. n=2–7의 누적 histogram 476개는 각각 2048 shots이고, 보존된 execution metadata 6개는 마지막 RR_R8의 256-shot job을 설명한다. 같은 원문 안의 서로 다른 확인 범위를 분리해 재사용한다.",
+      "question": "IBM Fez의 고정 mapping에서 η3=0.2인 κ-profile이 n에 따라 어떻게 관찰되며 다른 η3·날짜의 묶음과 어떻게 비교되는가? 현재 README의 Fig.5/6/8 선택과 코드에서 재구성한 질문이다.",
+      "motivation": "현재 저장소는 시뮬레이션 진단을 QPU에서 비교하고 acquisition time을 바꾼 반복을 분석하도록 구성돼 있다. 이 특정 wrapper를 고른 동시대 의사결정 일지는 보존돼 있지 않다.",
+      "change": "현재 README가 Day 1에 지정한 η3=0.2, run=5을 선택해 n=2…7의 signal/control 측정 결과를 연결한다. 이 run 번호는 R8 subrun label 및 Git commit과 서로 다른 식별자다.",
+      "conditions": [
+        "보존된 마지막-R8 metadata 날짜: UTC 2026-01-02, 한국시간 2026-01-03. 누적 histogram에 기여한 모든 subrun 시각을 이 최종 metadata로 대체하지 않는다.",
+        "η3=0.2, outer wrapper run=5; inner run은 문자열 \"5\"이다. n=2…7, IBM Fez, model bit_order=lsb.",
+        "physical qubits는 [3,16,2,4,23,1,5]의 n개 prefix. pair(0,1)는 모든 n, control pair(1,4)는 n≥5이다.",
+        "4 measurement settings cos_a/sin_a/cos_b/sin_b, 각 pair에서 exhaustive 2^(n−2) contexts.",
+        "retained count entry와 histogram 합은 설정당 2048 shots. object header shots_per_circuit, 마지막-R8 config와 job metadata는 256 shots.",
+        "18개 η3/n model YAML 중 해당 6개의 현재 보존 바이트 SHA256과 backend snapshot SHA256이 원 execution metadata의 값과 정확히 일치한다."
+      ],
+      "observed_results": [
+        "누적 count entry 476개, pair/context 조합 119개, histogram 측정 합974,848 shots를 보존한다. 모든 선언된 pair/context/4-setting 조합이 있고 entry shots와 histogram 합이 일치한다.",
+        "보존된 6개 RR_R8 metadata와 6개 job ID는 exit_code=0, errors=[], dropped_contexts=[]이고 기록된 noiseless validation이 통과했다. 이는 이 최종 subrun 기록의 상태다.",
+        "metadata는 frozen transpiled circuit cache 재사용을 기록한다. 정확한 QPY/cache manifest 파일 자체는 현재 저장소에 없다.",
+        "이번 정리의 raw-count 산술 점추정(n=7, bootstrap·필터 없음): pair(0, 1) V_circ=0.01057879765, pair(1, 4) V_circ=0.0002354752348. 과거 figure의 bootstrap-median 결과로 표시하지 않는다."
+      ],
+      "interpretation": "η3·날짜별 누적 counts는 실제 관찰 자산이고 마지막-R8 metadata는 그 일부 실행의 근거다. 재분석할 때 명시적 η3/run 선택과 effective 2048-shot histogram을 사용하고, 누적 실행의 모든 단계가 검증됐다고 확대하지 않는다.",
+      "limits": [
+        "2048/256=8은 누적과 부합하지만 선행 R1–R7 metadata 및 전체 count-merge manifest가 보존돼 있지 않다. 누락된 실행 ID·job·시각·상태를 만들어 넣지 않는다.",
+        "정확한 model YAML와 backend snapshot 확인은 runtime runner commit, dirty state, transpiled QPY 동일성을 증명하지 않는다.",
+        "현재 README의 Day 1/2 선택과 원 timestamp를 구분한다. 원 run label에 들어간 숫자 시각을 metadata start_time의 대용으로 사용하지 않는다.",
+        "현재 Fig.5/6 recipe와 원 counts는 과거 figure 출력·승인·독립 감사 기록을 대신하지 않는다. 본 정리는 QPU를 재실행하지 않았다.",
+        "두 저장소의 동일 counts·metadata 사본은 독립 반복이 아니다. 별도 날짜의 다른 wrapper는 별도 관찰 묶음이다."
+      ],
+      "execution_status": "accumulated_counts_retained_final_R8_metadata_completed",
+      "evidence_level": "retained_counts_or_rows_and_execution_metadata",
+      "scientific_status": "observed_dataset_with_explicit_provenance_limits",
+      "approval_status": "historical_execution_recorded_no_future_job_authorization",
+      "original_status_terms": [
+        "qiskit_runner.v0.1",
+        "mode=qpu",
+        "RR_R8",
+        "exit_code=0",
+        "errors=[]",
+        "dropped_contexts=[]",
+        "counts.v1",
+        "counts.v2"
+      ],
+      "status_basis": "원 counts와 nested run metadata의 η3/run/n을 대조했다. 실행 성공 표시는 보존된 마지막-R8 metadata 범위이며 accumulated histogram의 전체 실행 lineage가 완전하다는 표시는 아니다.",
+      "provenance": {
+        "source_branch": "main",
+        "preparation_commits": [],
+        "code_commit": null,
+        "code_commit_note": "실행 당시 코드 commit·dirty state는 원 metadata에 없다. 현재 보관된 runner와 결과를 처음 올린 commit은 실행 checkout을 증명하지 않는다.",
+        "target_commit": null,
+        "result_commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+        "result_commit_note": "확인한 원 자료의 보관 snapshot이다. 데이터의 실제 실행 시각이나 runtime checkout을 뜻하지 않는다.",
+        "integration_commits": [
+          "00635d5d5ae3cf459cc3bde32b2524aab4352640"
+        ],
+        "original_run_ids": [
+          "RR_R8_n2_20260103_013327",
+          "RR_R8_n3_20260103_013327",
+          "RR_R8_n4_20260103_013327",
+          "RR_R8_n5_20260103_013327",
+          "RR_R8_n6_20260103_013327",
+          "RR_R8_n7_20260103_013327"
+        ],
+        "run_id_note": "원 metadata의 문자열을 그대로 보존한다. wrapper run 번호, n별 execution ID, QPU job ID와 trial/pair/context는 별개 단위다."
+      },
+      "relations": [
+        {
+          "id": "KP-R003",
+          "relation": "compared_with_simulation",
+          "note": "Same η3 label but simulation/control pair, hardware, dates and noise conditions differ; not identical executions."
+        },
+        {
+          "id": "KP-R009",
+          "relation": "followed_by_repeat",
+          "note": "Separate Day1/Day2 acquisition family with the same exact model hashes; retained final-R8 metadata and accumulated count lineage limits apply."
+        },
+        {
+          "id": "KP-R004",
+          "relation": "compared_with",
+          "note": "Same README day selection, distinct η3/run datasets; choose explicit wrappers during analysis."
+        },
+        {
+          "id": "KP-R005",
+          "relation": "compared_with",
+          "note": "Same README day selection, distinct η3/run datasets; choose explicit wrappers during analysis."
+        }
+      ],
+      "keywords": [
+        "QPU",
+        "IBM Fez",
+        "Day 1",
+        "day1",
+        "η3",
+        "0.2",
+        "eta3=0.2",
+        "run=5",
+        "RR_R8",
+        "round robin",
+        "2048",
+        "256",
+        "누적",
+        "메타데이터",
+        "재현",
+        "day-to-day",
+        "signal control",
+        "2026-01-02",
+        "2026-01-03",
+        "RR_R8_n2_20260103_013327",
+        "RR_R8_n3_20260103_013327",
+        "RR_R8_n4_20260103_013327",
+        "RR_R8_n5_20260103_013327",
+        "RR_R8_n6_20260103_013327",
+        "RR_R8_n7_20260103_013327",
+        "failure history unknown",
+        "실패 이력 미확인",
+        "runtime provenance",
+        "duplicate archived evidence"
+      ],
+      "evidence": [
+        {
+          "label": "data/qpu/qpu_run_meta.json",
+          "role": "retained_final_R8_execution_metadata",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/qpu_run_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_run_meta.json",
+          "blob_sha": "bce6f72a3980f57c48d0fa48b1b78b505cf80383"
+        },
+        {
+          "label": "data/qpu/qpu_counts.json",
+          "role": "accumulated_raw_histograms",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/qpu_counts.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_counts.json",
+          "blob_sha": "1ec96689c3c80e8a86b824e09258e23492500d41"
+        },
+        {
+          "label": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "role": "exact_runtime_snapshot_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/ibm_fez_full_20251231_220523.json",
+          "blob_sha": "0c9919f4889d55addea9f9bbb753ccf68934fdf4"
+        },
+        {
+          "label": "src/qpu/qiskit_runner.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner.py",
+          "blob_sha": "04d523f45cbbe12a11d9990955103fba08256180"
+        },
+        {
+          "label": "src/qpu/qiskit_runner_two_pairs.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner_two_pairs.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner_two_pairs.py",
+          "blob_sha": "11767a7f7c84c9a093336dc19cedbcfbdea4a8ce"
+        },
+        {
+          "label": "figures/fig5/fig5_data.py",
+          "role": "available_analysis_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "figures/fig5/fig5_data.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig5/fig5_data.py",
+          "blob_sha": "8b7f438b0236a2ba606b2b731cb2e6c35d8067c8"
+        },
+        {
+          "label": "README.md",
+          "role": "current_day_run_selection_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "README.md",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/README.md",
+          "blob_sha": "60062daffb17e1d50204f6a75a739cdb208844a6"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "blob_sha": "fee1c21803e175f808a72afd8e15e813f4b04dd4"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "blob_sha": "14b2dc54b95a9c78cbeb7a7d2ed2bdea126132cd"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "blob_sha": "a315a2fd50c8f6f569d0185d2d82364ce83dc1a5"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "blob_sha": "1e1f54d95fa28ce10d9683277d0546e7d0aa6f8b"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "blob_sha": "78211761872e8167cfa49680736568388744b7a9"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "blob_sha": "98fab28d2ee32f065b101f0dcb24e11d5cda4f6a"
+        },
+        {
+          "label": "기존 실행 메타데이터와 관측값의 복원 목록",
+          "role": "retrospective_execution_inventory",
+          "path": "docs/research_memory/historical_run_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "31487a3d49a60f3edff1e0d1ce94e7a302d03942",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "원 데이터의 읽기 전용 복원·검산 코드",
+          "role": "retrospective_reconstruction_code",
+          "path": "scripts/reconstruct_run_inventory.py",
+          "commit": null,
+          "url": null,
+          "blob_sha": "e229a2d9d2fb7c1fdb29feac7dbd5ebf10bc2bf2",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "두 원본 snapshot의 전체 path·blob·SHA256 목록",
+          "role": "retrospective_source_inventory",
+          "path": "docs/research_memory/source_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d6d36e8f62eacddc166e9cd329317a122f750be9",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "기존 rows/counts의 현재 산술 검산 수치",
+          "role": "current_readonly_arithmetic",
+          "path": "docs/research_memory/verification/observed_metrics.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d42ba15744bedd8314c91d936be4b79e210436b3",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        }
+      ],
+      "artifacts": [],
+      "mirrors": [
+        {
+          "repository": "jisung-jung88/kappa-profile",
+          "id": "KP-R006",
+          "path": "docs/research_memory/entries/KP-R006.md"
+        }
+      ]
+    },
+    {
+      "id": "KP-R007",
+      "title": "IBM Fez Day 2, η3=0·run=8: 누적 counts와 마지막 R8 metadata",
+      "workstream": "data/qpu",
+      "kind": "qpu_campaign",
+      "summary": "Day 2의 η3=0, wrapper run=8 묶음이다. n=2–7의 누적 histogram 476개는 각각 2048 shots이고, 보존된 execution metadata 6개는 마지막 RR_R8의 256-shot job을 설명한다. 같은 원문 안의 서로 다른 확인 범위를 분리해 재사용한다.",
+      "question": "IBM Fez의 고정 mapping에서 η3=0인 κ-profile이 n에 따라 어떻게 관찰되며 다른 η3·날짜의 묶음과 어떻게 비교되는가? 현재 README의 Fig.5/6/8 선택과 코드에서 재구성한 질문이다.",
+      "motivation": "현재 저장소는 시뮬레이션 진단을 QPU에서 비교하고 acquisition time을 바꾼 반복을 분석하도록 구성돼 있다. 이 특정 wrapper를 고른 동시대 의사결정 일지는 보존돼 있지 않다.",
+      "change": "현재 README가 Day 2에 지정한 η3=0, run=8을 선택해 n=2…7의 signal/control 측정 결과를 연결한다. 이 run 번호는 R8 subrun label 및 Git commit과 서로 다른 식별자다.",
+      "conditions": [
+        "보존된 마지막-R8 metadata 날짜: UTC 2026-01-04, 한국시간 2026-01-04. 누적 histogram에 기여한 모든 subrun 시각을 이 최종 metadata로 대체하지 않는다.",
+        "η3=0, outer wrapper run=8; inner run은 문자열 \"8\"이다. n=2…7, IBM Fez, model bit_order=lsb.",
+        "physical qubits는 [3,16,2,4,23,1,5]의 n개 prefix. pair(0,1)는 모든 n, control pair(1,4)는 n≥5이다.",
+        "4 measurement settings cos_a/sin_a/cos_b/sin_b, 각 pair에서 exhaustive 2^(n−2) contexts.",
+        "retained count entry와 histogram 합은 설정당 2048 shots. object header shots_per_circuit, 마지막-R8 config와 job metadata는 256 shots.",
+        "18개 η3/n model YAML 중 해당 6개의 현재 보존 바이트 SHA256과 backend snapshot SHA256이 원 execution metadata의 값과 정확히 일치한다."
+      ],
+      "observed_results": [
+        "누적 count entry 476개, pair/context 조합 119개, histogram 측정 합974,848 shots를 보존한다. 모든 선언된 pair/context/4-setting 조합이 있고 entry shots와 histogram 합이 일치한다.",
+        "보존된 6개 RR_R8 metadata와 6개 job ID는 exit_code=0, errors=[], dropped_contexts=[]이고 기록된 noiseless validation이 통과했다. 이는 이 최종 subrun 기록의 상태다.",
+        "metadata는 frozen transpiled circuit cache 재사용을 기록한다. 정확한 QPY/cache manifest 파일 자체는 현재 저장소에 없다.",
+        "이번 정리의 raw-count 산술 점추정(n=7, bootstrap·필터 없음): pair(0, 1) V_circ=0.0008030147774, pair(1, 4) V_circ=0.0003740527332. 과거 figure의 bootstrap-median 결과로 표시하지 않는다."
+      ],
+      "interpretation": "η3·날짜별 누적 counts는 실제 관찰 자산이고 마지막-R8 metadata는 그 일부 실행의 근거다. 재분석할 때 명시적 η3/run 선택과 effective 2048-shot histogram을 사용하고, 누적 실행의 모든 단계가 검증됐다고 확대하지 않는다.",
+      "limits": [
+        "2048/256=8은 누적과 부합하지만 선행 R1–R7 metadata 및 전체 count-merge manifest가 보존돼 있지 않다. 누락된 실행 ID·job·시각·상태를 만들어 넣지 않는다.",
+        "정확한 model YAML와 backend snapshot 확인은 runtime runner commit, dirty state, transpiled QPY 동일성을 증명하지 않는다.",
+        "현재 README의 Day 1/2 선택과 원 timestamp를 구분한다. 원 run label에 들어간 숫자 시각을 metadata start_time의 대용으로 사용하지 않는다.",
+        "현재 Fig.5/6 recipe와 원 counts는 과거 figure 출력·승인·독립 감사 기록을 대신하지 않는다. 본 정리는 QPU를 재실행하지 않았다.",
+        "두 저장소의 동일 counts·metadata 사본은 독립 반복이 아니다. 별도 날짜의 다른 wrapper는 별도 관찰 묶음이다."
+      ],
+      "execution_status": "accumulated_counts_retained_final_R8_metadata_completed",
+      "evidence_level": "retained_counts_or_rows_and_execution_metadata",
+      "scientific_status": "observed_dataset_with_explicit_provenance_limits",
+      "approval_status": "historical_execution_recorded_no_future_job_authorization",
+      "original_status_terms": [
+        "qiskit_runner.v0.1",
+        "mode=qpu",
+        "RR_R8",
+        "exit_code=0",
+        "errors=[]",
+        "dropped_contexts=[]",
+        "counts.v1",
+        "counts.v2"
+      ],
+      "status_basis": "원 counts와 nested run metadata의 η3/run/n을 대조했다. 실행 성공 표시는 보존된 마지막-R8 metadata 범위이며 accumulated histogram의 전체 실행 lineage가 완전하다는 표시는 아니다.",
+      "provenance": {
+        "source_branch": "main",
+        "preparation_commits": [],
+        "code_commit": null,
+        "code_commit_note": "실행 당시 코드 commit·dirty state는 원 metadata에 없다. 현재 보관된 runner와 결과를 처음 올린 commit은 실행 checkout을 증명하지 않는다.",
+        "target_commit": null,
+        "result_commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+        "result_commit_note": "확인한 원 자료의 보관 snapshot이다. 데이터의 실제 실행 시각이나 runtime checkout을 뜻하지 않는다.",
+        "integration_commits": [
+          "00635d5d5ae3cf459cc3bde32b2524aab4352640"
+        ],
+        "original_run_ids": [
+          "RR_R8_n2_20260104_114846",
+          "RR_R8_n3_20260104_114846",
+          "RR_R8_n4_20260104_114846",
+          "RR_R8_n5_20260104_114846",
+          "RR_R8_n6_20260104_114846",
+          "RR_R8_n7_20260104_114846"
+        ],
+        "run_id_note": "원 metadata의 문자열을 그대로 보존한다. wrapper run 번호, n별 execution ID, QPU job ID와 trial/pair/context는 별개 단위다."
+      },
+      "relations": [
+        {
+          "id": "KP-R004",
+          "relation": "repeats_condition",
+          "note": "Separate Day1/Day2 acquisition family with the same exact model hashes; retained final-R8 metadata and accumulated count lineage limits apply."
+        },
+        {
+          "id": "KP-R008",
+          "relation": "compared_with",
+          "note": "Same README day selection, distinct η3/run datasets; choose explicit wrappers during analysis."
+        },
+        {
+          "id": "KP-R009",
+          "relation": "compared_with",
+          "note": "Same README day selection, distinct η3/run datasets; choose explicit wrappers during analysis."
+        }
+      ],
+      "keywords": [
+        "QPU",
+        "IBM Fez",
+        "Day 2",
+        "day2",
+        "η3",
+        "0",
+        "eta3=0",
+        "run=8",
+        "RR_R8",
+        "round robin",
+        "2048",
+        "256",
+        "누적",
+        "메타데이터",
+        "재현",
+        "day-to-day",
+        "signal control",
+        "2026-01-04",
+        "RR_R8_n2_20260104_114846",
+        "RR_R8_n3_20260104_114846",
+        "RR_R8_n4_20260104_114846",
+        "RR_R8_n5_20260104_114846",
+        "RR_R8_n6_20260104_114846",
+        "RR_R8_n7_20260104_114846",
+        "failure history unknown",
+        "실패 이력 미확인",
+        "runtime provenance",
+        "duplicate archived evidence"
+      ],
+      "evidence": [
+        {
+          "label": "data/qpu/qpu_run_meta.json",
+          "role": "retained_final_R8_execution_metadata",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/qpu_run_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_run_meta.json",
+          "blob_sha": "bce6f72a3980f57c48d0fa48b1b78b505cf80383"
+        },
+        {
+          "label": "data/qpu/qpu_counts.json",
+          "role": "accumulated_raw_histograms",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/qpu_counts.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_counts.json",
+          "blob_sha": "1ec96689c3c80e8a86b824e09258e23492500d41"
+        },
+        {
+          "label": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "role": "exact_runtime_snapshot_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/ibm_fez_full_20251231_220523.json",
+          "blob_sha": "0c9919f4889d55addea9f9bbb753ccf68934fdf4"
+        },
+        {
+          "label": "src/qpu/qiskit_runner.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner.py",
+          "blob_sha": "04d523f45cbbe12a11d9990955103fba08256180"
+        },
+        {
+          "label": "src/qpu/qiskit_runner_two_pairs.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner_two_pairs.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner_two_pairs.py",
+          "blob_sha": "11767a7f7c84c9a093336dc19cedbcfbdea4a8ce"
+        },
+        {
+          "label": "figures/fig5/fig5_data.py",
+          "role": "available_analysis_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "figures/fig5/fig5_data.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig5/fig5_data.py",
+          "blob_sha": "8b7f438b0236a2ba606b2b731cb2e6c35d8067c8"
+        },
+        {
+          "label": "README.md",
+          "role": "current_day_run_selection_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "README.md",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/README.md",
+          "blob_sha": "60062daffb17e1d50204f6a75a739cdb208844a6"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "blob_sha": "4f577f321eedf8cf0e54cddae8f538bfdde1270d"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "blob_sha": "601e9901abc09848f94d1926c15fe9d616524dc0"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "blob_sha": "f971dd6ed7e75e1a28d855ae90525b80a8d6f155"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "blob_sha": "6d21fe08a89fd38d9b453063ba73785321b52504"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "blob_sha": "4d0753a7d309ebd3bc0faacadc9bd625ef76b5c7"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "blob_sha": "e609d5dfad8e27c6c5358cbe310e16bfd5af5c1d"
+        },
+        {
+          "label": "기존 실행 메타데이터와 관측값의 복원 목록",
+          "role": "retrospective_execution_inventory",
+          "path": "docs/research_memory/historical_run_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "31487a3d49a60f3edff1e0d1ce94e7a302d03942",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "원 데이터의 읽기 전용 복원·검산 코드",
+          "role": "retrospective_reconstruction_code",
+          "path": "scripts/reconstruct_run_inventory.py",
+          "commit": null,
+          "url": null,
+          "blob_sha": "e229a2d9d2fb7c1fdb29feac7dbd5ebf10bc2bf2",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "두 원본 snapshot의 전체 path·blob·SHA256 목록",
+          "role": "retrospective_source_inventory",
+          "path": "docs/research_memory/source_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d6d36e8f62eacddc166e9cd329317a122f750be9",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "기존 rows/counts의 현재 산술 검산 수치",
+          "role": "current_readonly_arithmetic",
+          "path": "docs/research_memory/verification/observed_metrics.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d42ba15744bedd8314c91d936be4b79e210436b3",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        }
+      ],
+      "artifacts": [],
+      "mirrors": [
+        {
+          "repository": "jisung-jung88/kappa-profile",
+          "id": "KP-R007",
+          "path": "docs/research_memory/entries/KP-R007.md"
+        }
+      ]
+    },
+    {
+      "id": "KP-R008",
+      "title": "IBM Fez Day 2, η3=0.1·run=9: 누적 counts와 마지막 R8 metadata",
+      "workstream": "data/qpu",
+      "kind": "qpu_campaign",
+      "summary": "Day 2의 η3=0.1, wrapper run=9 묶음이다. n=2–7의 누적 histogram 476개는 각각 2048 shots이고, 보존된 execution metadata 6개는 마지막 RR_R8의 256-shot job을 설명한다. 같은 원문 안의 서로 다른 확인 범위를 분리해 재사용한다.",
+      "question": "IBM Fez의 고정 mapping에서 η3=0.1인 κ-profile이 n에 따라 어떻게 관찰되며 다른 η3·날짜의 묶음과 어떻게 비교되는가? 현재 README의 Fig.5/6/8 선택과 코드에서 재구성한 질문이다.",
+      "motivation": "현재 저장소는 시뮬레이션 진단을 QPU에서 비교하고 acquisition time을 바꾼 반복을 분석하도록 구성돼 있다. 이 특정 wrapper를 고른 동시대 의사결정 일지는 보존돼 있지 않다.",
+      "change": "현재 README가 Day 2에 지정한 η3=0.1, run=9을 선택해 n=2…7의 signal/control 측정 결과를 연결한다. 이 run 번호는 R8 subrun label 및 Git commit과 서로 다른 식별자다.",
+      "conditions": [
+        "보존된 마지막-R8 metadata 날짜: UTC 2026-01-04, 한국시간 2026-01-04. 누적 histogram에 기여한 모든 subrun 시각을 이 최종 metadata로 대체하지 않는다.",
+        "η3=0.1, outer wrapper run=9; inner run은 문자열 \"9\"이다. n=2…7, IBM Fez, model bit_order=lsb.",
+        "physical qubits는 [3,16,2,4,23,1,5]의 n개 prefix. pair(0,1)는 모든 n, control pair(1,4)는 n≥5이다.",
+        "4 measurement settings cos_a/sin_a/cos_b/sin_b, 각 pair에서 exhaustive 2^(n−2) contexts.",
+        "retained count entry와 histogram 합은 설정당 2048 shots. object header shots_per_circuit, 마지막-R8 config와 job metadata는 256 shots.",
+        "18개 η3/n model YAML 중 해당 6개의 현재 보존 바이트 SHA256과 backend snapshot SHA256이 원 execution metadata의 값과 정확히 일치한다."
+      ],
+      "observed_results": [
+        "누적 count entry 476개, pair/context 조합 119개, histogram 측정 합974,848 shots를 보존한다. 모든 선언된 pair/context/4-setting 조합이 있고 entry shots와 histogram 합이 일치한다.",
+        "보존된 6개 RR_R8 metadata와 6개 job ID는 exit_code=0, errors=[], dropped_contexts=[]이고 기록된 noiseless validation이 통과했다. 이는 이 최종 subrun 기록의 상태다.",
+        "metadata는 frozen transpiled circuit cache 재사용을 기록한다. 정확한 QPY/cache manifest 파일 자체는 현재 저장소에 없다.",
+        "이번 정리의 raw-count 산술 점추정(n=7, bootstrap·필터 없음): pair(0, 1) V_circ=0.003127120048, pair(1, 4) V_circ=0.0001843698679. 과거 figure의 bootstrap-median 결과로 표시하지 않는다."
+      ],
+      "interpretation": "η3·날짜별 누적 counts는 실제 관찰 자산이고 마지막-R8 metadata는 그 일부 실행의 근거다. 재분석할 때 명시적 η3/run 선택과 effective 2048-shot histogram을 사용하고, 누적 실행의 모든 단계가 검증됐다고 확대하지 않는다.",
+      "limits": [
+        "2048/256=8은 누적과 부합하지만 선행 R1–R7 metadata 및 전체 count-merge manifest가 보존돼 있지 않다. 누락된 실행 ID·job·시각·상태를 만들어 넣지 않는다.",
+        "정확한 model YAML와 backend snapshot 확인은 runtime runner commit, dirty state, transpiled QPY 동일성을 증명하지 않는다.",
+        "현재 README의 Day 1/2 선택과 원 timestamp를 구분한다. 원 run label에 들어간 숫자 시각을 metadata start_time의 대용으로 사용하지 않는다.",
+        "현재 Fig.5/6 recipe와 원 counts는 과거 figure 출력·승인·독립 감사 기록을 대신하지 않는다. 본 정리는 QPU를 재실행하지 않았다.",
+        "두 저장소의 동일 counts·metadata 사본은 독립 반복이 아니다. 별도 날짜의 다른 wrapper는 별도 관찰 묶음이다."
+      ],
+      "execution_status": "accumulated_counts_retained_final_R8_metadata_completed",
+      "evidence_level": "retained_counts_or_rows_and_execution_metadata",
+      "scientific_status": "observed_dataset_with_explicit_provenance_limits",
+      "approval_status": "historical_execution_recorded_no_future_job_authorization",
+      "original_status_terms": [
+        "qiskit_runner.v0.1",
+        "mode=qpu",
+        "RR_R8",
+        "exit_code=0",
+        "errors=[]",
+        "dropped_contexts=[]",
+        "counts.v1",
+        "counts.v2"
+      ],
+      "status_basis": "원 counts와 nested run metadata의 η3/run/n을 대조했다. 실행 성공 표시는 보존된 마지막-R8 metadata 범위이며 accumulated histogram의 전체 실행 lineage가 완전하다는 표시는 아니다.",
+      "provenance": {
+        "source_branch": "main",
+        "preparation_commits": [],
+        "code_commit": null,
+        "code_commit_note": "실행 당시 코드 commit·dirty state는 원 metadata에 없다. 현재 보관된 runner와 결과를 처음 올린 commit은 실행 checkout을 증명하지 않는다.",
+        "target_commit": null,
+        "result_commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+        "result_commit_note": "확인한 원 자료의 보관 snapshot이다. 데이터의 실제 실행 시각이나 runtime checkout을 뜻하지 않는다.",
+        "integration_commits": [
+          "00635d5d5ae3cf459cc3bde32b2524aab4352640"
+        ],
+        "original_run_ids": [
+          "RR_R8_n2_20260104_111211",
+          "RR_R8_n3_20260104_111211",
+          "RR_R8_n4_20260104_111211",
+          "RR_R8_n5_20260104_111211",
+          "RR_R8_n6_20260104_111211",
+          "RR_R8_n7_20260104_111211"
+        ],
+        "run_id_note": "원 metadata의 문자열을 그대로 보존한다. wrapper run 번호, n별 execution ID, QPU job ID와 trial/pair/context는 별개 단위다."
+      },
+      "relations": [
+        {
+          "id": "KP-R005",
+          "relation": "repeats_condition",
+          "note": "Separate Day1/Day2 acquisition family with the same exact model hashes; retained final-R8 metadata and accumulated count lineage limits apply."
+        },
+        {
+          "id": "KP-R007",
+          "relation": "compared_with",
+          "note": "Same README day selection, distinct η3/run datasets; choose explicit wrappers during analysis."
+        },
+        {
+          "id": "KP-R009",
+          "relation": "compared_with",
+          "note": "Same README day selection, distinct η3/run datasets; choose explicit wrappers during analysis."
+        }
+      ],
+      "keywords": [
+        "QPU",
+        "IBM Fez",
+        "Day 2",
+        "day2",
+        "η3",
+        "0.1",
+        "eta3=0.1",
+        "run=9",
+        "RR_R8",
+        "round robin",
+        "2048",
+        "256",
+        "누적",
+        "메타데이터",
+        "재현",
+        "day-to-day",
+        "signal control",
+        "2026-01-04",
+        "RR_R8_n2_20260104_111211",
+        "RR_R8_n3_20260104_111211",
+        "RR_R8_n4_20260104_111211",
+        "RR_R8_n5_20260104_111211",
+        "RR_R8_n6_20260104_111211",
+        "RR_R8_n7_20260104_111211",
+        "failure history unknown",
+        "실패 이력 미확인",
+        "runtime provenance",
+        "duplicate archived evidence"
+      ],
+      "evidence": [
+        {
+          "label": "data/qpu/qpu_run_meta.json",
+          "role": "retained_final_R8_execution_metadata",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/qpu_run_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_run_meta.json",
+          "blob_sha": "bce6f72a3980f57c48d0fa48b1b78b505cf80383"
+        },
+        {
+          "label": "data/qpu/qpu_counts.json",
+          "role": "accumulated_raw_histograms",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/qpu_counts.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_counts.json",
+          "blob_sha": "1ec96689c3c80e8a86b824e09258e23492500d41"
+        },
+        {
+          "label": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "role": "exact_runtime_snapshot_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/ibm_fez_full_20251231_220523.json",
+          "blob_sha": "0c9919f4889d55addea9f9bbb753ccf68934fdf4"
+        },
+        {
+          "label": "src/qpu/qiskit_runner.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner.py",
+          "blob_sha": "04d523f45cbbe12a11d9990955103fba08256180"
+        },
+        {
+          "label": "src/qpu/qiskit_runner_two_pairs.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner_two_pairs.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner_two_pairs.py",
+          "blob_sha": "11767a7f7c84c9a093336dc19cedbcfbdea4a8ce"
+        },
+        {
+          "label": "figures/fig5/fig5_data.py",
+          "role": "available_analysis_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "figures/fig5/fig5_data.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig5/fig5_data.py",
+          "blob_sha": "8b7f438b0236a2ba606b2b731cb2e6c35d8067c8"
+        },
+        {
+          "label": "README.md",
+          "role": "current_day_run_selection_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "README.md",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/README.md",
+          "blob_sha": "60062daffb17e1d50204f6a75a739cdb208844a6"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "blob_sha": "7a59fa69284766dbbba73bb7bcb3b643fd00a3f1"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "blob_sha": "3c15716a6a29a458a6162e6ad46ab77c16f3040f"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "blob_sha": "316dca48639b545e3a36df4d7e87688a1ec435b2"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "blob_sha": "0c62c432a56eee180491394c8eef05ca177388b8"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "blob_sha": "9043f90088ef7fb4bca2eb9612e13b01e45d64a4"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "blob_sha": "09f4e84c2e63d98a199ba1bab1e6f712ec8f6012"
+        },
+        {
+          "label": "기존 실행 메타데이터와 관측값의 복원 목록",
+          "role": "retrospective_execution_inventory",
+          "path": "docs/research_memory/historical_run_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "31487a3d49a60f3edff1e0d1ce94e7a302d03942",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "원 데이터의 읽기 전용 복원·검산 코드",
+          "role": "retrospective_reconstruction_code",
+          "path": "scripts/reconstruct_run_inventory.py",
+          "commit": null,
+          "url": null,
+          "blob_sha": "e229a2d9d2fb7c1fdb29feac7dbd5ebf10bc2bf2",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "두 원본 snapshot의 전체 path·blob·SHA256 목록",
+          "role": "retrospective_source_inventory",
+          "path": "docs/research_memory/source_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d6d36e8f62eacddc166e9cd329317a122f750be9",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "기존 rows/counts의 현재 산술 검산 수치",
+          "role": "current_readonly_arithmetic",
+          "path": "docs/research_memory/verification/observed_metrics.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d42ba15744bedd8314c91d936be4b79e210436b3",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        }
+      ],
+      "artifacts": [],
+      "mirrors": [
+        {
+          "repository": "jisung-jung88/kappa-profile",
+          "id": "KP-R008",
+          "path": "docs/research_memory/entries/KP-R008.md"
+        }
+      ]
+    },
+    {
+      "id": "KP-R009",
+      "title": "IBM Fez Day 2, η3=0.2·run=7: 누적 counts와 마지막 R8 metadata",
+      "workstream": "data/qpu",
+      "kind": "qpu_campaign",
+      "summary": "Day 2의 η3=0.2, wrapper run=7 묶음이다. n=2–7의 누적 histogram 476개는 각각 2048 shots이고, 보존된 execution metadata 6개는 마지막 RR_R8의 256-shot job을 설명한다. 같은 원문 안의 서로 다른 확인 범위를 분리해 재사용한다.",
+      "question": "IBM Fez의 고정 mapping에서 η3=0.2인 κ-profile이 n에 따라 어떻게 관찰되며 다른 η3·날짜의 묶음과 어떻게 비교되는가? 현재 README의 Fig.5/6/8 선택과 코드에서 재구성한 질문이다.",
+      "motivation": "현재 저장소는 시뮬레이션 진단을 QPU에서 비교하고 acquisition time을 바꾼 반복을 분석하도록 구성돼 있다. 이 특정 wrapper를 고른 동시대 의사결정 일지는 보존돼 있지 않다.",
+      "change": "현재 README가 Day 2에 지정한 η3=0.2, run=7을 선택해 n=2…7의 signal/control 측정 결과를 연결한다. 이 run 번호는 R8 subrun label 및 Git commit과 서로 다른 식별자다.",
+      "conditions": [
+        "보존된 마지막-R8 metadata 날짜: UTC 2026-01-04, 한국시간 2026-01-04. 누적 histogram에 기여한 모든 subrun 시각을 이 최종 metadata로 대체하지 않는다.",
+        "η3=0.2, outer wrapper run=7; inner run은 문자열 \"7\"이다. n=2…7, IBM Fez, model bit_order=lsb.",
+        "physical qubits는 [3,16,2,4,23,1,5]의 n개 prefix. pair(0,1)는 모든 n, control pair(1,4)는 n≥5이다.",
+        "4 measurement settings cos_a/sin_a/cos_b/sin_b, 각 pair에서 exhaustive 2^(n−2) contexts.",
+        "retained count entry와 histogram 합은 설정당 2048 shots. object header shots_per_circuit, 마지막-R8 config와 job metadata는 256 shots.",
+        "18개 η3/n model YAML 중 해당 6개의 현재 보존 바이트 SHA256과 backend snapshot SHA256이 원 execution metadata의 값과 정확히 일치한다."
+      ],
+      "observed_results": [
+        "누적 count entry 476개, pair/context 조합 119개, histogram 측정 합974,848 shots를 보존한다. 모든 선언된 pair/context/4-setting 조합이 있고 entry shots와 histogram 합이 일치한다.",
+        "보존된 6개 RR_R8 metadata와 6개 job ID는 exit_code=0, errors=[], dropped_contexts=[]이고 기록된 noiseless validation이 통과했다. 이는 이 최종 subrun 기록의 상태다.",
+        "metadata는 frozen transpiled circuit cache 재사용을 기록한다. 정확한 QPY/cache manifest 파일 자체는 현재 저장소에 없다.",
+        "이번 정리의 raw-count 산술 점추정(n=7, bootstrap·필터 없음): pair(0, 1) V_circ=0.01054253168, pair(1, 4) V_circ=0.0002861638896. 과거 figure의 bootstrap-median 결과로 표시하지 않는다."
+      ],
+      "interpretation": "η3·날짜별 누적 counts는 실제 관찰 자산이고 마지막-R8 metadata는 그 일부 실행의 근거다. 재분석할 때 명시적 η3/run 선택과 effective 2048-shot histogram을 사용하고, 누적 실행의 모든 단계가 검증됐다고 확대하지 않는다.",
+      "limits": [
+        "2048/256=8은 누적과 부합하지만 선행 R1–R7 metadata 및 전체 count-merge manifest가 보존돼 있지 않다. 누락된 실행 ID·job·시각·상태를 만들어 넣지 않는다.",
+        "정확한 model YAML와 backend snapshot 확인은 runtime runner commit, dirty state, transpiled QPY 동일성을 증명하지 않는다.",
+        "현재 README의 Day 1/2 선택과 원 timestamp를 구분한다. 원 run label에 들어간 숫자 시각을 metadata start_time의 대용으로 사용하지 않는다.",
+        "현재 Fig.5/6 recipe와 원 counts는 과거 figure 출력·승인·독립 감사 기록을 대신하지 않는다. 본 정리는 QPU를 재실행하지 않았다.",
+        "두 저장소의 동일 counts·metadata 사본은 독립 반복이 아니다. 별도 날짜의 다른 wrapper는 별도 관찰 묶음이다."
+      ],
+      "execution_status": "accumulated_counts_retained_final_R8_metadata_completed",
+      "evidence_level": "retained_counts_or_rows_and_execution_metadata",
+      "scientific_status": "observed_dataset_with_explicit_provenance_limits",
+      "approval_status": "historical_execution_recorded_no_future_job_authorization",
+      "original_status_terms": [
+        "qiskit_runner.v0.1",
+        "mode=qpu",
+        "RR_R8",
+        "exit_code=0",
+        "errors=[]",
+        "dropped_contexts=[]",
+        "counts.v1",
+        "counts.v2"
+      ],
+      "status_basis": "원 counts와 nested run metadata의 η3/run/n을 대조했다. 실행 성공 표시는 보존된 마지막-R8 metadata 범위이며 accumulated histogram의 전체 실행 lineage가 완전하다는 표시는 아니다.",
+      "provenance": {
+        "source_branch": "main",
+        "preparation_commits": [],
+        "code_commit": null,
+        "code_commit_note": "실행 당시 코드 commit·dirty state는 원 metadata에 없다. 현재 보관된 runner와 결과를 처음 올린 commit은 실행 checkout을 증명하지 않는다.",
+        "target_commit": null,
+        "result_commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+        "result_commit_note": "확인한 원 자료의 보관 snapshot이다. 데이터의 실제 실행 시각이나 runtime checkout을 뜻하지 않는다.",
+        "integration_commits": [
+          "00635d5d5ae3cf459cc3bde32b2524aab4352640"
+        ],
+        "original_run_ids": [
+          "RR_R8_n2_20260104_103150",
+          "RR_R8_n3_20260104_103150",
+          "RR_R8_n4_20260104_103150",
+          "RR_R8_n5_20260104_103150",
+          "RR_R8_n6_20260104_103150",
+          "RR_R8_n7_20260104_103150"
+        ],
+        "run_id_note": "원 metadata의 문자열을 그대로 보존한다. wrapper run 번호, n별 execution ID, QPU job ID와 trial/pair/context는 별개 단위다."
+      },
+      "relations": [
+        {
+          "id": "KP-R006",
+          "relation": "repeats_condition",
+          "note": "Separate Day1/Day2 acquisition family with the same exact model hashes; retained final-R8 metadata and accumulated count lineage limits apply."
+        },
+        {
+          "id": "KP-R007",
+          "relation": "compared_with",
+          "note": "Same README day selection, distinct η3/run datasets; choose explicit wrappers during analysis."
+        },
+        {
+          "id": "KP-R008",
+          "relation": "compared_with",
+          "note": "Same README day selection, distinct η3/run datasets; choose explicit wrappers during analysis."
+        }
+      ],
+      "keywords": [
+        "QPU",
+        "IBM Fez",
+        "Day 2",
+        "day2",
+        "η3",
+        "0.2",
+        "eta3=0.2",
+        "run=7",
+        "RR_R8",
+        "round robin",
+        "2048",
+        "256",
+        "누적",
+        "메타데이터",
+        "재현",
+        "day-to-day",
+        "signal control",
+        "2026-01-04",
+        "RR_R8_n2_20260104_103150",
+        "RR_R8_n3_20260104_103150",
+        "RR_R8_n4_20260104_103150",
+        "RR_R8_n5_20260104_103150",
+        "RR_R8_n6_20260104_103150",
+        "RR_R8_n7_20260104_103150",
+        "failure history unknown",
+        "실패 이력 미확인",
+        "runtime provenance",
+        "duplicate archived evidence"
+      ],
+      "evidence": [
+        {
+          "label": "data/qpu/qpu_run_meta.json",
+          "role": "retained_final_R8_execution_metadata",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/qpu_run_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_run_meta.json",
+          "blob_sha": "bce6f72a3980f57c48d0fa48b1b78b505cf80383"
+        },
+        {
+          "label": "data/qpu/qpu_counts.json",
+          "role": "accumulated_raw_histograms",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/qpu_counts.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_counts.json",
+          "blob_sha": "1ec96689c3c80e8a86b824e09258e23492500d41"
+        },
+        {
+          "label": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "role": "exact_runtime_snapshot_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/ibm_fez_full_20251231_220523.json",
+          "blob_sha": "0c9919f4889d55addea9f9bbb753ccf68934fdf4"
+        },
+        {
+          "label": "src/qpu/qiskit_runner.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner.py",
+          "blob_sha": "04d523f45cbbe12a11d9990955103fba08256180"
+        },
+        {
+          "label": "src/qpu/qiskit_runner_two_pairs.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner_two_pairs.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner_two_pairs.py",
+          "blob_sha": "11767a7f7c84c9a093336dc19cedbcfbdea4a8ce"
+        },
+        {
+          "label": "figures/fig5/fig5_data.py",
+          "role": "available_analysis_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "figures/fig5/fig5_data.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig5/fig5_data.py",
+          "blob_sha": "8b7f438b0236a2ba606b2b731cb2e6c35d8067c8"
+        },
+        {
+          "label": "README.md",
+          "role": "current_day_run_selection_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "README.md",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/README.md",
+          "blob_sha": "60062daffb17e1d50204f6a75a739cdb208844a6"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "blob_sha": "fee1c21803e175f808a72afd8e15e813f4b04dd4"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "blob_sha": "14b2dc54b95a9c78cbeb7a7d2ed2bdea126132cd"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "blob_sha": "a315a2fd50c8f6f569d0185d2d82364ce83dc1a5"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "blob_sha": "1e1f54d95fa28ce10d9683277d0546e7d0aa6f8b"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "blob_sha": "78211761872e8167cfa49680736568388744b7a9"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "blob_sha": "98fab28d2ee32f065b101f0dcb24e11d5cda4f6a"
+        },
+        {
+          "label": "기존 실행 메타데이터와 관측값의 복원 목록",
+          "role": "retrospective_execution_inventory",
+          "path": "docs/research_memory/historical_run_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "31487a3d49a60f3edff1e0d1ce94e7a302d03942",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "원 데이터의 읽기 전용 복원·검산 코드",
+          "role": "retrospective_reconstruction_code",
+          "path": "scripts/reconstruct_run_inventory.py",
+          "commit": null,
+          "url": null,
+          "blob_sha": "e229a2d9d2fb7c1fdb29feac7dbd5ebf10bc2bf2",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "두 원본 snapshot의 전체 path·blob·SHA256 목록",
+          "role": "retrospective_source_inventory",
+          "path": "docs/research_memory/source_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d6d36e8f62eacddc166e9cd329317a122f750be9",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "기존 rows/counts의 현재 산술 검산 수치",
+          "role": "current_readonly_arithmetic",
+          "path": "docs/research_memory/verification/observed_metrics.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d42ba15744bedd8314c91d936be4b79e210436b3",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        }
+      ],
+      "artifacts": [],
+      "mirrors": [
+        {
+          "repository": "jisung-jung88/kappa-profile",
+          "id": "KP-R009",
+          "path": "docs/research_memory/entries/KP-R009.md"
+        }
+      ]
+    },
+    {
+      "id": "KP-R010",
+      "title": "Schedule ablation: I1–I4 네 번의 512-shot interleaved 실행",
+      "workstream": "data/qpu",
+      "kind": "schedule_ablation_family",
+      "summary": "η3=0, n=7에서 네 번 따로 수행된 512-shot interleaved 구간이다. I1·I2 뒤 blocked 시행이 있고 이후 I3·I4가 이어진다. I_sum은 이 네 원 counts를 합치는 후속 분석 산출물이다.",
+      "question": "동일한 η3=0·n=7·mapping에서 측정 setting을 시간상 묶거나 interleave하는 schedule의 차이가 κ-profile과 측정 품질에 어떻게 나타나는가? 현재 Fig.7 recipe에서 재구성한 질문이다.",
+      "motivation": "현재 Fig.7 코드와 README는 blocked/interleaved schedule 비교를 목적으로 한다. 원 metadata에는 실행 조건·순서가 남지만 사전 설계나 인과적 판정 기준의 일지는 없다.",
+      "change": "서로 다른4 execution ID로 interleaved512-shot 측정을 반복했다. 같은 configuration·model/cache를 사용하지만 raw counts와 job ID는 각 실행별로 보존한다.",
+      "conditions": [
+        "η3=0, n=7, IBM Fez; physical qubits [3,16,2,4,23,1,5], pairs(0,1),(1,4), pair별 32 exhaustive contexts.",
+        "원 timestamp는 2026-01-02 UTC, 한국시간 2026-01-03. 시간 순서는 I1→I2→B→I3→I4이다.",
+        "원 model YAML SHA256=4359ff532c5445e09587c521451fd316fc59d0713dfef622f120378fd9600a58, snapshot SHA256=9a36cbca831059af718f6b267577abfe49c4ec30a2b3c0fd81c1c69e341b5881이며 현재 보존 바이트와 일치한다.",
+        "frozen transpiled circuit cache key=13552e1015b260de267221ab08c1f4beaf05152b757d4b41b688cdf1433dedb0를 재사용했다고 기록한다.",
+        "blocked는 설정당 2048 shots의 4 job; interleaved 각 구간은 설정당 512 shots의 1 job이다."
+      ],
+      "observed_results": [
+        "I1–I4: 서로 다른 4개의 run_id와 4개 job ID, 각 num_rows=64·count entry 256개·131,072 shots. 네 구간 합계 1,024 entries·524,288 shots.",
+        "모든 보존 count의 shots와 histogram 합이 같고, 두 pair·32 context·4 setting 조합이 완전하다.",
+        "보존 metadata는 exit_code=0, errors=[], dropped_contexts=[]이며 validation passed=true다. exhaustive 때문에 context.samples를 무시했다는 경고와 cache 재사용 경고는 오류와 구분한다.",
+        "2026-11-10 기존 Fig.7 코드로 재생성한 총 2,048-shot 자료의 raw V_circ 점추정: (0,1): B=0.0003622917657, I_sum=0.0003898434246; (1,4): B=0.0003135986044, I_sum=0.0001980285432. CSV의 V_circ_point는 별도 bootstrap-median 값이다. 과거 원 figure 출력이나 새 획득 결과로 표시하지 않는다."
+      ],
+      "interpretation": "schedule과 시간·shot budget을 구분한 원 counts 비교에 재사용할 수 있다. 총 shot 수를 맞춘 2048-shot 비교에는 interleaved 4구간의 합산이 필요하며, I_sum은 별도 획득이 아니다. 관찰된 차이의 인과적 원인이나 일반적 우월성은 별도 분석·설계로 평가한다. 이번 재생성의 raw 점추정에서는 pair별 B/I_sum 크기 순서가 다르다. 이 비교로 측정 순서의 일괄 우월성이나 차이의 유의성을 결론내리지 않는다.",
+      "limits": [
+        "blocked 하나와 512-shot interleaved 하나를 같은 shot budget으로 간주하지 않는다. I_sum의 분석 recipe는 현재 코드에 있지만 과거 생성 출력은 별도 보존돼 있지 않다.",
+        "I1, I2와 I3, I4가 B 전후에 있으므로 순수한 schedule 효과와 시간 변화의 인과적 분리를 자동으로 주장하지 않는다.",
+        "runtime code commit/dirty state와 실제 transpiled QPY/cache manifest는 보존되지 않았다. model/snapshot hash 일치는 그 파일들에 한정한다.",
+        "이 보존 묶음에서 실행 오류는 보고되지 않았다. 실패한 다른 시도가 없었다거나 전체 탐색을 보존했다고 일반화하지 않는다.",
+        "두 저장소에 동일한 원 counts가 있으므로 저장소 수를 반복 횟수로 세지 않는다."
+      ],
+      "execution_status": "retained_outputs_and_metadata_reconciled",
+      "evidence_level": "retained_counts_or_rows_and_execution_metadata",
+      "scientific_status": "observed_dataset_with_explicit_provenance_limits",
+      "approval_status": "historical_execution_recorded_no_future_job_authorization",
+      "original_status_terms": [
+        "qiskit_runner.v0.1",
+        "counts.v2",
+        "exit_code=0",
+        "errors=[]",
+        "dropped_contexts=[]",
+        "512",
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "status_basis": "원 acquisition metadata·job ID·histogram의 직접 대조로 각 실행의 완료된 보존 결과를 확인했다. 후속 Fig.7 합산·bootstrap recipe는 acquisition과 구분한다.",
+      "provenance": {
+        "source_branch": "main",
+        "preparation_commits": [],
+        "code_commit": null,
+        "code_commit_note": "실행 당시 코드 commit·dirty state는 원 metadata에 없다. 현재 보관된 runner와 결과를 처음 올린 commit은 실행 checkout을 증명하지 않는다.",
+        "target_commit": null,
+        "result_commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+        "result_commit_note": "확인한 원 자료의 보관 snapshot이다. 데이터의 실제 실행 시각이나 runtime checkout을 뜻하지 않는다.",
+        "integration_commits": [
+          "00635d5d5ae3cf459cc3bde32b2524aab4352640"
+        ],
+        "original_run_ids": [
+          "20260102_195646_qpu",
+          "20260102_195817_qpu",
+          "20260102_200507_qpu",
+          "20260102_200624_qpu"
+        ],
+        "run_id_note": "원 metadata의 문자열을 그대로 보존한다. wrapper run 번호, n별 execution ID, QPU job ID와 trial/pair/context는 별개 단위다."
+      },
+      "relations": [
+        {
+          "id": "KP-R011",
+          "relation": "schedule_comparison",
+          "note": "Actual order I1,I2,B,I3,I4; four512-shot interleaved segments sum to2048 shots per setting, matching B budget only after pooling."
+        },
+        {
+          "id": "KP-R004",
+          "relation": "related_reference_campaign",
+          "note": "Both η3=0 on IBM Fez; distinct executions and different effective shot/metadata scope."
+        }
+      ],
+      "keywords": [
+        "schedule ablation",
+        "interleaved",
+        "I1 I2 B I3 I4",
+        "I_sum",
+        "η3=0",
+        "n=7",
+        "512",
+        "2048",
+        "시간 순서",
+        "스케줄",
+        "드리프트",
+        "합산",
+        "2026-01-02",
+        "2026-01-03",
+        "20260102_195646_qpu",
+        "20260102_195817_qpu",
+        "20260102_200507_qpu",
+        "20260102_200624_qpu",
+        "failure history unknown",
+        "실패 이력 미확인",
+        "runtime provenance",
+        "duplicate archived evidence"
+      ],
+      "evidence": [
+        {
+          "label": "data/qpu/ablation_interleaved_run_meta.json",
+          "role": "historical_execution_metadata",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/ablation_interleaved_run_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/ablation_interleaved_run_meta.json",
+          "blob_sha": "5366a6779184c94e240dc9f4677fdbff99be5339"
+        },
+        {
+          "label": "data/qpu/ablation_interleaved_counts.json",
+          "role": "raw_histograms",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/ablation_interleaved_counts.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/ablation_interleaved_counts.json",
+          "blob_sha": "aed78252b5c177950a5d81c8b370bc9182f05f3e"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "blob_sha": "e609d5dfad8e27c6c5358cbe310e16bfd5af5c1d"
+        },
+        {
+          "label": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "role": "exact_runtime_snapshot_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/ibm_fez_full_20251231_220523.json",
+          "blob_sha": "0c9919f4889d55addea9f9bbb753ccf68934fdf4"
+        },
+        {
+          "label": "src/qpu/qiskit_runner_two_pairs.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner_two_pairs.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner_two_pairs.py",
+          "blob_sha": "11767a7f7c84c9a093336dc19cedbcfbdea4a8ce"
+        },
+        {
+          "label": "figures/fig7/fig7_data.py",
+          "role": "available_pooling_and_analysis_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "figures/fig7/fig7_data.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig7/fig7_data.py",
+          "blob_sha": "af5ee595df552eb053641f1c6f856e4e9ce4aab9"
+        },
+        {
+          "label": "기존 실행 메타데이터와 관측값의 복원 목록",
+          "role": "retrospective_execution_inventory",
+          "path": "docs/research_memory/historical_run_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "31487a3d49a60f3edff1e0d1ce94e7a302d03942",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "원 데이터의 읽기 전용 복원·검산 코드",
+          "role": "retrospective_reconstruction_code",
+          "path": "scripts/reconstruct_run_inventory.py",
+          "commit": null,
+          "url": null,
+          "blob_sha": "e229a2d9d2fb7c1fdb29feac7dbd5ebf10bc2bf2",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "두 원본 snapshot의 전체 path·blob·SHA256 목록",
+          "role": "retrospective_source_inventory",
+          "path": "docs/research_memory/source_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d6d36e8f62eacddc166e9cd329317a122f750be9",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "기존 rows/counts의 현재 산술 검산 수치",
+          "role": "current_readonly_arithmetic",
+          "path": "docs/research_memory/verification/observed_metrics.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d42ba15744bedd8314c91d936be4b79e210436b3",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "기존 Fig.7 코드로 현재 재생성한 raw·bootstrap 요약",
+          "role": "current_offline_reuse_output",
+          "path": "docs/research_memory/verification/fig7/summary_metrics.csv",
+          "commit": null,
+          "url": null,
+          "blob_sha": "ef0037f124f61ada3e9169a40b672bdd5fbb117e",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "현재 figure 재생성의 입력·코드·환경·출력 provenance",
+          "role": "current_offline_reuse_manifest",
+          "path": "docs/research_memory/verification/manifest.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "b58d3538d43aca7dbcedc7ea7acf4ffae6fe9100",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        }
+      ],
+      "artifacts": [],
+      "mirrors": [
+        {
+          "repository": "jisung-jung88/kappa-profile",
+          "id": "KP-R010",
+          "path": "docs/research_memory/entries/KP-R010.md"
+        }
+      ]
+    },
+    {
+      "id": "KP-R011",
+      "title": "Schedule ablation: 2048-shot blocked-by-setting 한 시도",
+      "workstream": "data/qpu",
+      "kind": "schedule_ablation_attempt",
+      "summary": "η3=0, n=7에서 setting별로 묶어 제출한 blocked 시도다. 네 setting job은 한 실행에 속하며 256 histogram과524,288 shots, 두 pair의 32 contexts를 보존한다.",
+      "question": "동일한 η3=0·n=7·mapping에서 측정 setting을 시간상 묶거나 interleave하는 schedule의 차이가 κ-profile과 측정 품질에 어떻게 나타나는가? 현재 Fig.7 recipe에서 재구성한 질문이다.",
+      "motivation": "현재 Fig.7 코드와 README는 blocked/interleaved schedule 비교를 목적으로 한다. 원 metadata에는 실행 조건·순서가 남지만 사전 설계나 인과적 판정 기준의 일지는 없다.",
+      "change": "CLI schedule_mode=blocked_by_setting, blocked_order=cos_a,sin_a,cos_b,sin_b로4 setting을 각각 2048-shot job으로 실행했다.",
+      "conditions": [
+        "η3=0, n=7, IBM Fez; physical qubits [3,16,2,4,23,1,5], pairs(0,1),(1,4), pair별 32 exhaustive contexts.",
+        "원 timestamp는 2026-01-02 UTC, 한국시간 2026-01-03. 시간 순서는 I1→I2→B→I3→I4이다.",
+        "원 model YAML SHA256=4359ff532c5445e09587c521451fd316fc59d0713dfef622f120378fd9600a58, snapshot SHA256=9a36cbca831059af718f6b267577abfe49c4ec30a2b3c0fd81c1c69e341b5881이며 현재 보존 바이트와 일치한다.",
+        "frozen transpiled circuit cache key=13552e1015b260de267221ab08c1f4beaf05152b757d4b41b688cdf1433dedb0를 재사용했다고 기록한다.",
+        "blocked는 설정당 2048 shots의 4 job; interleaved 각 구간은 설정당 512 shots의 1 job이다."
+      ],
+      "observed_results": [
+        "B: 원 run_id=S1_blk_n7_eta00, num_rows=64, count entry 256개, histogram 합524,288 shots.",
+        "모든 보존 count의 shots와 histogram 합이 같고, 두 pair·32 context·4 setting 조합이 완전하다.",
+        "보존 metadata는 exit_code=0, errors=[], dropped_contexts=[]이며 validation passed=true다. exhaustive 때문에 context.samples를 무시했다는 경고와 cache 재사용 경고는 오류와 구분한다.",
+        "2026-11-10 기존 Fig.7 코드로 재생성한 총 2,048-shot 자료의 raw V_circ 점추정: (0,1): B=0.0003622917657, I_sum=0.0003898434246; (1,4): B=0.0003135986044, I_sum=0.0001980285432. CSV의 V_circ_point는 별도 bootstrap-median 값이다. 과거 원 figure 출력이나 새 획득 결과로 표시하지 않는다."
+      ],
+      "interpretation": "schedule과 시간·shot budget을 구분한 원 counts 비교에 재사용할 수 있다. 총 shot 수를 맞춘 2048-shot 비교에는 interleaved 4구간의 합산이 필요하며, I_sum은 별도 획득이 아니다. 관찰된 차이의 인과적 원인이나 일반적 우월성은 별도 분석·설계로 평가한다. 이번 재생성의 raw 점추정에서는 pair별 B/I_sum 크기 순서가 다르다. 이 비교로 측정 순서의 일괄 우월성이나 차이의 유의성을 결론내리지 않는다.",
+      "limits": [
+        "blocked 하나와 512-shot interleaved 하나를 같은 shot budget으로 간주하지 않는다. I_sum의 분석 recipe는 현재 코드에 있지만 과거 생성 출력은 별도 보존돼 있지 않다.",
+        "I1, I2와 I3, I4가 B 전후에 있으므로 순수한 schedule 효과와 시간 변화의 인과적 분리를 자동으로 주장하지 않는다.",
+        "runtime code commit/dirty state와 실제 transpiled QPY/cache manifest는 보존되지 않았다. model/snapshot hash 일치는 그 파일들에 한정한다.",
+        "이 보존 묶음에서 실행 오류는 보고되지 않았다. 실패한 다른 시도가 없었다거나 전체 탐색을 보존했다고 일반화하지 않는다.",
+        "두 저장소에 동일한 원 counts가 있으므로 저장소 수를 반복 횟수로 세지 않는다."
+      ],
+      "execution_status": "retained_outputs_and_metadata_reconciled",
+      "evidence_level": "retained_counts_or_rows_and_execution_metadata",
+      "scientific_status": "observed_dataset_with_explicit_provenance_limits",
+      "approval_status": "historical_execution_recorded_no_future_job_authorization",
+      "original_status_terms": [
+        "qiskit_runner.v0.1",
+        "counts.v2",
+        "exit_code=0",
+        "errors=[]",
+        "dropped_contexts=[]",
+        "blocked_by_setting",
+        "S1_blk_n7_eta00"
+      ],
+      "status_basis": "원 acquisition metadata·job ID·histogram의 직접 대조로 각 실행의 완료된 보존 결과를 확인했다. 후속 Fig.7 합산·bootstrap recipe는 acquisition과 구분한다.",
+      "provenance": {
+        "source_branch": "main",
+        "preparation_commits": [],
+        "code_commit": null,
+        "code_commit_note": "실행 당시 코드 commit·dirty state는 원 metadata에 없다. 현재 보관된 runner와 결과를 처음 올린 commit은 실행 checkout을 증명하지 않는다.",
+        "target_commit": null,
+        "result_commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+        "result_commit_note": "확인한 원 자료의 보관 snapshot이다. 데이터의 실제 실행 시각이나 runtime checkout을 뜻하지 않는다.",
+        "integration_commits": [
+          "00635d5d5ae3cf459cc3bde32b2524aab4352640"
+        ],
+        "original_run_ids": [
+          "S1_blk_n7_eta00"
+        ],
+        "run_id_note": "원 metadata의 문자열을 그대로 보존한다. wrapper run 번호, n별 execution ID, QPU job ID와 trial/pair/context는 별개 단위다."
+      },
+      "relations": [
+        {
+          "id": "KP-R010",
+          "relation": "schedule_comparison",
+          "note": "Actual order I1,I2,B,I3,I4; four512-shot interleaved segments sum to2048 shots per setting, matching B budget only after pooling."
+        },
+        {
+          "id": "KP-R004",
+          "relation": "related_reference_campaign",
+          "note": "Both η3=0 on IBM Fez; blocked four-setting execution has its own counts/job IDs."
+        }
+      ],
+      "keywords": [
+        "schedule ablation",
+        "blocked",
+        "I1 I2 B I3 I4",
+        "I_sum",
+        "η3=0",
+        "n=7",
+        "512",
+        "2048",
+        "시간 순서",
+        "스케줄",
+        "드리프트",
+        "합산",
+        "2026-01-02",
+        "2026-01-03",
+        "S1_blk_n7_eta00",
+        "failure history unknown",
+        "실패 이력 미확인",
+        "runtime provenance",
+        "duplicate archived evidence"
+      ],
+      "evidence": [
+        {
+          "label": "data/qpu/ablation_block_run_meta.json",
+          "role": "historical_execution_metadata",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/ablation_block_run_meta.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/ablation_block_run_meta.json",
+          "blob_sha": "fb3418f5f44fac549272a58d6a01f891b786b589"
+        },
+        {
+          "label": "data/qpu/ablation_block_counts.json",
+          "role": "raw_histograms",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "data/qpu/ablation_block_counts.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/ablation_block_counts.json",
+          "blob_sha": "7a67a0b1fec9eac8ae0b59392ffbec94bc973d9d"
+        },
+        {
+          "label": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "role": "exact_runtime_model_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "blob_sha": "e609d5dfad8e27c6c5358cbe310e16bfd5af5c1d"
+        },
+        {
+          "label": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "role": "exact_runtime_snapshot_hash_match",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/ibm_fez_full_20251231_220523.json",
+          "blob_sha": "0c9919f4889d55addea9f9bbb753ccf68934fdf4"
+        },
+        {
+          "label": "src/qpu/qiskit_runner_two_pairs_block.py",
+          "role": "available_runner_snapshot_not_runtime_proof",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "src/qpu/qiskit_runner_two_pairs_block.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner_two_pairs_block.py",
+          "blob_sha": "ae33b789480191c21b6f28c668bca4c26939a3e5"
+        },
+        {
+          "label": "figures/fig7/fig7_data.py",
+          "role": "available_pooling_and_analysis_recipe",
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "path": "figures/fig7/fig7_data.py",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig7/fig7_data.py",
+          "blob_sha": "af5ee595df552eb053641f1c6f856e4e9ce4aab9"
+        },
+        {
+          "label": "기존 실행 메타데이터와 관측값의 복원 목록",
+          "role": "retrospective_execution_inventory",
+          "path": "docs/research_memory/historical_run_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "31487a3d49a60f3edff1e0d1ce94e7a302d03942",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "원 데이터의 읽기 전용 복원·검산 코드",
+          "role": "retrospective_reconstruction_code",
+          "path": "scripts/reconstruct_run_inventory.py",
+          "commit": null,
+          "url": null,
+          "blob_sha": "e229a2d9d2fb7c1fdb29feac7dbd5ebf10bc2bf2",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "두 원본 snapshot의 전체 path·blob·SHA256 목록",
+          "role": "retrospective_source_inventory",
+          "path": "docs/research_memory/source_inventory.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d6d36e8f62eacddc166e9cd329317a122f750be9",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "기존 rows/counts의 현재 산술 검산 수치",
+          "role": "current_readonly_arithmetic",
+          "path": "docs/research_memory/verification/observed_metrics.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "d42ba15744bedd8314c91d936be4b79e210436b3",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "기존 Fig.7 코드로 현재 재생성한 raw·bootstrap 요약",
+          "role": "current_offline_reuse_output",
+          "path": "docs/research_memory/verification/fig7/summary_metrics.csv",
+          "commit": null,
+          "url": null,
+          "blob_sha": "ef0037f124f61ada3e9169a40b672bdd5fbb117e",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        },
+        {
+          "label": "현재 figure 재생성의 입력·코드·환경·출력 provenance",
+          "role": "current_offline_reuse_manifest",
+          "path": "docs/research_memory/verification/manifest.json",
+          "commit": null,
+          "url": null,
+          "blob_sha": "b58d3538d43aca7dbcedc7ea7acf4ffae6fe9100",
+          "commit_note": "원 근거와 이 색인을 함께 추가하는 관리 commit의 SHA는 작성 시점에 미정이다. 정확한 path/blob로 추적하며, 과거 runtime commit을 의미하지 않는다."
+        }
+      ],
+      "artifacts": [],
+      "mirrors": [
+        {
+          "repository": "jisung-jung88/kappa-profile",
+          "id": "KP-R011",
+          "path": "docs/research_memory/entries/KP-R011.md"
+        }
+      ]
+    }
+  ]
+}

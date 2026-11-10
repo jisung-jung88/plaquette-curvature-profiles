@@ -1,0 +1,1352 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-10",
+  "scope": "Exact original source snapshots before research-memory organization. This is a dated preservation inventory, not a live inventory of future experiments.",
+  "execution_identity_warning": "An archived source/import commit is not an inferred runtime commit. Exact duplicates here are the same archived evidence, with the same contained run/job identifiers, not independent replications.",
+  "canonical_repository": null,
+  "repositories": {
+    "jisung-jung88/kappa-profile": {
+      "commit": "a49a198e6327f42323e0f43c17ef58d8c535c15c",
+      "tree": "3d02a11118638ff3aabc7e6fdd5719969fe19782",
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644",
+          "git_blob_sha": "b7faf403d915ca307532bb0eb9cceaf0214e8e5b",
+          "bytes": 4688,
+          "sha256": "48b33f9f89ef24f8a66f461ea9278e7ecf21b4660c26088989d231e53c578724",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/.gitignore"
+        },
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob_sha": "206e21690f9224a0e09c87ad2eae53242f65204b",
+          "bytes": 1070,
+          "sha256": "77ceb357e1e373341745990c3a6a0c29abfbaaab2f828b92fa24a24ecdd866a8",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644",
+          "git_blob_sha": "e6eb9596e5b5f31811b27fb689fce24d014487d7",
+          "bytes": 6280,
+          "sha256": "a4fd81592969462e9d05c236db9f0547c96cf16e2030f387ba2da12f71da79a9",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/README.md"
+        },
+        {
+          "path": "data/qpu/ablation_block_counts.json",
+          "mode": "100644",
+          "git_blob_sha": "7a67a0b1fec9eac8ae0b59392ffbec94bc973d9d",
+          "bytes": 52665,
+          "sha256": "b1b4f3a1e51fe9033bbfdc78930d0df7527a62c0c310fc27e81cf4969fe84469",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/data/qpu/ablation_block_counts.json"
+        },
+        {
+          "path": "data/qpu/ablation_block_run_meta.json",
+          "mode": "100644",
+          "git_blob_sha": "fb3418f5f44fac549272a58d6a01f891b786b589",
+          "bytes": 8072,
+          "sha256": "002495a22913989675d56f7746fb2c817ee7e3643d8af2513e9ad8e30e88ed16",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/data/qpu/ablation_block_run_meta.json"
+        },
+        {
+          "path": "data/qpu/ablation_interleaved_counts.json",
+          "mode": "100644",
+          "git_blob_sha": "aed78252b5c177950a5d81c8b370bc9182f05f3e",
+          "bytes": 248482,
+          "sha256": "b9b0cb874e196b5171419c4756a69543e1fbea2555c27002638deb64f26037de",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/data/qpu/ablation_interleaved_counts.json"
+        },
+        {
+          "path": "data/qpu/ablation_interleaved_run_meta.json",
+          "mode": "100644",
+          "git_blob_sha": "5366a6779184c94e240dc9f4677fdbff99be5339",
+          "bytes": 29902,
+          "sha256": "eb1cbc3b80fd63c1c18d53a058b4f6dd968d5ac517404dbcb1ee7b6957a91101",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/data/qpu/ablation_interleaved_run_meta.json"
+        },
+        {
+          "path": "data/qpu/qpu_counts.json",
+          "mode": "100644",
+          "git_blob_sha": "1ec96689c3c80e8a86b824e09258e23492500d41",
+          "bytes": 770751,
+          "sha256": "c9ac526aa50e42335749049b338dd6e341d0a3189a4450a99ac03ebd9510bae0",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/data/qpu/qpu_counts.json"
+        },
+        {
+          "path": "data/qpu/qpu_run_meta.json",
+          "mode": "100644",
+          "git_blob_sha": "bce6f72a3980f57c48d0fa48b1b78b505cf80383",
+          "bytes": 290277,
+          "sha256": "01cddbf79c380eabb824a71ca00099a0ec604da272ede053de50a41013c3ccc8",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/data/qpu/qpu_run_meta.json"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_rows.csv",
+          "mode": "100644",
+          "git_blob_sha": "4d7935d2ce152b2df8256d135a9862ba8020b767",
+          "bytes": 878851,
+          "sha256": "b0b091c0c7690c4906eeb68eeef038998a6b6e791a9a384655e4c0b2f4314f4f",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/data/sim/grid_BFS_Shell_rows.csv"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_run_meta.json",
+          "mode": "100644",
+          "git_blob_sha": "b74471f6a020ead3f1aea596c2978e21f6bd4028",
+          "bytes": 32148,
+          "sha256": "712c8729095210bb4032dbdfb1eb6014dab76345f7dde5aba05c3074c6e6213b",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/data/sim/grid_BFS_Shell_run_meta.json"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_stats_meta.json",
+          "mode": "100644",
+          "git_blob_sha": "9581d43a7f1edce1bf46640764b227a56eaaeeaf",
+          "bytes": 5759,
+          "sha256": "411f01c937bb6aa4c341de3085e186d9d195562acaf1752a4f3ba604ef4b4df2",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/data/sim/grid_BFS_Shell_stats_meta.json"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_trial_summary.csv",
+          "mode": "100644",
+          "git_blob_sha": "d40cb9cd19f7a2d681a07a907855955c98ba0ef5",
+          "bytes": 56485,
+          "sha256": "966d7d6ddd0d2a2134e509bbc910fe6d26fe047f7b3377f2994eaa4cf6726ca0",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/data/sim/grid_BFS_Shell_trial_summary.csv"
+        },
+        {
+          "path": "figures/fig3/fig3_data.py",
+          "mode": "100644",
+          "git_blob_sha": "05ec629017cccb3a53a1e2f80402ceb35d92f387",
+          "bytes": 17266,
+          "sha256": "6eab423e6143411d26016514ae0039c9cea0a7de83bcc7618f76a54bd47c7bdb",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig3/fig3_data.py"
+        },
+        {
+          "path": "figures/fig3/fig3_plot.py",
+          "mode": "100644",
+          "git_blob_sha": "d70dbc0d9a9ac4ba121f2491b8d9be1a6c6b4fff",
+          "bytes": 11186,
+          "sha256": "c9d4956ea9e8c2a679510f59708e85886e301908be919a750c67f03fb07e5fb6",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig3/fig3_plot.py"
+        },
+        {
+          "path": "figures/fig3/make_fig3.py",
+          "mode": "100644",
+          "git_blob_sha": "bdd09f569941aa37a8b041ca4bd6bace51fa52d7",
+          "bytes": 5346,
+          "sha256": "901b747db03528c3b7c95b572b6bc2ec0a023ae43843d6b14b806d77051b59f0",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig3/make_fig3.py"
+        },
+        {
+          "path": "figures/fig4/fig4_sim_data.py",
+          "mode": "100644",
+          "git_blob_sha": "18f2698951aa5bd57b54c8ed32de160393babd02",
+          "bytes": 14791,
+          "sha256": "1409c3bf0da7a6bbe957116ef485a973ca7f647c3a72dfa6c1bd5f288200f611",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig4/fig4_sim_data.py"
+        },
+        {
+          "path": "figures/fig4/fig4_sim_plot.py",
+          "mode": "100644",
+          "git_blob_sha": "8d2b7c342ace158dc27bdfbcb49d64d614ef2fbe",
+          "bytes": 11269,
+          "sha256": "ab05fdc16a689745bf415bdb0926b17b9dd43ec06379cabc5d6fc140644a1e02",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig4/fig4_sim_plot.py"
+        },
+        {
+          "path": "figures/fig4/make_fig4.py",
+          "mode": "100644",
+          "git_blob_sha": "d03284f57fa3420935afa1d6764efbb6ae282566",
+          "bytes": 6459,
+          "sha256": "233597e584abd6b5dc201f5acc3deed8291ac74c77350ad5fffeec398399865a",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig4/make_fig4.py"
+        },
+        {
+          "path": "figures/fig5/fig5_data.py",
+          "mode": "100644",
+          "git_blob_sha": "8b7f438b0236a2ba606b2b731cb2e6c35d8067c8",
+          "bytes": 32498,
+          "sha256": "2b924a29b6214fb7fe5266836d8e72db671d4f602cb9fc57085902557d0e1321",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig5/fig5_data.py"
+        },
+        {
+          "path": "figures/fig5/fig5_plot.py",
+          "mode": "100644",
+          "git_blob_sha": "dc1f745acbe706e2c001e3c22400f6a775006983",
+          "bytes": 10203,
+          "sha256": "45561c92fb175bccfeda0680df67a23f9f919e86ee54c18cf4021838678b4cc2",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig5/fig5_plot.py"
+        },
+        {
+          "path": "figures/fig5/make_fig5.py",
+          "mode": "100644",
+          "git_blob_sha": "a90be4c1781ae20936a8ed6d7a604f7828ea8cff",
+          "bytes": 5825,
+          "sha256": "026c863a21bbdc26f9708ecc977efd4406319f5a1dd0e9965074bf55f9dfeea1",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig5/make_fig5.py"
+        },
+        {
+          "path": "figures/fig6/fig6_data.py",
+          "mode": "100644",
+          "git_blob_sha": "f8049bdec4fdbe3692f40d7d29d01af0e024f112",
+          "bytes": 21374,
+          "sha256": "cf35880cfbca72c2b86f37ccd1faaab7288cfe1e22497ecb6cbfae1771545210",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig6/fig6_data.py"
+        },
+        {
+          "path": "figures/fig6/fig6_plot.py",
+          "mode": "100644",
+          "git_blob_sha": "9e1c1e1db5fbc0cc3a4172988820c42ade01fd47",
+          "bytes": 11370,
+          "sha256": "d98c9c3311071ec2b557709fe13982620ccd8f13a577a23d7508d05be45de218",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig6/fig6_plot.py"
+        },
+        {
+          "path": "figures/fig6/make_fig6.py",
+          "mode": "100644",
+          "git_blob_sha": "c228179345a4e574a10bb6af1d87252e7388729b",
+          "bytes": 5907,
+          "sha256": "33a8184de7c3b1edacd16c653c87044f4a7c0b984af85677181ec0589e9c2eb2",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig6/make_fig6.py"
+        },
+        {
+          "path": "figures/fig7/fig7_data.py",
+          "mode": "100644",
+          "git_blob_sha": "af5ee595df552eb053641f1c6f856e4e9ce4aab9",
+          "bytes": 22540,
+          "sha256": "30018925fe0330ca2ffb47b7f54eb8f05895336fa5520cc4ec73475e911af18c",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig7/fig7_data.py"
+        },
+        {
+          "path": "figures/fig7/fig7_plot.py",
+          "mode": "100644",
+          "git_blob_sha": "c0232e6709e54e923db33ce7fff3ce413d9f3014",
+          "bytes": 11471,
+          "sha256": "5bb30b6c286a685b424e6fc5914ae4d0fd4ac2eaaad0942c2653d9814e8056e5",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig7/fig7_plot.py"
+        },
+        {
+          "path": "figures/fig7/make_fig7.py",
+          "mode": "100644",
+          "git_blob_sha": "f191ef444911a478936217aab653773397ea4c7d",
+          "bytes": 4462,
+          "sha256": "6426a768aaa28ef681fc242eb1244ca6e51b488b3237395ec971e5d366f19936",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig7/make_fig7.py"
+        },
+        {
+          "path": "figures/fig8/fig8_data.py",
+          "mode": "100644",
+          "git_blob_sha": "cee1dba3c1b18ffc5968dd746a0b581214da4d68",
+          "bytes": 26437,
+          "sha256": "f2ab5c618cb76fda287d61e1eb09181f10a626a2b1e699a3d5a32abc8c8d959c",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig8/fig8_data.py"
+        },
+        {
+          "path": "figures/fig8/fig8_plot.py",
+          "mode": "100644",
+          "git_blob_sha": "242385869078f2b1fb85be7a61c45c7c46094e34",
+          "bytes": 12722,
+          "sha256": "73ea89500ca371896607647d7ada680e84bfc9985e26fb89a4a5d0f5992144aa",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig8/fig8_plot.py"
+        },
+        {
+          "path": "figures/fig8/make_fig8.py",
+          "mode": "100644",
+          "git_blob_sha": "2130ef5ed28567787450321f69b78687070b2722",
+          "bytes": 7736,
+          "sha256": "177ec975d50b48bbeaf3852ebd88b949d2bbee62ec9bbc0bc2cf08af02da3911",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/figures/fig8/make_fig8.py"
+        },
+        {
+          "path": "requirements.txt",
+          "mode": "100644",
+          "git_blob_sha": "c284836a12e1819c30d8a295268cf3194a44cf4d",
+          "bytes": 186,
+          "sha256": "d7db47fcc90cc46f6b10a46142b93b50bc31300d68f0d0eb0d54e6475f2d86ea",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/requirements.txt"
+        },
+        {
+          "path": "src/qpu/diagonal_model_family_ibm_subgraph.py",
+          "mode": "100644",
+          "git_blob_sha": "65216a8b7156bbe93b24fa40de38e833e55b75d5",
+          "bytes": 22715,
+          "sha256": "2bfd33470f8a350ea8c8cc75dbe7ee3f163f3de6d8824aab489d9baaf27cfe0f",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/diagonal_model_family_ibm_subgraph.py"
+        },
+        {
+          "path": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "mode": "100644",
+          "git_blob_sha": "0c9919f4889d55addea9f9bbb753ccf68934fdf4",
+          "bytes": 1197393,
+          "sha256": "9a36cbca831059af718f6b267577abfe49c4ec30a2b3c0fd81c1c69e341b5881",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/ibm_fez_full_20251231_220523.json"
+        },
+        {
+          "path": "src/qpu/model_provider.py",
+          "mode": "100644",
+          "git_blob_sha": "f43da03f3bb6f7bc8fbeec3b7d95a61c020dfda3",
+          "bytes": 11859,
+          "sha256": "d09081480a9a4962b8ca205a2d606217ebac36587d1d8cf4d0305b4d4919bf25",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/model_provider.py"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "mode": "100644",
+          "git_blob_sha": "4f577f321eedf8cf0e54cddae8f538bfdde1270d",
+          "bytes": 583,
+          "sha256": "b4742caf2b652daf4732665a1bccdaa8436a77ece61380ad256dbb53a6db1f9d",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n2.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "mode": "100644",
+          "git_blob_sha": "601e9901abc09848f94d1926c15fe9d616524dc0",
+          "bytes": 698,
+          "sha256": "8561316b1de3f6441db3cf654806935683ed50d2ed2fc4cefe958107c511042b",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n3.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "mode": "100644",
+          "git_blob_sha": "f971dd6ed7e75e1a28d855ae90525b80a8d6f155",
+          "bytes": 813,
+          "sha256": "ea6072882cdb2e218d21b402ccc0234451356680451091a66eaaeb5b57099c9c",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n4.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "mode": "100644",
+          "git_blob_sha": "6d21fe08a89fd38d9b453063ba73785321b52504",
+          "bytes": 868,
+          "sha256": "dee9303423ff77efbc1a75920f8c779a55b09d34a89bc120619b1a3950521eaf",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n5.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "mode": "100644",
+          "git_blob_sha": "4d0753a7d309ebd3bc0faacadc9bd625ef76b5c7",
+          "bytes": 922,
+          "sha256": "237a1ad4adde26f75c4058a24d20feb6cbccc4dd7abdbdce28a9bd66b2f708d9",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n6.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "mode": "100644",
+          "git_blob_sha": "e609d5dfad8e27c6c5358cbe310e16bfd5af5c1d",
+          "bytes": 976,
+          "sha256": "4359ff532c5445e09587c521451fd316fc59d0713dfef622f120378fd9600a58",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "mode": "100644",
+          "git_blob_sha": "7a59fa69284766dbbba73bb7bcb3b643fd00a3f1",
+          "bytes": 583,
+          "sha256": "50c48be83bc5b27a985999b778d32faedb9581ab52dd831e12688be2be942b70",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n2.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "mode": "100644",
+          "git_blob_sha": "3c15716a6a29a458a6162e6ad46ab77c16f3040f",
+          "bytes": 711,
+          "sha256": "fa2bf4848eb98efbaa2ab82361d900acff70611188a0afd7bcdade33c5a21606",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n3.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "mode": "100644",
+          "git_blob_sha": "316dca48639b545e3a36df4d7e87688a1ec435b2",
+          "bytes": 838,
+          "sha256": "7fb25176d70b758127d8bd15beeb892ce597d49a3eb6ea131ef49b3bc9996bc4",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n4.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "mode": "100644",
+          "git_blob_sha": "0c62c432a56eee180491394c8eef05ca177388b8",
+          "bytes": 893,
+          "sha256": "21448e202483bdf2099dce769e65d132cc035209eacd21c0ce9677c3fcf66f7e",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n5.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "mode": "100644",
+          "git_blob_sha": "9043f90088ef7fb4bca2eb9612e13b01e45d64a4",
+          "bytes": 947,
+          "sha256": "d54f678acb53169ba6bf3b4c31f7477c25323393c5ef015b43c3bfa4ec179bbf",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n6.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "mode": "100644",
+          "git_blob_sha": "09f4e84c2e63d98a199ba1bab1e6f712ec8f6012",
+          "bytes": 1001,
+          "sha256": "f38509449a0f090472f88a7399d9dbb3a8898b35f5ad3665747d6b3e01017997",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n7.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "mode": "100644",
+          "git_blob_sha": "fee1c21803e175f808a72afd8e15e813f4b04dd4",
+          "bytes": 583,
+          "sha256": "51e83a0690e61d47fc2597f501669a7cc6c6c8339013ef68248688b49594c771",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n2.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "mode": "100644",
+          "git_blob_sha": "14b2dc54b95a9c78cbeb7a7d2ed2bdea126132cd",
+          "bytes": 710,
+          "sha256": "d2cbf150680494bf05888935f6e29ac1c1de8d4b8aeb32ec2bba6b04f340f8de",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n3.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "mode": "100644",
+          "git_blob_sha": "a315a2fd50c8f6f569d0185d2d82364ce83dc1a5",
+          "bytes": 836,
+          "sha256": "b996532eb17118a8f0f20d2c042efb7b0341ffcb90f5b8ef3909eff54e554466",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n4.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "mode": "100644",
+          "git_blob_sha": "1e1f54d95fa28ce10d9683277d0546e7d0aa6f8b",
+          "bytes": 891,
+          "sha256": "9064d00368ef8a4a99b887ca40fa6bb413bc8abe6052718b0799e87e3d265c8a",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n5.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "mode": "100644",
+          "git_blob_sha": "78211761872e8167cfa49680736568388744b7a9",
+          "bytes": 945,
+          "sha256": "fa4a8b66da7f38c773941c686ae615a6333fccc78f7e08eed867c20f4485478d",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n6.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "mode": "100644",
+          "git_blob_sha": "98fab28d2ee32f065b101f0dcb24e11d5cda4f6a",
+          "bytes": 999,
+          "sha256": "08d15db186ae6051dddfb8bc09d16615ee00cbcf21ade8bfb0bdb58d1b0cd372",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n7.yaml"
+        },
+        {
+          "path": "src/qpu/qiskit_runner.py",
+          "mode": "100644",
+          "git_blob_sha": "04d523f45cbbe12a11d9990955103fba08256180",
+          "bytes": 98698,
+          "sha256": "598155a7e84e9e35c2c22e6fdeb1bbb28e6a8355e195effca403f67e4c03e5a6",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/qiskit_runner.py"
+        },
+        {
+          "path": "src/qpu/qiskit_runner.yaml",
+          "mode": "100644",
+          "git_blob_sha": "71f75849ba69f7c538199105baebb63709d983e7",
+          "bytes": 1177,
+          "sha256": "8a1c6cd139cdaa11dee72cae414cb93dde1cb74ba6ed07f296f7f1dc2c2da8c8",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/qiskit_runner.yaml"
+        },
+        {
+          "path": "src/qpu/qiskit_runner_two_pairs.py",
+          "mode": "100644",
+          "git_blob_sha": "11767a7f7c84c9a093336dc19cedbcfbdea4a8ce",
+          "bytes": 115629,
+          "sha256": "553934b7fb401c3ea692ede2b7a5f319c0c443fcd513489177280827b6233e9c",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/qiskit_runner_two_pairs.py"
+        },
+        {
+          "path": "src/qpu/qiskit_runner_two_pairs.yaml",
+          "mode": "100644",
+          "git_blob_sha": "495aa231478454a664e2f127f3cefd78e153a0d8",
+          "bytes": 10871,
+          "sha256": "e4c1cfdd755c189b88f3b462c6e04138263707c1b51e3d28641550953ab5c3b4",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/qiskit_runner_two_pairs.yaml"
+        },
+        {
+          "path": "src/qpu/qiskit_runner_two_pairs_block.py",
+          "mode": "100644",
+          "git_blob_sha": "ae33b789480191c21b6f28c668bca4c26939a3e5",
+          "bytes": 128769,
+          "sha256": "070a4d5fb6c9bbf09d88853b5dfc25c009d936868df0022f2e7691469c3410bf",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/qpu/qiskit_runner_two_pairs_block.py"
+        },
+        {
+          "path": "src/sim/diagonal_model_family_grid_BFS_Shell.py",
+          "mode": "100644",
+          "git_blob_sha": "c2e222ba537f81e4b9f8741c26cc8675193d6055",
+          "bytes": 30190,
+          "sha256": "d21f0352c42b2a5ca492753825cdd08bd2f9af4e0769c61bc0db72af32711847",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/diagonal_model_family_grid_BFS_Shell.py"
+        },
+        {
+          "path": "src/sim/model_provider.py",
+          "mode": "100644",
+          "git_blob_sha": "f43da03f3bb6f7bc8fbeec3b7d95a61c020dfda3",
+          "bytes": 11859,
+          "sha256": "d09081480a9a4962b8ca205a2d606217ebac36587d1d8cf4d0305b4d4919bf25",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/model_provider.py"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "mode": "100644",
+          "git_blob_sha": "bdcb55a56878cc63e0ee71858996dc701dabadcc",
+          "bytes": 504,
+          "sha256": "1433d810cd5d022e042f2e88bae6d62a725ed66504bf49015e8458c35447ba1b",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n2.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "mode": "100644",
+          "git_blob_sha": "3f93e4717f45a26713cfaef87ddbadb3032dec11",
+          "bytes": 612,
+          "sha256": "b731072c8936fba2e77e4d62872dfdefa3177adcb4cc49d03748d12f8e8f92f5",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n3.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "mode": "100644",
+          "git_blob_sha": "e74f7aa5e7291916a615d5520ad1fac6964012a3",
+          "bytes": 767,
+          "sha256": "8e181b2b6745847f55f86d991181ac9c1d454406018fcabf301fcc5aef33c5ba",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n4.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "mode": "100644",
+          "git_blob_sha": "9adb558c3484a0943a05e5655d7da1b1fc123165",
+          "bytes": 814,
+          "sha256": "b7f7bac586d7688068d32ddb5048e9af74e50c2641a4017ddcf560e97b631f5a",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n5.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "mode": "100644",
+          "git_blob_sha": "826c895ccf30c2ad3673c086c41e5fa56f310d83",
+          "bytes": 861,
+          "sha256": "fcc58591467e6364234b3842fb4cb47307571828309ab46be951d6db54c3dacf",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n6.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "mode": "100644",
+          "git_blob_sha": "43e8c42de1b23896ea051e0457b8f9c432ecc86c",
+          "bytes": 955,
+          "sha256": "f39b58d664b873ed0655c481bafc926c628be078694b1f76ed20ca192c56bb3b",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n7.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "mode": "100644",
+          "git_blob_sha": "bdcb55a56878cc63e0ee71858996dc701dabadcc",
+          "bytes": 504,
+          "sha256": "1433d810cd5d022e042f2e88bae6d62a725ed66504bf49015e8458c35447ba1b",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n2.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "mode": "100644",
+          "git_blob_sha": "7211f04a2067f879abefda8dda28dc548042b2cc",
+          "bytes": 625,
+          "sha256": "d645619acb5cd1fc9f1051c75e1cfba2104dd878a7147e565e01090d44c99f44",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n3.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "mode": "100644",
+          "git_blob_sha": "4f6885d079fc8fda732b9bb0e74586dc741d832f",
+          "bytes": 792,
+          "sha256": "b1e24597070dd81b4ee058fcbb120c1a327f472934c63a64d371cf8c4509c126",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n4.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "mode": "100644",
+          "git_blob_sha": "72fd46a8774312465af98e8b7baf86b9ca88f948",
+          "bytes": 839,
+          "sha256": "c042c91a130e9a8dd4c7b9cc2a7fd7f1e5d8fe40fc2f497dce2b6e0aea0c37ad",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n5.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "mode": "100644",
+          "git_blob_sha": "bb2dfa34f2a9ebf311086c31aa310ea52c9a7cc5",
+          "bytes": 886,
+          "sha256": "888baa5dd939d4e4f0760431b4bf6384961f6da3e27d4e2475e807606b1a88cd",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n6.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "mode": "100644",
+          "git_blob_sha": "f98994c0e1b0c4197db6d689eb8bc3adb7d08fdc",
+          "bytes": 980,
+          "sha256": "03fad01a053eb5785bc3f777412c4469055e7421ebffd3b5bebbfc05e9425e3f",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n7.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "mode": "100644",
+          "git_blob_sha": "bdcb55a56878cc63e0ee71858996dc701dabadcc",
+          "bytes": 504,
+          "sha256": "1433d810cd5d022e042f2e88bae6d62a725ed66504bf49015e8458c35447ba1b",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n2.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "mode": "100644",
+          "git_blob_sha": "411b8317f5bc49ceda9719a1b93f30d2350545a4",
+          "bytes": 624,
+          "sha256": "64fc303e774cf990168a947a061757b5fdc7e08af3e3d896003282bb233efba8",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n3.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "mode": "100644",
+          "git_blob_sha": "0697f2ed8abac4ce5fbdc54586a8c6cb8f05af13",
+          "bytes": 790,
+          "sha256": "04aceaba7c8525adaa6fd39d7f8ec9ebc60a256d64fe576ad1b9e3932d544f55",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n4.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "mode": "100644",
+          "git_blob_sha": "a84f86414a5b7edf56a668b2807866117beec6b0",
+          "bytes": 837,
+          "sha256": "d4058bba0187af6ebf71462b4001e119ce9023ab6218e8ed88c7843f717ccc16",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n5.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "mode": "100644",
+          "git_blob_sha": "6481e14f9c84b697667ff8d19d26dd0a7c104647",
+          "bytes": 884,
+          "sha256": "43cfa7809b10bf526e5afcc682d08acaf311ad154db74e91163284e367e473ab",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n6.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "mode": "100644",
+          "git_blob_sha": "1bef46e950926a451567fb3ff87a98fb7572e1b3",
+          "bytes": 978,
+          "sha256": "242b2697f6936522cdd325ed6fe261d236374fe7233d5c8829ef69f28974d8b9",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n7.yaml"
+        },
+        {
+          "path": "src/sim/sim_runner.py",
+          "mode": "100644",
+          "git_blob_sha": "99a041615a9660491835625080f32adac4568213",
+          "bytes": 35947,
+          "sha256": "60b8080d2ceb6a4f6a1cf772704fa4c512282c75b9ba0e50d585fe097543674d",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/sim_runner.py"
+        },
+        {
+          "path": "src/sim/sim_runner.yaml",
+          "mode": "100644",
+          "git_blob_sha": "8d07b4f96c660987a808331132ffc92f6e99ffdc",
+          "bytes": 3327,
+          "sha256": "6d096ab1eb36c8e89c82034bd8a72fe587801997a86af0af25a2b5b6a287d313",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/sim_runner.yaml"
+        },
+        {
+          "path": "src/sim/stats.py",
+          "mode": "100644",
+          "git_blob_sha": "3f02a4897fe230f696abbcba20a77d8eaf6658a9",
+          "bytes": 10122,
+          "sha256": "0d10929b3c354257ef2d9619966d798ec7e31dd829dc962b0b194b12f510bb9b",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/src/sim/stats.py"
+        },
+        {
+          "path": "tree_structure.txt",
+          "mode": "100644",
+          "git_blob_sha": "0850c5c4fde19d9581c921a2449d6894a27ec813",
+          "bytes": 4303,
+          "sha256": "eb25e631a2dead1c74398ee625d30614afbd389144072afb573a2efa5ddef9f9",
+          "url": "https://github.com/jisung-jung88/kappa-profile/blob/a49a198e6327f42323e0f43c17ef58d8c535c15c/tree_structure.txt"
+        }
+      ]
+    },
+    "jisung-jung88/plaquette-curvature-profiles": {
+      "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+      "tree": "6b9a5ceb9a2a662511ab7312114049e9ed847228",
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644",
+          "git_blob_sha": "b7faf403d915ca307532bb0eb9cceaf0214e8e5b",
+          "bytes": 4688,
+          "sha256": "48b33f9f89ef24f8a66f461ea9278e7ecf21b4660c26088989d231e53c578724",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/.gitignore"
+        },
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob_sha": "206e21690f9224a0e09c87ad2eae53242f65204b",
+          "bytes": 1070,
+          "sha256": "77ceb357e1e373341745990c3a6a0c29abfbaaab2f828b92fa24a24ecdd866a8",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/LICENSE"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644",
+          "git_blob_sha": "60062daffb17e1d50204f6a75a739cdb208844a6",
+          "bytes": 6282,
+          "sha256": "ca181a36f0c9cab1835beb89ac8d31d8ba26a57a4ac71d4647ebd1d54e74360d",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/README.md"
+        },
+        {
+          "path": "data/qpu/ablation_block_counts.json",
+          "mode": "100644",
+          "git_blob_sha": "7a67a0b1fec9eac8ae0b59392ffbec94bc973d9d",
+          "bytes": 52665,
+          "sha256": "b1b4f3a1e51fe9033bbfdc78930d0df7527a62c0c310fc27e81cf4969fe84469",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/ablation_block_counts.json"
+        },
+        {
+          "path": "data/qpu/ablation_block_run_meta.json",
+          "mode": "100644",
+          "git_blob_sha": "fb3418f5f44fac549272a58d6a01f891b786b589",
+          "bytes": 8072,
+          "sha256": "002495a22913989675d56f7746fb2c817ee7e3643d8af2513e9ad8e30e88ed16",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/ablation_block_run_meta.json"
+        },
+        {
+          "path": "data/qpu/ablation_interleaved_counts.json",
+          "mode": "100644",
+          "git_blob_sha": "aed78252b5c177950a5d81c8b370bc9182f05f3e",
+          "bytes": 248482,
+          "sha256": "b9b0cb874e196b5171419c4756a69543e1fbea2555c27002638deb64f26037de",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/ablation_interleaved_counts.json"
+        },
+        {
+          "path": "data/qpu/ablation_interleaved_run_meta.json",
+          "mode": "100644",
+          "git_blob_sha": "5366a6779184c94e240dc9f4677fdbff99be5339",
+          "bytes": 29902,
+          "sha256": "eb1cbc3b80fd63c1c18d53a058b4f6dd968d5ac517404dbcb1ee7b6957a91101",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/ablation_interleaved_run_meta.json"
+        },
+        {
+          "path": "data/qpu/qpu_counts.json",
+          "mode": "100644",
+          "git_blob_sha": "1ec96689c3c80e8a86b824e09258e23492500d41",
+          "bytes": 770751,
+          "sha256": "c9ac526aa50e42335749049b338dd6e341d0a3189a4450a99ac03ebd9510bae0",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_counts.json"
+        },
+        {
+          "path": "data/qpu/qpu_run_meta.json",
+          "mode": "100644",
+          "git_blob_sha": "bce6f72a3980f57c48d0fa48b1b78b505cf80383",
+          "bytes": 290277,
+          "sha256": "01cddbf79c380eabb824a71ca00099a0ec604da272ede053de50a41013c3ccc8",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/qpu/qpu_run_meta.json"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_rows.csv",
+          "mode": "100644",
+          "git_blob_sha": "4d7935d2ce152b2df8256d135a9862ba8020b767",
+          "bytes": 878851,
+          "sha256": "b0b091c0c7690c4906eeb68eeef038998a6b6e791a9a384655e4c0b2f4314f4f",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_rows.csv"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_run_meta.json",
+          "mode": "100644",
+          "git_blob_sha": "b74471f6a020ead3f1aea596c2978e21f6bd4028",
+          "bytes": 32148,
+          "sha256": "712c8729095210bb4032dbdfb1eb6014dab76345f7dde5aba05c3074c6e6213b",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_run_meta.json"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_stats_meta.json",
+          "mode": "100644",
+          "git_blob_sha": "9581d43a7f1edce1bf46640764b227a56eaaeeaf",
+          "bytes": 5759,
+          "sha256": "411f01c937bb6aa4c341de3085e186d9d195562acaf1752a4f3ba604ef4b4df2",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_stats_meta.json"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_trial_summary.csv",
+          "mode": "100644",
+          "git_blob_sha": "d40cb9cd19f7a2d681a07a907855955c98ba0ef5",
+          "bytes": 56485,
+          "sha256": "966d7d6ddd0d2a2134e509bbc910fe6d26fe047f7b3377f2994eaa4cf6726ca0",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/data/sim/grid_BFS_Shell_trial_summary.csv"
+        },
+        {
+          "path": "figures/fig3/fig3_data.py",
+          "mode": "100644",
+          "git_blob_sha": "05ec629017cccb3a53a1e2f80402ceb35d92f387",
+          "bytes": 17266,
+          "sha256": "6eab423e6143411d26016514ae0039c9cea0a7de83bcc7618f76a54bd47c7bdb",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig3/fig3_data.py"
+        },
+        {
+          "path": "figures/fig3/fig3_plot.py",
+          "mode": "100644",
+          "git_blob_sha": "d70dbc0d9a9ac4ba121f2491b8d9be1a6c6b4fff",
+          "bytes": 11186,
+          "sha256": "c9d4956ea9e8c2a679510f59708e85886e301908be919a750c67f03fb07e5fb6",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig3/fig3_plot.py"
+        },
+        {
+          "path": "figures/fig3/make_fig3.py",
+          "mode": "100644",
+          "git_blob_sha": "bdd09f569941aa37a8b041ca4bd6bace51fa52d7",
+          "bytes": 5346,
+          "sha256": "901b747db03528c3b7c95b572b6bc2ec0a023ae43843d6b14b806d77051b59f0",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig3/make_fig3.py"
+        },
+        {
+          "path": "figures/fig4/fig4_sim_data.py",
+          "mode": "100644",
+          "git_blob_sha": "18f2698951aa5bd57b54c8ed32de160393babd02",
+          "bytes": 14791,
+          "sha256": "1409c3bf0da7a6bbe957116ef485a973ca7f647c3a72dfa6c1bd5f288200f611",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig4/fig4_sim_data.py"
+        },
+        {
+          "path": "figures/fig4/fig4_sim_plot.py",
+          "mode": "100644",
+          "git_blob_sha": "8d2b7c342ace158dc27bdfbcb49d64d614ef2fbe",
+          "bytes": 11269,
+          "sha256": "ab05fdc16a689745bf415bdb0926b17b9dd43ec06379cabc5d6fc140644a1e02",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig4/fig4_sim_plot.py"
+        },
+        {
+          "path": "figures/fig4/make_fig4.py",
+          "mode": "100644",
+          "git_blob_sha": "d03284f57fa3420935afa1d6764efbb6ae282566",
+          "bytes": 6459,
+          "sha256": "233597e584abd6b5dc201f5acc3deed8291ac74c77350ad5fffeec398399865a",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig4/make_fig4.py"
+        },
+        {
+          "path": "figures/fig5/fig5_data.py",
+          "mode": "100644",
+          "git_blob_sha": "8b7f438b0236a2ba606b2b731cb2e6c35d8067c8",
+          "bytes": 32498,
+          "sha256": "2b924a29b6214fb7fe5266836d8e72db671d4f602cb9fc57085902557d0e1321",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig5/fig5_data.py"
+        },
+        {
+          "path": "figures/fig5/fig5_plot.py",
+          "mode": "100644",
+          "git_blob_sha": "dc1f745acbe706e2c001e3c22400f6a775006983",
+          "bytes": 10203,
+          "sha256": "45561c92fb175bccfeda0680df67a23f9f919e86ee54c18cf4021838678b4cc2",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig5/fig5_plot.py"
+        },
+        {
+          "path": "figures/fig5/make_fig5.py",
+          "mode": "100644",
+          "git_blob_sha": "a90be4c1781ae20936a8ed6d7a604f7828ea8cff",
+          "bytes": 5825,
+          "sha256": "026c863a21bbdc26f9708ecc977efd4406319f5a1dd0e9965074bf55f9dfeea1",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig5/make_fig5.py"
+        },
+        {
+          "path": "figures/fig6/fig6_data.py",
+          "mode": "100644",
+          "git_blob_sha": "f8049bdec4fdbe3692f40d7d29d01af0e024f112",
+          "bytes": 21374,
+          "sha256": "cf35880cfbca72c2b86f37ccd1faaab7288cfe1e22497ecb6cbfae1771545210",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig6/fig6_data.py"
+        },
+        {
+          "path": "figures/fig6/fig6_plot.py",
+          "mode": "100644",
+          "git_blob_sha": "9e1c1e1db5fbc0cc3a4172988820c42ade01fd47",
+          "bytes": 11370,
+          "sha256": "d98c9c3311071ec2b557709fe13982620ccd8f13a577a23d7508d05be45de218",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig6/fig6_plot.py"
+        },
+        {
+          "path": "figures/fig6/make_fig6.py",
+          "mode": "100644",
+          "git_blob_sha": "c228179345a4e574a10bb6af1d87252e7388729b",
+          "bytes": 5907,
+          "sha256": "33a8184de7c3b1edacd16c653c87044f4a7c0b984af85677181ec0589e9c2eb2",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig6/make_fig6.py"
+        },
+        {
+          "path": "figures/fig7/fig7_data.py",
+          "mode": "100644",
+          "git_blob_sha": "af5ee595df552eb053641f1c6f856e4e9ce4aab9",
+          "bytes": 22540,
+          "sha256": "30018925fe0330ca2ffb47b7f54eb8f05895336fa5520cc4ec73475e911af18c",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig7/fig7_data.py"
+        },
+        {
+          "path": "figures/fig7/fig7_plot.py",
+          "mode": "100644",
+          "git_blob_sha": "c0232e6709e54e923db33ce7fff3ce413d9f3014",
+          "bytes": 11471,
+          "sha256": "5bb30b6c286a685b424e6fc5914ae4d0fd4ac2eaaad0942c2653d9814e8056e5",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig7/fig7_plot.py"
+        },
+        {
+          "path": "figures/fig7/make_fig7.py",
+          "mode": "100644",
+          "git_blob_sha": "f191ef444911a478936217aab653773397ea4c7d",
+          "bytes": 4462,
+          "sha256": "6426a768aaa28ef681fc242eb1244ca6e51b488b3237395ec971e5d366f19936",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig7/make_fig7.py"
+        },
+        {
+          "path": "figures/fig8/fig8_data.py",
+          "mode": "100644",
+          "git_blob_sha": "cee1dba3c1b18ffc5968dd746a0b581214da4d68",
+          "bytes": 26437,
+          "sha256": "f2ab5c618cb76fda287d61e1eb09181f10a626a2b1e699a3d5a32abc8c8d959c",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig8/fig8_data.py"
+        },
+        {
+          "path": "figures/fig8/fig8_plot.py",
+          "mode": "100644",
+          "git_blob_sha": "242385869078f2b1fb85be7a61c45c7c46094e34",
+          "bytes": 12722,
+          "sha256": "73ea89500ca371896607647d7ada680e84bfc9985e26fb89a4a5d0f5992144aa",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig8/fig8_plot.py"
+        },
+        {
+          "path": "figures/fig8/make_fig8.py",
+          "mode": "100644",
+          "git_blob_sha": "2130ef5ed28567787450321f69b78687070b2722",
+          "bytes": 7736,
+          "sha256": "177ec975d50b48bbeaf3852ebd88b949d2bbee62ec9bbc0bc2cf08af02da3911",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/figures/fig8/make_fig8.py"
+        },
+        {
+          "path": "requirements.txt",
+          "mode": "100644",
+          "git_blob_sha": "c284836a12e1819c30d8a295268cf3194a44cf4d",
+          "bytes": 186,
+          "sha256": "d7db47fcc90cc46f6b10a46142b93b50bc31300d68f0d0eb0d54e6475f2d86ea",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/requirements.txt"
+        },
+        {
+          "path": "src/qpu/diagonal_model_family_ibm_subgraph.py",
+          "mode": "100644",
+          "git_blob_sha": "65216a8b7156bbe93b24fa40de38e833e55b75d5",
+          "bytes": 22715,
+          "sha256": "2bfd33470f8a350ea8c8cc75dbe7ee3f163f3de6d8824aab489d9baaf27cfe0f",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/diagonal_model_family_ibm_subgraph.py"
+        },
+        {
+          "path": "src/qpu/ibm_fez_full_20251231_220523.json",
+          "mode": "100644",
+          "git_blob_sha": "0c9919f4889d55addea9f9bbb753ccf68934fdf4",
+          "bytes": 1197393,
+          "sha256": "9a36cbca831059af718f6b267577abfe49c4ec30a2b3c0fd81c1c69e341b5881",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/ibm_fez_full_20251231_220523.json"
+        },
+        {
+          "path": "src/qpu/model_provider.py",
+          "mode": "100644",
+          "git_blob_sha": "f43da03f3bb6f7bc8fbeec3b7d95a61c020dfda3",
+          "bytes": 11859,
+          "sha256": "d09081480a9a4962b8ca205a2d606217ebac36587d1d8cf4d0305b4d4919bf25",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/model_provider.py"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "mode": "100644",
+          "git_blob_sha": "4f577f321eedf8cf0e54cddae8f538bfdde1270d",
+          "bytes": 583,
+          "sha256": "b4742caf2b652daf4732665a1bccdaa8436a77ece61380ad256dbb53a6db1f9d",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n2.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "mode": "100644",
+          "git_blob_sha": "601e9901abc09848f94d1926c15fe9d616524dc0",
+          "bytes": 698,
+          "sha256": "8561316b1de3f6441db3cf654806935683ed50d2ed2fc4cefe958107c511042b",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n3.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "mode": "100644",
+          "git_blob_sha": "f971dd6ed7e75e1a28d855ae90525b80a8d6f155",
+          "bytes": 813,
+          "sha256": "ea6072882cdb2e218d21b402ccc0234451356680451091a66eaaeb5b57099c9c",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n4.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "mode": "100644",
+          "git_blob_sha": "6d21fe08a89fd38d9b453063ba73785321b52504",
+          "bytes": 868,
+          "sha256": "dee9303423ff77efbc1a75920f8c779a55b09d34a89bc120619b1a3950521eaf",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n5.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "mode": "100644",
+          "git_blob_sha": "4d0753a7d309ebd3bc0faacadc9bd625ef76b5c7",
+          "bytes": 922,
+          "sha256": "237a1ad4adde26f75c4058a24d20feb6cbccc4dd7abdbdce28a9bd66b2f708d9",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n6.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "mode": "100644",
+          "git_blob_sha": "e609d5dfad8e27c6c5358cbe310e16bfd5af5c1d",
+          "bytes": 976,
+          "sha256": "4359ff532c5445e09587c521451fd316fc59d0713dfef622f120378fd9600a58",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "mode": "100644",
+          "git_blob_sha": "7a59fa69284766dbbba73bb7bcb3b643fd00a3f1",
+          "bytes": 583,
+          "sha256": "50c48be83bc5b27a985999b778d32faedb9581ab52dd831e12688be2be942b70",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n2.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "mode": "100644",
+          "git_blob_sha": "3c15716a6a29a458a6162e6ad46ab77c16f3040f",
+          "bytes": 711,
+          "sha256": "fa2bf4848eb98efbaa2ab82361d900acff70611188a0afd7bcdade33c5a21606",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n3.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "mode": "100644",
+          "git_blob_sha": "316dca48639b545e3a36df4d7e87688a1ec435b2",
+          "bytes": 838,
+          "sha256": "7fb25176d70b758127d8bd15beeb892ce597d49a3eb6ea131ef49b3bc9996bc4",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n4.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "mode": "100644",
+          "git_blob_sha": "0c62c432a56eee180491394c8eef05ca177388b8",
+          "bytes": 893,
+          "sha256": "21448e202483bdf2099dce769e65d132cc035209eacd21c0ce9677c3fcf66f7e",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n5.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "mode": "100644",
+          "git_blob_sha": "9043f90088ef7fb4bca2eb9612e13b01e45d64a4",
+          "bytes": 947,
+          "sha256": "d54f678acb53169ba6bf3b4c31f7477c25323393c5ef015b43c3bfa4ec179bbf",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n6.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "mode": "100644",
+          "git_blob_sha": "09f4e84c2e63d98a199ba1bab1e6f712ec8f6012",
+          "bytes": 1001,
+          "sha256": "f38509449a0f090472f88a7399d9dbb3a8898b35f5ad3665747d6b3e01017997",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n7.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n2.yaml",
+          "mode": "100644",
+          "git_blob_sha": "fee1c21803e175f808a72afd8e15e813f4b04dd4",
+          "bytes": 583,
+          "sha256": "51e83a0690e61d47fc2597f501669a7cc6c6c8339013ef68248688b49594c771",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n2.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n3.yaml",
+          "mode": "100644",
+          "git_blob_sha": "14b2dc54b95a9c78cbeb7a7d2ed2bdea126132cd",
+          "bytes": 710,
+          "sha256": "d2cbf150680494bf05888935f6e29ac1c1de8d4b8aeb32ec2bba6b04f340f8de",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n3.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n4.yaml",
+          "mode": "100644",
+          "git_blob_sha": "a315a2fd50c8f6f569d0185d2d82364ce83dc1a5",
+          "bytes": 836,
+          "sha256": "b996532eb17118a8f0f20d2c042efb7b0341ffcb90f5b8ef3909eff54e554466",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n4.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n5.yaml",
+          "mode": "100644",
+          "git_blob_sha": "1e1f54d95fa28ce10d9683277d0546e7d0aa6f8b",
+          "bytes": 891,
+          "sha256": "9064d00368ef8a4a99b887ca40fa6bb413bc8abe6052718b0799e87e3d265c8a",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n5.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n6.yaml",
+          "mode": "100644",
+          "git_blob_sha": "78211761872e8167cfa49680736568388744b7a9",
+          "bytes": 945,
+          "sha256": "fa4a8b66da7f38c773941c686ae615a6333fccc78f7e08eed867c20f4485478d",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n6.yaml"
+        },
+        {
+          "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n7.yaml",
+          "mode": "100644",
+          "git_blob_sha": "98fab28d2ee32f065b101f0dcb24e11d5cda4f6a",
+          "bytes": 999,
+          "sha256": "08d15db186ae6051dddfb8bc09d16615ee00cbcf21ade8bfb0bdb58d1b0cd372",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n7.yaml"
+        },
+        {
+          "path": "src/qpu/qiskit_runner.py",
+          "mode": "100644",
+          "git_blob_sha": "04d523f45cbbe12a11d9990955103fba08256180",
+          "bytes": 98698,
+          "sha256": "598155a7e84e9e35c2c22e6fdeb1bbb28e6a8355e195effca403f67e4c03e5a6",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner.py"
+        },
+        {
+          "path": "src/qpu/qiskit_runner.yaml",
+          "mode": "100644",
+          "git_blob_sha": "71f75849ba69f7c538199105baebb63709d983e7",
+          "bytes": 1177,
+          "sha256": "8a1c6cd139cdaa11dee72cae414cb93dde1cb74ba6ed07f296f7f1dc2c2da8c8",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner.yaml"
+        },
+        {
+          "path": "src/qpu/qiskit_runner_two_pairs.py",
+          "mode": "100644",
+          "git_blob_sha": "11767a7f7c84c9a093336dc19cedbcfbdea4a8ce",
+          "bytes": 115629,
+          "sha256": "553934b7fb401c3ea692ede2b7a5f319c0c443fcd513489177280827b6233e9c",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner_two_pairs.py"
+        },
+        {
+          "path": "src/qpu/qiskit_runner_two_pairs.yaml",
+          "mode": "100644",
+          "git_blob_sha": "495aa231478454a664e2f127f3cefd78e153a0d8",
+          "bytes": 10871,
+          "sha256": "e4c1cfdd755c189b88f3b462c6e04138263707c1b51e3d28641550953ab5c3b4",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner_two_pairs.yaml"
+        },
+        {
+          "path": "src/qpu/qiskit_runner_two_pairs_block.py",
+          "mode": "100644",
+          "git_blob_sha": "ae33b789480191c21b6f28c668bca4c26939a3e5",
+          "bytes": 128769,
+          "sha256": "070a4d5fb6c9bbf09d88853b5dfc25c009d936868df0022f2e7691469c3410bf",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/qpu/qiskit_runner_two_pairs_block.py"
+        },
+        {
+          "path": "src/sim/diagonal_model_family_grid_BFS_Shell.py",
+          "mode": "100644",
+          "git_blob_sha": "c2e222ba537f81e4b9f8741c26cc8675193d6055",
+          "bytes": 30190,
+          "sha256": "d21f0352c42b2a5ca492753825cdd08bd2f9af4e0769c61bc0db72af32711847",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/diagonal_model_family_grid_BFS_Shell.py"
+        },
+        {
+          "path": "src/sim/model_provider.py",
+          "mode": "100644",
+          "git_blob_sha": "f43da03f3bb6f7bc8fbeec3b7d95a61c020dfda3",
+          "bytes": 11859,
+          "sha256": "d09081480a9a4962b8ca205a2d606217ebac36587d1d8cf4d0305b4d4919bf25",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/model_provider.py"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "mode": "100644",
+          "git_blob_sha": "bdcb55a56878cc63e0ee71858996dc701dabadcc",
+          "bytes": 504,
+          "sha256": "1433d810cd5d022e042f2e88bae6d62a725ed66504bf49015e8458c35447ba1b",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n2.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "mode": "100644",
+          "git_blob_sha": "3f93e4717f45a26713cfaef87ddbadb3032dec11",
+          "bytes": 612,
+          "sha256": "b731072c8936fba2e77e4d62872dfdefa3177adcb4cc49d03748d12f8e8f92f5",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n3.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "mode": "100644",
+          "git_blob_sha": "e74f7aa5e7291916a615d5520ad1fac6964012a3",
+          "bytes": 767,
+          "sha256": "8e181b2b6745847f55f86d991181ac9c1d454406018fcabf301fcc5aef33c5ba",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n4.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "mode": "100644",
+          "git_blob_sha": "9adb558c3484a0943a05e5655d7da1b1fc123165",
+          "bytes": 814,
+          "sha256": "b7f7bac586d7688068d32ddb5048e9af74e50c2641a4017ddcf560e97b631f5a",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n5.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "mode": "100644",
+          "git_blob_sha": "826c895ccf30c2ad3673c086c41e5fa56f310d83",
+          "bytes": 861,
+          "sha256": "fcc58591467e6364234b3842fb4cb47307571828309ab46be951d6db54c3dacf",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n6.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "mode": "100644",
+          "git_blob_sha": "43e8c42de1b23896ea051e0457b8f9c432ecc86c",
+          "bytes": 955,
+          "sha256": "f39b58d664b873ed0655c481bafc926c628be078694b1f76ed20ca192c56bb3b",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n7.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "mode": "100644",
+          "git_blob_sha": "bdcb55a56878cc63e0ee71858996dc701dabadcc",
+          "bytes": 504,
+          "sha256": "1433d810cd5d022e042f2e88bae6d62a725ed66504bf49015e8458c35447ba1b",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n2.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "mode": "100644",
+          "git_blob_sha": "7211f04a2067f879abefda8dda28dc548042b2cc",
+          "bytes": 625,
+          "sha256": "d645619acb5cd1fc9f1051c75e1cfba2104dd878a7147e565e01090d44c99f44",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n3.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "mode": "100644",
+          "git_blob_sha": "4f6885d079fc8fda732b9bb0e74586dc741d832f",
+          "bytes": 792,
+          "sha256": "b1e24597070dd81b4ee058fcbb120c1a327f472934c63a64d371cf8c4509c126",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n4.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "mode": "100644",
+          "git_blob_sha": "72fd46a8774312465af98e8b7baf86b9ca88f948",
+          "bytes": 839,
+          "sha256": "c042c91a130e9a8dd4c7b9cc2a7fd7f1e5d8fe40fc2f497dce2b6e0aea0c37ad",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n5.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "mode": "100644",
+          "git_blob_sha": "bb2dfa34f2a9ebf311086c31aa310ea52c9a7cc5",
+          "bytes": 886,
+          "sha256": "888baa5dd939d4e4f0760431b4bf6384961f6da3e27d4e2475e807606b1a88cd",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n6.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "mode": "100644",
+          "git_blob_sha": "f98994c0e1b0c4197db6d689eb8bc3adb7d08fdc",
+          "bytes": 980,
+          "sha256": "03fad01a053eb5785bc3f777412c4469055e7421ebffd3b5bebbfc05e9425e3f",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n7.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n2.yaml",
+          "mode": "100644",
+          "git_blob_sha": "bdcb55a56878cc63e0ee71858996dc701dabadcc",
+          "bytes": 504,
+          "sha256": "1433d810cd5d022e042f2e88bae6d62a725ed66504bf49015e8458c35447ba1b",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n2.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n3.yaml",
+          "mode": "100644",
+          "git_blob_sha": "411b8317f5bc49ceda9719a1b93f30d2350545a4",
+          "bytes": 624,
+          "sha256": "64fc303e774cf990168a947a061757b5fdc7e08af3e3d896003282bb233efba8",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n3.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n4.yaml",
+          "mode": "100644",
+          "git_blob_sha": "0697f2ed8abac4ce5fbdc54586a8c6cb8f05af13",
+          "bytes": 790,
+          "sha256": "04aceaba7c8525adaa6fd39d7f8ec9ebc60a256d64fe576ad1b9e3932d544f55",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n4.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n5.yaml",
+          "mode": "100644",
+          "git_blob_sha": "a84f86414a5b7edf56a668b2807866117beec6b0",
+          "bytes": 837,
+          "sha256": "d4058bba0187af6ebf71462b4001e119ce9023ab6218e8ed88c7843f717ccc16",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n5.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n6.yaml",
+          "mode": "100644",
+          "git_blob_sha": "6481e14f9c84b697667ff8d19d26dd0a7c104647",
+          "bytes": 884,
+          "sha256": "43cfa7809b10bf526e5afcc682d08acaf311ad154db74e91163284e367e473ab",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n6.yaml"
+        },
+        {
+          "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n7.yaml",
+          "mode": "100644",
+          "git_blob_sha": "1bef46e950926a451567fb3ff87a98fb7572e1b3",
+          "bytes": 978,
+          "sha256": "242b2697f6936522cdd325ed6fe261d236374fe7233d5c8829ef69f28974d8b9",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n7.yaml"
+        },
+        {
+          "path": "src/sim/sim_runner.py",
+          "mode": "100644",
+          "git_blob_sha": "99a041615a9660491835625080f32adac4568213",
+          "bytes": 35947,
+          "sha256": "60b8080d2ceb6a4f6a1cf772704fa4c512282c75b9ba0e50d585fe097543674d",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/sim_runner.py"
+        },
+        {
+          "path": "src/sim/sim_runner.yaml",
+          "mode": "100644",
+          "git_blob_sha": "8d07b4f96c660987a808331132ffc92f6e99ffdc",
+          "bytes": 3327,
+          "sha256": "6d096ab1eb36c8e89c82034bd8a72fe587801997a86af0af25a2b5b6a287d313",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/sim_runner.yaml"
+        },
+        {
+          "path": "src/sim/stats.py",
+          "mode": "100644",
+          "git_blob_sha": "3f02a4897fe230f696abbcba20a77d8eaf6658a9",
+          "bytes": 10122,
+          "sha256": "0d10929b3c354257ef2d9619966d798ec7e31dd829dc962b0b194b12f510bb9b",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/src/sim/stats.py"
+        },
+        {
+          "path": "tree_structure.txt",
+          "mode": "100644",
+          "git_blob_sha": "46a38d41bbab739a1ca9bd8d289a7ac19a687393",
+          "bytes": 4664,
+          "sha256": "a2ceeb9e33b002ba2f32dc25ee31de684ad122b8b33d74cfb0a7c8acf37eb54e",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/blob/bd4e4f24175d71a360f86bd88fda35c91ae30219/tree_structure.txt"
+        }
+      ]
+    }
+  },
+  "shared_historical_record_ids": [
+    "KP-R001",
+    "KP-R002",
+    "KP-R003",
+    "KP-R004",
+    "KP-R005",
+    "KP-R006",
+    "KP-R007",
+    "KP-R008",
+    "KP-R009",
+    "KP-R010",
+    "KP-R011"
+  ],
+  "same_path_and_bytes": 80,
+  "shared_reproducibility_files": 78,
+  "different_original_paths": [
+    "README.md",
+    "tree_structure.txt"
+  ]
+}

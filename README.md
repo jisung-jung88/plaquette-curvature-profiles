@@ -8,10 +8,29 @@ Code and data for reproducing the results in:
 
 This repository provides the simulation and QPU experiment pipelines for κ-profile diagnostics, a low-overhead method for detecting context-dependent phase structure in Z-diagonal unitaries.
 
+## Research records and provenance
+
+Start with [current state](docs/research_memory/STATUS.md) and the
+[research index](docs/research_memory/INDEX.md) to find preserved attempts,
+conditions, observations and limitations. [Reuse notes](docs/research_memory/REUSE.md)
+connect the original data to the figure pipelines.
+
+The original scientific files in this repository and
+[jisung-jung88/kappa-profile](https://github.com/jisung-jung88/kappa-profile) are the same archived assets.
+Shared `KP-R…` records identify those same observations; the second location is
+not an independent replication. See [the verified relationship](docs/research_memory/RELATIONSHIP.md).
+Archived upload commits identify source snapshots, while actual runtime Git
+identities remain unknown where the original metadata does not record them.
+
+Future Codex work follows [AGENTS.md](AGENTS.md) and the
+[recordkeeping guide](docs/research_memory/README.md). Preserve the original
+results, including negative or partial observations, and add a short searchable
+record as part of completing a meaningful attempt or investigation.
+
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/plaquette-curvature-profiles.git
+git clone https://github.com/jisung-jung88/plaquette-curvature-profiles.git
 cd plaquette-curvature-profiles
 pip install -r requirements.txt
 ```
@@ -161,7 +180,7 @@ python figures/fig8/make_fig8.py \
 
 - **η₃ sweep**: {0.0, 0.1, 0.2} — controls 3-local interaction strength
 - **n**: 2–7 qubits
-- **shots**: 2048 per circuit
+- **shots**: simulation settings and retained main-QPU histograms use 2048; retained final-R8 QPU metadata records 256. Interleaved ablation has four separate 512-shot segments; blocked ablation uses 2048 per setting. See [the source distinctions](docs/research_memory/STATUS.md).
 - **QPU**: IBM Fez (Heron processor)
 
 ## License

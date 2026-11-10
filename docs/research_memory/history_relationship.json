@@ -1,0 +1,1722 @@
+{
+  "verified_at": "2026-11-10",
+  "scope": "All commits reachable from the two observed main heads, six lightweight tags and release metadata; no network QPU execution or source edits.",
+  "repositories": {
+    "kappa": {
+      "repository": "jisung-jung88/kappa-profile",
+      "head": "a49a198e6327f42323e0f43c17ef58d8c535c15c",
+      "head_tree": "3d02a11118638ff3aabc7e6fdd5719969fe19782",
+      "commit_count": 9,
+      "linear": true,
+      "missing_parent_count": 0,
+      "commits": [
+        {
+          "commit": "5de87dc51900afd89b8ca4411129ea23ba886808",
+          "tree": "a19f166b0b549aae2537bc3f5095d32c97d75a5c",
+          "date": "2026-02-04T05:57:40Z",
+          "message": "Initial commit",
+          "parents": [],
+          "added_paths": [
+            ".gitignore",
+            "LICENSE"
+          ],
+          "deleted_paths": [],
+          "changed_paths": [],
+          "commit_url": "https://github.com/jisung-jung88/kappa-profile/commit/5de87dc51900afd89b8ca4411129ea23ba886808"
+        },
+        {
+          "commit": "ed862c55b4e1b19773af4b69c6aa70f872bfb276",
+          "tree": "a73ff1c3fbbf525d11f2d3751c46575e79317b9a",
+          "date": "2026-02-04T07:50:09Z",
+          "message": "Add files via upload",
+          "parents": [
+            "5de87dc51900afd89b8ca4411129ea23ba886808"
+          ],
+          "added_paths": [
+            "README.md",
+            "data/qpu/ablation_block_counts.json",
+            "data/qpu/ablation_block_run_meta.json",
+            "data/qpu/ablation_interleaved_counts.json",
+            "data/qpu/ablation_interleaved_run_meta.json",
+            "data/qpu/qpu_counts.json",
+            "data/qpu/qpu_run_meta.json",
+            "data/sim/grid_BFS_Shell_rows.csv",
+            "data/sim/grid_BFS_Shell_run_meta.json",
+            "data/sim/grid_BFS_Shell_stats_meta.json",
+            "data/sim/grid_BFS_Shell_trial_summary.csv",
+            "figures/fig3/fig3_data.py",
+            "figures/fig3/fig3_plot.py",
+            "figures/fig3/make_fig3.py",
+            "figures/fig4/fig4_sim_data.py",
+            "figures/fig4/fig4_sim_plot.py",
+            "figures/fig4/make_fig4.py",
+            "figures/fig5/fig5_data.py",
+            "figures/fig5/fig5_plot.py",
+            "figures/fig5/make_fig5.py",
+            "figures/fig6/fig6_data.py",
+            "figures/fig6/fig6_plot.py",
+            "figures/fig6/make_fig6.py",
+            "figures/fig8/fig8_data.py",
+            "figures/fig8/fig8_plot.py",
+            "figures/fig8/make_fig8.py",
+            "figures/fig9/fig9_data.py",
+            "figures/fig9/fig9_plot.py",
+            "figures/fig9/make_fig9.py",
+            "requirements.txt",
+            "src/qpu/diagonal_model_family_ibm_subgraph.py",
+            "src/qpu/ibm_fez_full_20251231_220523.json",
+            "src/qpu/model_provider.py",
+            "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n2.yaml",
+            "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n3.yaml",
+            "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n4.yaml",
+            "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n5.yaml",
+            "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n6.yaml",
+            "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+            "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n2.yaml",
+            "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n3.yaml",
+            "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n4.yaml",
+            "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n5.yaml",
+            "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n6.yaml",
+            "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n7.yaml",
+            "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n2.yaml",
+            "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n3.yaml",
+            "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n4.yaml",
+            "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n5.yaml",
+            "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n6.yaml",
+            "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n7.yaml",
+            "src/qpu/qiskit_runner.py",
+            "src/qpu/qiskit_runner.yaml",
+            "src/qpu/qiskit_runner_two_pairs.py",
+            "src/qpu/qiskit_runner_two_pairs.yaml",
+            "src/qpu/qiskit_runner_two_pairs_block.py",
+            "src/sim/diagonal_model_family_grid_BFS_Shell.py",
+            "src/sim/model_provider.py",
+            "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n2.yaml",
+            "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n3.yaml",
+            "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n4.yaml",
+            "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n5.yaml",
+            "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n6.yaml",
+            "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n7.yaml",
+            "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n2.yaml",
+            "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n3.yaml",
+            "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n4.yaml",
+            "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n5.yaml",
+            "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n6.yaml",
+            "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n7.yaml",
+            "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n2.yaml",
+            "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n3.yaml",
+            "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n4.yaml",
+            "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n5.yaml",
+            "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n6.yaml",
+            "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n7.yaml",
+            "src/sim/sim_runner.py",
+            "src/sim/sim_runner.yaml",
+            "src/sim/stats.py",
+            "tree_structure.txt"
+          ],
+          "deleted_paths": [],
+          "changed_paths": [],
+          "commit_url": "https://github.com/jisung-jung88/kappa-profile/commit/ed862c55b4e1b19773af4b69c6aa70f872bfb276"
+        },
+        {
+          "commit": "c94496cb2fc5bcb729e27c71ccd0ce9d24ae33b2",
+          "tree": "620379358ff3a9bc98fc7d812deae3fdf238204c",
+          "date": "2026-02-04T08:26:27Z",
+          "message": "Remove figures directory",
+          "parents": [
+            "ed862c55b4e1b19773af4b69c6aa70f872bfb276"
+          ],
+          "added_paths": [],
+          "deleted_paths": [
+            "figures/fig3/fig3_data.py",
+            "figures/fig3/fig3_plot.py",
+            "figures/fig3/make_fig3.py",
+            "figures/fig4/fig4_sim_data.py",
+            "figures/fig4/fig4_sim_plot.py",
+            "figures/fig4/make_fig4.py",
+            "figures/fig5/fig5_data.py",
+            "figures/fig5/fig5_plot.py",
+            "figures/fig5/make_fig5.py",
+            "figures/fig6/fig6_data.py",
+            "figures/fig6/fig6_plot.py",
+            "figures/fig6/make_fig6.py",
+            "figures/fig8/fig8_data.py",
+            "figures/fig8/fig8_plot.py",
+            "figures/fig8/make_fig8.py",
+            "figures/fig9/fig9_data.py",
+            "figures/fig9/fig9_plot.py",
+            "figures/fig9/make_fig9.py"
+          ],
+          "changed_paths": [],
+          "commit_url": "https://github.com/jisung-jung88/kappa-profile/commit/c94496cb2fc5bcb729e27c71ccd0ce9d24ae33b2"
+        },
+        {
+          "commit": "7d2d870edef52e3e9ce132c91bc3753cd6cd6040",
+          "tree": "0d84daa72bef95280e24459527cc09c2895ada0f",
+          "date": "2026-02-04T08:30:44Z",
+          "message": "Remove tree_structure and README",
+          "parents": [
+            "c94496cb2fc5bcb729e27c71ccd0ce9d24ae33b2"
+          ],
+          "added_paths": [],
+          "deleted_paths": [
+            "README.md"
+          ],
+          "changed_paths": [],
+          "commit_url": "https://github.com/jisung-jung88/kappa-profile/commit/7d2d870edef52e3e9ce132c91bc3753cd6cd6040"
+        },
+        {
+          "commit": "1a0afc365918c117a223d82b94cce65ab923cedd",
+          "tree": "295eaa0608eefc87d3d766d209254cdbe03b5621",
+          "date": "2026-02-04T08:31:47Z",
+          "message": "Remove tree_structure",
+          "parents": [
+            "7d2d870edef52e3e9ce132c91bc3753cd6cd6040"
+          ],
+          "added_paths": [],
+          "deleted_paths": [
+            "tree_structure.txt"
+          ],
+          "changed_paths": [],
+          "commit_url": "https://github.com/jisung-jung88/kappa-profile/commit/1a0afc365918c117a223d82b94cce65ab923cedd"
+        },
+        {
+          "commit": "4f58990ed63545c3388613458b3c27ef393efa2e",
+          "tree": "314156f932744f804871810c66629e0d7447148b",
+          "date": "2026-02-04T08:32:30Z",
+          "message": "Add files via upload",
+          "parents": [
+            "1a0afc365918c117a223d82b94cce65ab923cedd"
+          ],
+          "added_paths": [
+            "README.md",
+            "figures/fig3/fig3_data.py",
+            "figures/fig3/fig3_plot.py",
+            "figures/fig3/make_fig3.py",
+            "figures/fig4/fig4_sim_data.py",
+            "figures/fig4/fig4_sim_plot.py",
+            "figures/fig4/make_fig4.py",
+            "figures/fig5/fig5_data.py",
+            "figures/fig5/fig5_plot.py",
+            "figures/fig5/make_fig5.py",
+            "figures/fig6/fig6_data.py",
+            "figures/fig6/fig6_plot.py",
+            "figures/fig6/make_fig6.py",
+            "figures/fig7/fig7_data.py",
+            "figures/fig7/fig7_plot.py",
+            "figures/fig7/make_fig7.py",
+            "figures/fig8/fig8_data.py",
+            "figures/fig8/fig8_plot.py",
+            "figures/fig8/make_fig8.py",
+            "tree_structure.txt"
+          ],
+          "deleted_paths": [],
+          "changed_paths": [],
+          "commit_url": "https://github.com/jisung-jung88/kappa-profile/commit/4f58990ed63545c3388613458b3c27ef393efa2e"
+        },
+        {
+          "commit": "0dadfb87cab4918b03800a4db2d1f1b1c18679cc",
+          "tree": "a3a393d0a77bcf2a3c4b3b4ed1058dbeb39ac13c",
+          "date": "2026-02-09T07:02:16Z",
+          "message": "Update README.md",
+          "parents": [
+            "4f58990ed63545c3388613458b3c27ef393efa2e"
+          ],
+          "added_paths": [],
+          "deleted_paths": [],
+          "changed_paths": [
+            "README.md"
+          ],
+          "commit_url": "https://github.com/jisung-jung88/kappa-profile/commit/0dadfb87cab4918b03800a4db2d1f1b1c18679cc"
+        },
+        {
+          "commit": "a7dfd3f206f3a52d1d0845bb6ff9dd83e86ec403",
+          "tree": "e801fe19dcb9eba1afde6ce96a246919339d49a9",
+          "date": "2026-02-09T07:03:36Z",
+          "message": "Update README.md",
+          "parents": [
+            "0dadfb87cab4918b03800a4db2d1f1b1c18679cc"
+          ],
+          "added_paths": [],
+          "deleted_paths": [],
+          "changed_paths": [
+            "README.md"
+          ],
+          "commit_url": "https://github.com/jisung-jung88/kappa-profile/commit/a7dfd3f206f3a52d1d0845bb6ff9dd83e86ec403"
+        },
+        {
+          "commit": "a49a198e6327f42323e0f43c17ef58d8c535c15c",
+          "tree": "3d02a11118638ff3aabc7e6fdd5719969fe19782",
+          "date": "2026-02-09T07:25:09Z",
+          "message": "Update tree_structure.txt",
+          "parents": [
+            "a7dfd3f206f3a52d1d0845bb6ff9dd83e86ec403"
+          ],
+          "added_paths": [],
+          "deleted_paths": [],
+          "changed_paths": [
+            "tree_structure.txt"
+          ],
+          "commit_url": "https://github.com/jisung-jung88/kappa-profile/commit/a49a198e6327f42323e0f43c17ef58d8c535c15c"
+        }
+      ],
+      "tags": {
+        "refs/tags/v1.0.0": "ed862c55b4e1b19773af4b69c6aa70f872bfb276",
+        "refs/tags/v2.0.0": "4f58990ed63545c3388613458b3c27ef393efa2e",
+        "refs/tags/v2.0.1": "a7dfd3f206f3a52d1d0845bb6ff9dd83e86ec403",
+        "refs/tags/v2.0.2": "a49a198e6327f42323e0f43c17ef58d8c535c15c"
+      },
+      "releases": [
+        {
+          "tag": "v2.0.2",
+          "title": "v2.0.2 — PRA journal",
+          "published_at": "2026-02-09T07:26:54Z",
+          "body": "Revised release accompanying the manuscript submitted to Physical Review A:\r\n\r\n\"Context-dependent phase structure in Z-diagonal unitaries detected via plaquette curvature profiles\"\r\n\r\nChanges from v2.0.1:\r\n\r\nUpdated tree_structure.txt",
+          "url": "https://github.com/jisung-jung88/kappa-profile/releases/tag/v2.0.2",
+          "assets": []
+        },
+        {
+          "tag": "v2.0.1",
+          "title": "v2.0.1 — PRA journal",
+          "published_at": "2026-02-09T07:19:11Z",
+          "body": "Revised release accompanying the manuscript submitted to Physical Review A:\r\n\r\n\"Context-dependent phase structure in Z-diagonal unitaries detected via plaquette curvature profiles\"\r\n\r\nChanges from v2.0.0:\r\n\r\nUpdated readme",
+          "url": "https://github.com/jisung-jung88/kappa-profile/releases/tag/v2.0.1",
+          "assets": []
+        },
+        {
+          "tag": "v2.0.0",
+          "title": "v2.0.0 — PRA journal",
+          "published_at": "2026-02-04T08:34:01Z",
+          "body": "Revised release accompanying the manuscript submitted to Physical Review A:\r\n\r\n\"Context-dependent phase structure in Z-diagonal unitaries detected via plaquette curvature profiles\"\r\n\r\nChanges from v1.0.0:\r\n- Updated figures for PRA submission",
+          "url": "https://github.com/jisung-jung88/kappa-profile/releases/tag/v2.0.0",
+          "assets": []
+        },
+        {
+          "tag": "v1.0.0",
+          "title": "v1.0.0 — Quantum journal",
+          "published_at": "2026-02-04T07:55:59Z",
+          "body": "Initial release accompanying the manuscript submitted to Quantum:\r\n\r\n\"κ-Profiles for Detecting Context-Dependent Phase Structure in Z-Diagonal Unitaries\"\r\n\r\nIncludes:\r\n- κ-profile computation scripts\r\n- IBM QPU experiment code and raw data\r\n- Figure generation scripts",
+          "url": "https://github.com/jisung-jung88/kappa-profile/releases/tag/v1.0.0",
+          "assets": []
+        }
+      ]
+    },
+    "plaquette": {
+      "repository": "jisung-jung88/plaquette-curvature-profiles",
+      "head": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+      "head_tree": "6b9a5ceb9a2a662511ab7312114049e9ed847228",
+      "commit_count": 3,
+      "linear": true,
+      "missing_parent_count": 0,
+      "commits": [
+        {
+          "commit": "295eece2206cdc68b85e7c44709efb8936d5fd1c",
+          "tree": "a19f166b0b549aae2537bc3f5095d32c97d75a5c",
+          "date": "2026-02-13T05:24:14Z",
+          "message": "Initial commit",
+          "parents": [],
+          "added_paths": [
+            ".gitignore",
+            "LICENSE"
+          ],
+          "deleted_paths": [],
+          "changed_paths": [],
+          "commit_url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/commit/295eece2206cdc68b85e7c44709efb8936d5fd1c"
+        },
+        {
+          "commit": "00635d5d5ae3cf459cc3bde32b2524aab4352640",
+          "tree": "970db8cf45c795ad6d6cae424d513639fc5dcf4a",
+          "date": "2026-02-13T05:33:43Z",
+          "message": "Add files via upload",
+          "parents": [
+            "295eece2206cdc68b85e7c44709efb8936d5fd1c"
+          ],
+          "added_paths": [
+            "data/qpu/ablation_block_counts.json",
+            "data/qpu/ablation_block_run_meta.json",
+            "data/qpu/ablation_interleaved_counts.json",
+            "data/qpu/ablation_interleaved_run_meta.json",
+            "data/qpu/qpu_counts.json",
+            "data/qpu/qpu_run_meta.json",
+            "data/sim/grid_BFS_Shell_rows.csv",
+            "data/sim/grid_BFS_Shell_run_meta.json",
+            "data/sim/grid_BFS_Shell_stats_meta.json",
+            "data/sim/grid_BFS_Shell_trial_summary.csv",
+            "figures/fig3/fig3_data.py",
+            "figures/fig3/fig3_plot.py",
+            "figures/fig3/make_fig3.py",
+            "figures/fig4/fig4_sim_data.py",
+            "figures/fig4/fig4_sim_plot.py",
+            "figures/fig4/make_fig4.py",
+            "figures/fig5/fig5_data.py",
+            "figures/fig5/fig5_plot.py",
+            "figures/fig5/make_fig5.py",
+            "figures/fig6/fig6_data.py",
+            "figures/fig6/fig6_plot.py",
+            "figures/fig6/make_fig6.py",
+            "figures/fig7/fig7_data.py",
+            "figures/fig7/fig7_plot.py",
+            "figures/fig7/make_fig7.py",
+            "figures/fig8/fig8_data.py",
+            "figures/fig8/fig8_plot.py",
+            "figures/fig8/make_fig8.py",
+            "requirements.txt",
+            "src/qpu/diagonal_model_family_ibm_subgraph.py",
+            "src/qpu/ibm_fez_full_20251231_220523.json",
+            "src/qpu/model_provider.py",
+            "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n2.yaml",
+            "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n3.yaml",
+            "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n4.yaml",
+            "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n5.yaml",
+            "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n6.yaml",
+            "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+            "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n2.yaml",
+            "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n3.yaml",
+            "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n4.yaml",
+            "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n5.yaml",
+            "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n6.yaml",
+            "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n7.yaml",
+            "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n2.yaml",
+            "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n3.yaml",
+            "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n4.yaml",
+            "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n5.yaml",
+            "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n6.yaml",
+            "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n7.yaml",
+            "src/qpu/qiskit_runner.py",
+            "src/qpu/qiskit_runner.yaml",
+            "src/qpu/qiskit_runner_two_pairs.py",
+            "src/qpu/qiskit_runner_two_pairs.yaml",
+            "src/qpu/qiskit_runner_two_pairs_block.py",
+            "src/sim/diagonal_model_family_grid_BFS_Shell.py",
+            "src/sim/model_provider.py",
+            "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n2.yaml",
+            "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n3.yaml",
+            "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n4.yaml",
+            "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n5.yaml",
+            "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n6.yaml",
+            "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n7.yaml",
+            "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n2.yaml",
+            "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n3.yaml",
+            "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n4.yaml",
+            "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n5.yaml",
+            "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n6.yaml",
+            "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n7.yaml",
+            "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n2.yaml",
+            "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n3.yaml",
+            "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n4.yaml",
+            "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n5.yaml",
+            "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n6.yaml",
+            "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n7.yaml",
+            "src/sim/sim_runner.py",
+            "src/sim/sim_runner.yaml",
+            "src/sim/stats.py",
+            "tree_structure.txt"
+          ],
+          "deleted_paths": [],
+          "changed_paths": [],
+          "commit_url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/commit/00635d5d5ae3cf459cc3bde32b2524aab4352640"
+        },
+        {
+          "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+          "tree": "6b9a5ceb9a2a662511ab7312114049e9ed847228",
+          "date": "2026-03-06T12:05:34Z",
+          "message": "Add files via upload",
+          "parents": [
+            "00635d5d5ae3cf459cc3bde32b2524aab4352640"
+          ],
+          "added_paths": [
+            "README.md"
+          ],
+          "deleted_paths": [],
+          "changed_paths": [],
+          "commit_url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/commit/bd4e4f24175d71a360f86bd88fda35c91ae30219"
+        }
+      ],
+      "tags": {
+        "refs/tags/v1.0.0": "00635d5d5ae3cf459cc3bde32b2524aab4352640",
+        "refs/tags/v1.0.1": "bd4e4f24175d71a360f86bd88fda35c91ae30219"
+      },
+      "releases": [
+        {
+          "tag": "v1.0.1",
+          "title": "v1.0.1",
+          "published_at": "2026-03-06T12:07:42Z",
+          "body": "Plaquette curvatureprofiles data\r\nv1.0.1",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/releases/tag/v1.0.1",
+          "assets": []
+        },
+        {
+          "tag": "v1.0.0",
+          "title": "v1.0.0",
+          "published_at": "2026-02-13T05:35:23Z",
+          "body": "Plaquette curvatureprofiles data\r\nv1.0.0",
+          "url": "https://github.com/jisung-jung88/plaquette-curvature-profiles/releases/tag/v1.0.0",
+          "assets": []
+        }
+      ]
+    }
+  },
+  "common_reachable_commit_count": 0,
+  "current_overlap": {
+    "files_per_repository": 82,
+    "identical_path_and_blob_count": 80,
+    "different_paths": [
+      "README.md",
+      "tree_structure.txt"
+    ],
+    "kappa_only_paths": [],
+    "plaquette_only_paths": [],
+    "same": [
+      {
+        "path": ".gitignore",
+        "kappa_blob": "b7faf403d915ca307532bb0eb9cceaf0214e8e5b",
+        "plaquette_blob": "b7faf403d915ca307532bb0eb9cceaf0214e8e5b",
+        "kappa_bytes": 4688,
+        "plaquette_bytes": 4688,
+        "kappa_sha256": "48b33f9f89ef24f8a66f461ea9278e7ecf21b4660c26088989d231e53c578724",
+        "plaquette_sha256": "48b33f9f89ef24f8a66f461ea9278e7ecf21b4660c26088989d231e53c578724"
+      },
+      {
+        "path": "LICENSE",
+        "kappa_blob": "206e21690f9224a0e09c87ad2eae53242f65204b",
+        "plaquette_blob": "206e21690f9224a0e09c87ad2eae53242f65204b",
+        "kappa_bytes": 1070,
+        "plaquette_bytes": 1070,
+        "kappa_sha256": "77ceb357e1e373341745990c3a6a0c29abfbaaab2f828b92fa24a24ecdd866a8",
+        "plaquette_sha256": "77ceb357e1e373341745990c3a6a0c29abfbaaab2f828b92fa24a24ecdd866a8"
+      },
+      {
+        "path": "data/qpu/ablation_block_counts.json",
+        "kappa_blob": "7a67a0b1fec9eac8ae0b59392ffbec94bc973d9d",
+        "plaquette_blob": "7a67a0b1fec9eac8ae0b59392ffbec94bc973d9d",
+        "kappa_bytes": 52665,
+        "plaquette_bytes": 52665,
+        "kappa_sha256": "b1b4f3a1e51fe9033bbfdc78930d0df7527a62c0c310fc27e81cf4969fe84469",
+        "plaquette_sha256": "b1b4f3a1e51fe9033bbfdc78930d0df7527a62c0c310fc27e81cf4969fe84469"
+      },
+      {
+        "path": "data/qpu/ablation_block_run_meta.json",
+        "kappa_blob": "fb3418f5f44fac549272a58d6a01f891b786b589",
+        "plaquette_blob": "fb3418f5f44fac549272a58d6a01f891b786b589",
+        "kappa_bytes": 8072,
+        "plaquette_bytes": 8072,
+        "kappa_sha256": "002495a22913989675d56f7746fb2c817ee7e3643d8af2513e9ad8e30e88ed16",
+        "plaquette_sha256": "002495a22913989675d56f7746fb2c817ee7e3643d8af2513e9ad8e30e88ed16"
+      },
+      {
+        "path": "data/qpu/ablation_interleaved_counts.json",
+        "kappa_blob": "aed78252b5c177950a5d81c8b370bc9182f05f3e",
+        "plaquette_blob": "aed78252b5c177950a5d81c8b370bc9182f05f3e",
+        "kappa_bytes": 248482,
+        "plaquette_bytes": 248482,
+        "kappa_sha256": "b9b0cb874e196b5171419c4756a69543e1fbea2555c27002638deb64f26037de",
+        "plaquette_sha256": "b9b0cb874e196b5171419c4756a69543e1fbea2555c27002638deb64f26037de"
+      },
+      {
+        "path": "data/qpu/ablation_interleaved_run_meta.json",
+        "kappa_blob": "5366a6779184c94e240dc9f4677fdbff99be5339",
+        "plaquette_blob": "5366a6779184c94e240dc9f4677fdbff99be5339",
+        "kappa_bytes": 29902,
+        "plaquette_bytes": 29902,
+        "kappa_sha256": "eb1cbc3b80fd63c1c18d53a058b4f6dd968d5ac517404dbcb1ee7b6957a91101",
+        "plaquette_sha256": "eb1cbc3b80fd63c1c18d53a058b4f6dd968d5ac517404dbcb1ee7b6957a91101"
+      },
+      {
+        "path": "data/qpu/qpu_counts.json",
+        "kappa_blob": "1ec96689c3c80e8a86b824e09258e23492500d41",
+        "plaquette_blob": "1ec96689c3c80e8a86b824e09258e23492500d41",
+        "kappa_bytes": 770751,
+        "plaquette_bytes": 770751,
+        "kappa_sha256": "c9ac526aa50e42335749049b338dd6e341d0a3189a4450a99ac03ebd9510bae0",
+        "plaquette_sha256": "c9ac526aa50e42335749049b338dd6e341d0a3189a4450a99ac03ebd9510bae0"
+      },
+      {
+        "path": "data/qpu/qpu_run_meta.json",
+        "kappa_blob": "bce6f72a3980f57c48d0fa48b1b78b505cf80383",
+        "plaquette_blob": "bce6f72a3980f57c48d0fa48b1b78b505cf80383",
+        "kappa_bytes": 290277,
+        "plaquette_bytes": 290277,
+        "kappa_sha256": "01cddbf79c380eabb824a71ca00099a0ec604da272ede053de50a41013c3ccc8",
+        "plaquette_sha256": "01cddbf79c380eabb824a71ca00099a0ec604da272ede053de50a41013c3ccc8"
+      },
+      {
+        "path": "data/sim/grid_BFS_Shell_rows.csv",
+        "kappa_blob": "4d7935d2ce152b2df8256d135a9862ba8020b767",
+        "plaquette_blob": "4d7935d2ce152b2df8256d135a9862ba8020b767",
+        "kappa_bytes": 878851,
+        "plaquette_bytes": 878851,
+        "kappa_sha256": "b0b091c0c7690c4906eeb68eeef038998a6b6e791a9a384655e4c0b2f4314f4f",
+        "plaquette_sha256": "b0b091c0c7690c4906eeb68eeef038998a6b6e791a9a384655e4c0b2f4314f4f"
+      },
+      {
+        "path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "kappa_blob": "b74471f6a020ead3f1aea596c2978e21f6bd4028",
+        "plaquette_blob": "b74471f6a020ead3f1aea596c2978e21f6bd4028",
+        "kappa_bytes": 32148,
+        "plaquette_bytes": 32148,
+        "kappa_sha256": "712c8729095210bb4032dbdfb1eb6014dab76345f7dde5aba05c3074c6e6213b",
+        "plaquette_sha256": "712c8729095210bb4032dbdfb1eb6014dab76345f7dde5aba05c3074c6e6213b"
+      },
+      {
+        "path": "data/sim/grid_BFS_Shell_stats_meta.json",
+        "kappa_blob": "9581d43a7f1edce1bf46640764b227a56eaaeeaf",
+        "plaquette_blob": "9581d43a7f1edce1bf46640764b227a56eaaeeaf",
+        "kappa_bytes": 5759,
+        "plaquette_bytes": 5759,
+        "kappa_sha256": "411f01c937bb6aa4c341de3085e186d9d195562acaf1752a4f3ba604ef4b4df2",
+        "plaquette_sha256": "411f01c937bb6aa4c341de3085e186d9d195562acaf1752a4f3ba604ef4b4df2"
+      },
+      {
+        "path": "data/sim/grid_BFS_Shell_trial_summary.csv",
+        "kappa_blob": "d40cb9cd19f7a2d681a07a907855955c98ba0ef5",
+        "plaquette_blob": "d40cb9cd19f7a2d681a07a907855955c98ba0ef5",
+        "kappa_bytes": 56485,
+        "plaquette_bytes": 56485,
+        "kappa_sha256": "966d7d6ddd0d2a2134e509bbc910fe6d26fe047f7b3377f2994eaa4cf6726ca0",
+        "plaquette_sha256": "966d7d6ddd0d2a2134e509bbc910fe6d26fe047f7b3377f2994eaa4cf6726ca0"
+      },
+      {
+        "path": "figures/fig3/fig3_data.py",
+        "kappa_blob": "05ec629017cccb3a53a1e2f80402ceb35d92f387",
+        "plaquette_blob": "05ec629017cccb3a53a1e2f80402ceb35d92f387",
+        "kappa_bytes": 17266,
+        "plaquette_bytes": 17266,
+        "kappa_sha256": "6eab423e6143411d26016514ae0039c9cea0a7de83bcc7618f76a54bd47c7bdb",
+        "plaquette_sha256": "6eab423e6143411d26016514ae0039c9cea0a7de83bcc7618f76a54bd47c7bdb"
+      },
+      {
+        "path": "figures/fig3/fig3_plot.py",
+        "kappa_blob": "d70dbc0d9a9ac4ba121f2491b8d9be1a6c6b4fff",
+        "plaquette_blob": "d70dbc0d9a9ac4ba121f2491b8d9be1a6c6b4fff",
+        "kappa_bytes": 11186,
+        "plaquette_bytes": 11186,
+        "kappa_sha256": "c9d4956ea9e8c2a679510f59708e85886e301908be919a750c67f03fb07e5fb6",
+        "plaquette_sha256": "c9d4956ea9e8c2a679510f59708e85886e301908be919a750c67f03fb07e5fb6"
+      },
+      {
+        "path": "figures/fig3/make_fig3.py",
+        "kappa_blob": "bdd09f569941aa37a8b041ca4bd6bace51fa52d7",
+        "plaquette_blob": "bdd09f569941aa37a8b041ca4bd6bace51fa52d7",
+        "kappa_bytes": 5346,
+        "plaquette_bytes": 5346,
+        "kappa_sha256": "901b747db03528c3b7c95b572b6bc2ec0a023ae43843d6b14b806d77051b59f0",
+        "plaquette_sha256": "901b747db03528c3b7c95b572b6bc2ec0a023ae43843d6b14b806d77051b59f0"
+      },
+      {
+        "path": "figures/fig4/fig4_sim_data.py",
+        "kappa_blob": "18f2698951aa5bd57b54c8ed32de160393babd02",
+        "plaquette_blob": "18f2698951aa5bd57b54c8ed32de160393babd02",
+        "kappa_bytes": 14791,
+        "plaquette_bytes": 14791,
+        "kappa_sha256": "1409c3bf0da7a6bbe957116ef485a973ca7f647c3a72dfa6c1bd5f288200f611",
+        "plaquette_sha256": "1409c3bf0da7a6bbe957116ef485a973ca7f647c3a72dfa6c1bd5f288200f611"
+      },
+      {
+        "path": "figures/fig4/fig4_sim_plot.py",
+        "kappa_blob": "8d2b7c342ace158dc27bdfbcb49d64d614ef2fbe",
+        "plaquette_blob": "8d2b7c342ace158dc27bdfbcb49d64d614ef2fbe",
+        "kappa_bytes": 11269,
+        "plaquette_bytes": 11269,
+        "kappa_sha256": "ab05fdc16a689745bf415bdb0926b17b9dd43ec06379cabc5d6fc140644a1e02",
+        "plaquette_sha256": "ab05fdc16a689745bf415bdb0926b17b9dd43ec06379cabc5d6fc140644a1e02"
+      },
+      {
+        "path": "figures/fig4/make_fig4.py",
+        "kappa_blob": "d03284f57fa3420935afa1d6764efbb6ae282566",
+        "plaquette_blob": "d03284f57fa3420935afa1d6764efbb6ae282566",
+        "kappa_bytes": 6459,
+        "plaquette_bytes": 6459,
+        "kappa_sha256": "233597e584abd6b5dc201f5acc3deed8291ac74c77350ad5fffeec398399865a",
+        "plaquette_sha256": "233597e584abd6b5dc201f5acc3deed8291ac74c77350ad5fffeec398399865a"
+      },
+      {
+        "path": "figures/fig5/fig5_data.py",
+        "kappa_blob": "8b7f438b0236a2ba606b2b731cb2e6c35d8067c8",
+        "plaquette_blob": "8b7f438b0236a2ba606b2b731cb2e6c35d8067c8",
+        "kappa_bytes": 32498,
+        "plaquette_bytes": 32498,
+        "kappa_sha256": "2b924a29b6214fb7fe5266836d8e72db671d4f602cb9fc57085902557d0e1321",
+        "plaquette_sha256": "2b924a29b6214fb7fe5266836d8e72db671d4f602cb9fc57085902557d0e1321"
+      },
+      {
+        "path": "figures/fig5/fig5_plot.py",
+        "kappa_blob": "dc1f745acbe706e2c001e3c22400f6a775006983",
+        "plaquette_blob": "dc1f745acbe706e2c001e3c22400f6a775006983",
+        "kappa_bytes": 10203,
+        "plaquette_bytes": 10203,
+        "kappa_sha256": "45561c92fb175bccfeda0680df67a23f9f919e86ee54c18cf4021838678b4cc2",
+        "plaquette_sha256": "45561c92fb175bccfeda0680df67a23f9f919e86ee54c18cf4021838678b4cc2"
+      },
+      {
+        "path": "figures/fig5/make_fig5.py",
+        "kappa_blob": "a90be4c1781ae20936a8ed6d7a604f7828ea8cff",
+        "plaquette_blob": "a90be4c1781ae20936a8ed6d7a604f7828ea8cff",
+        "kappa_bytes": 5825,
+        "plaquette_bytes": 5825,
+        "kappa_sha256": "026c863a21bbdc26f9708ecc977efd4406319f5a1dd0e9965074bf55f9dfeea1",
+        "plaquette_sha256": "026c863a21bbdc26f9708ecc977efd4406319f5a1dd0e9965074bf55f9dfeea1"
+      },
+      {
+        "path": "figures/fig6/fig6_data.py",
+        "kappa_blob": "f8049bdec4fdbe3692f40d7d29d01af0e024f112",
+        "plaquette_blob": "f8049bdec4fdbe3692f40d7d29d01af0e024f112",
+        "kappa_bytes": 21374,
+        "plaquette_bytes": 21374,
+        "kappa_sha256": "cf35880cfbca72c2b86f37ccd1faaab7288cfe1e22497ecb6cbfae1771545210",
+        "plaquette_sha256": "cf35880cfbca72c2b86f37ccd1faaab7288cfe1e22497ecb6cbfae1771545210"
+      },
+      {
+        "path": "figures/fig6/fig6_plot.py",
+        "kappa_blob": "9e1c1e1db5fbc0cc3a4172988820c42ade01fd47",
+        "plaquette_blob": "9e1c1e1db5fbc0cc3a4172988820c42ade01fd47",
+        "kappa_bytes": 11370,
+        "plaquette_bytes": 11370,
+        "kappa_sha256": "d98c9c3311071ec2b557709fe13982620ccd8f13a577a23d7508d05be45de218",
+        "plaquette_sha256": "d98c9c3311071ec2b557709fe13982620ccd8f13a577a23d7508d05be45de218"
+      },
+      {
+        "path": "figures/fig6/make_fig6.py",
+        "kappa_blob": "c228179345a4e574a10bb6af1d87252e7388729b",
+        "plaquette_blob": "c228179345a4e574a10bb6af1d87252e7388729b",
+        "kappa_bytes": 5907,
+        "plaquette_bytes": 5907,
+        "kappa_sha256": "33a8184de7c3b1edacd16c653c87044f4a7c0b984af85677181ec0589e9c2eb2",
+        "plaquette_sha256": "33a8184de7c3b1edacd16c653c87044f4a7c0b984af85677181ec0589e9c2eb2"
+      },
+      {
+        "path": "figures/fig7/fig7_data.py",
+        "kappa_blob": "af5ee595df552eb053641f1c6f856e4e9ce4aab9",
+        "plaquette_blob": "af5ee595df552eb053641f1c6f856e4e9ce4aab9",
+        "kappa_bytes": 22540,
+        "plaquette_bytes": 22540,
+        "kappa_sha256": "30018925fe0330ca2ffb47b7f54eb8f05895336fa5520cc4ec73475e911af18c",
+        "plaquette_sha256": "30018925fe0330ca2ffb47b7f54eb8f05895336fa5520cc4ec73475e911af18c"
+      },
+      {
+        "path": "figures/fig7/fig7_plot.py",
+        "kappa_blob": "c0232e6709e54e923db33ce7fff3ce413d9f3014",
+        "plaquette_blob": "c0232e6709e54e923db33ce7fff3ce413d9f3014",
+        "kappa_bytes": 11471,
+        "plaquette_bytes": 11471,
+        "kappa_sha256": "5bb30b6c286a685b424e6fc5914ae4d0fd4ac2eaaad0942c2653d9814e8056e5",
+        "plaquette_sha256": "5bb30b6c286a685b424e6fc5914ae4d0fd4ac2eaaad0942c2653d9814e8056e5"
+      },
+      {
+        "path": "figures/fig7/make_fig7.py",
+        "kappa_blob": "f191ef444911a478936217aab653773397ea4c7d",
+        "plaquette_blob": "f191ef444911a478936217aab653773397ea4c7d",
+        "kappa_bytes": 4462,
+        "plaquette_bytes": 4462,
+        "kappa_sha256": "6426a768aaa28ef681fc242eb1244ca6e51b488b3237395ec971e5d366f19936",
+        "plaquette_sha256": "6426a768aaa28ef681fc242eb1244ca6e51b488b3237395ec971e5d366f19936"
+      },
+      {
+        "path": "figures/fig8/fig8_data.py",
+        "kappa_blob": "cee1dba3c1b18ffc5968dd746a0b581214da4d68",
+        "plaquette_blob": "cee1dba3c1b18ffc5968dd746a0b581214da4d68",
+        "kappa_bytes": 26437,
+        "plaquette_bytes": 26437,
+        "kappa_sha256": "f2ab5c618cb76fda287d61e1eb09181f10a626a2b1e699a3d5a32abc8c8d959c",
+        "plaquette_sha256": "f2ab5c618cb76fda287d61e1eb09181f10a626a2b1e699a3d5a32abc8c8d959c"
+      },
+      {
+        "path": "figures/fig8/fig8_plot.py",
+        "kappa_blob": "242385869078f2b1fb85be7a61c45c7c46094e34",
+        "plaquette_blob": "242385869078f2b1fb85be7a61c45c7c46094e34",
+        "kappa_bytes": 12722,
+        "plaquette_bytes": 12722,
+        "kappa_sha256": "73ea89500ca371896607647d7ada680e84bfc9985e26fb89a4a5d0f5992144aa",
+        "plaquette_sha256": "73ea89500ca371896607647d7ada680e84bfc9985e26fb89a4a5d0f5992144aa"
+      },
+      {
+        "path": "figures/fig8/make_fig8.py",
+        "kappa_blob": "2130ef5ed28567787450321f69b78687070b2722",
+        "plaquette_blob": "2130ef5ed28567787450321f69b78687070b2722",
+        "kappa_bytes": 7736,
+        "plaquette_bytes": 7736,
+        "kappa_sha256": "177ec975d50b48bbeaf3852ebd88b949d2bbee62ec9bbc0bc2cf08af02da3911",
+        "plaquette_sha256": "177ec975d50b48bbeaf3852ebd88b949d2bbee62ec9bbc0bc2cf08af02da3911"
+      },
+      {
+        "path": "requirements.txt",
+        "kappa_blob": "c284836a12e1819c30d8a295268cf3194a44cf4d",
+        "plaquette_blob": "c284836a12e1819c30d8a295268cf3194a44cf4d",
+        "kappa_bytes": 186,
+        "plaquette_bytes": 186,
+        "kappa_sha256": "d7db47fcc90cc46f6b10a46142b93b50bc31300d68f0d0eb0d54e6475f2d86ea",
+        "plaquette_sha256": "d7db47fcc90cc46f6b10a46142b93b50bc31300d68f0d0eb0d54e6475f2d86ea"
+      },
+      {
+        "path": "src/qpu/diagonal_model_family_ibm_subgraph.py",
+        "kappa_blob": "65216a8b7156bbe93b24fa40de38e833e55b75d5",
+        "plaquette_blob": "65216a8b7156bbe93b24fa40de38e833e55b75d5",
+        "kappa_bytes": 22715,
+        "plaquette_bytes": 22715,
+        "kappa_sha256": "2bfd33470f8a350ea8c8cc75dbe7ee3f163f3de6d8824aab489d9baaf27cfe0f",
+        "plaquette_sha256": "2bfd33470f8a350ea8c8cc75dbe7ee3f163f3de6d8824aab489d9baaf27cfe0f"
+      },
+      {
+        "path": "src/qpu/ibm_fez_full_20251231_220523.json",
+        "kappa_blob": "0c9919f4889d55addea9f9bbb753ccf68934fdf4",
+        "plaquette_blob": "0c9919f4889d55addea9f9bbb753ccf68934fdf4",
+        "kappa_bytes": 1197393,
+        "plaquette_bytes": 1197393,
+        "kappa_sha256": "9a36cbca831059af718f6b267577abfe49c4ec30a2b3c0fd81c1c69e341b5881",
+        "plaquette_sha256": "9a36cbca831059af718f6b267577abfe49c4ec30a2b3c0fd81c1c69e341b5881"
+      },
+      {
+        "path": "src/qpu/model_provider.py",
+        "kappa_blob": "f43da03f3bb6f7bc8fbeec3b7d95a61c020dfda3",
+        "plaquette_blob": "f43da03f3bb6f7bc8fbeec3b7d95a61c020dfda3",
+        "kappa_bytes": 11859,
+        "plaquette_bytes": 11859,
+        "kappa_sha256": "d09081480a9a4962b8ca205a2d606217ebac36587d1d8cf4d0305b4d4919bf25",
+        "plaquette_sha256": "d09081480a9a4962b8ca205a2d606217ebac36587d1d8cf4d0305b4d4919bf25"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n2.yaml",
+        "kappa_blob": "4f577f321eedf8cf0e54cddae8f538bfdde1270d",
+        "plaquette_blob": "4f577f321eedf8cf0e54cddae8f538bfdde1270d",
+        "kappa_bytes": 583,
+        "plaquette_bytes": 583,
+        "kappa_sha256": "b4742caf2b652daf4732665a1bccdaa8436a77ece61380ad256dbb53a6db1f9d",
+        "plaquette_sha256": "b4742caf2b652daf4732665a1bccdaa8436a77ece61380ad256dbb53a6db1f9d"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n3.yaml",
+        "kappa_blob": "601e9901abc09848f94d1926c15fe9d616524dc0",
+        "plaquette_blob": "601e9901abc09848f94d1926c15fe9d616524dc0",
+        "kappa_bytes": 698,
+        "plaquette_bytes": 698,
+        "kappa_sha256": "8561316b1de3f6441db3cf654806935683ed50d2ed2fc4cefe958107c511042b",
+        "plaquette_sha256": "8561316b1de3f6441db3cf654806935683ed50d2ed2fc4cefe958107c511042b"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n4.yaml",
+        "kappa_blob": "f971dd6ed7e75e1a28d855ae90525b80a8d6f155",
+        "plaquette_blob": "f971dd6ed7e75e1a28d855ae90525b80a8d6f155",
+        "kappa_bytes": 813,
+        "plaquette_bytes": 813,
+        "kappa_sha256": "ea6072882cdb2e218d21b402ccc0234451356680451091a66eaaeb5b57099c9c",
+        "plaquette_sha256": "ea6072882cdb2e218d21b402ccc0234451356680451091a66eaaeb5b57099c9c"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n5.yaml",
+        "kappa_blob": "6d21fe08a89fd38d9b453063ba73785321b52504",
+        "plaquette_blob": "6d21fe08a89fd38d9b453063ba73785321b52504",
+        "kappa_bytes": 868,
+        "plaquette_bytes": 868,
+        "kappa_sha256": "dee9303423ff77efbc1a75920f8c779a55b09d34a89bc120619b1a3950521eaf",
+        "plaquette_sha256": "dee9303423ff77efbc1a75920f8c779a55b09d34a89bc120619b1a3950521eaf"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n6.yaml",
+        "kappa_blob": "4d0753a7d309ebd3bc0faacadc9bd625ef76b5c7",
+        "plaquette_blob": "4d0753a7d309ebd3bc0faacadc9bd625ef76b5c7",
+        "kappa_bytes": 922,
+        "plaquette_bytes": 922,
+        "kappa_sha256": "237a1ad4adde26f75c4058a24d20feb6cbccc4dd7abdbdce28a9bd66b2f708d9",
+        "plaquette_sha256": "237a1ad4adde26f75c4058a24d20feb6cbccc4dd7abdbdce28a9bd66b2f708d9"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta00/diagonal_model_ibm_fez_subgraph_n7.yaml",
+        "kappa_blob": "e609d5dfad8e27c6c5358cbe310e16bfd5af5c1d",
+        "plaquette_blob": "e609d5dfad8e27c6c5358cbe310e16bfd5af5c1d",
+        "kappa_bytes": 976,
+        "plaquette_bytes": 976,
+        "kappa_sha256": "4359ff532c5445e09587c521451fd316fc59d0713dfef622f120378fd9600a58",
+        "plaquette_sha256": "4359ff532c5445e09587c521451fd316fc59d0713dfef622f120378fd9600a58"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n2.yaml",
+        "kappa_blob": "7a59fa69284766dbbba73bb7bcb3b643fd00a3f1",
+        "plaquette_blob": "7a59fa69284766dbbba73bb7bcb3b643fd00a3f1",
+        "kappa_bytes": 583,
+        "plaquette_bytes": 583,
+        "kappa_sha256": "50c48be83bc5b27a985999b778d32faedb9581ab52dd831e12688be2be942b70",
+        "plaquette_sha256": "50c48be83bc5b27a985999b778d32faedb9581ab52dd831e12688be2be942b70"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n3.yaml",
+        "kappa_blob": "3c15716a6a29a458a6162e6ad46ab77c16f3040f",
+        "plaquette_blob": "3c15716a6a29a458a6162e6ad46ab77c16f3040f",
+        "kappa_bytes": 711,
+        "plaquette_bytes": 711,
+        "kappa_sha256": "fa2bf4848eb98efbaa2ab82361d900acff70611188a0afd7bcdade33c5a21606",
+        "plaquette_sha256": "fa2bf4848eb98efbaa2ab82361d900acff70611188a0afd7bcdade33c5a21606"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n4.yaml",
+        "kappa_blob": "316dca48639b545e3a36df4d7e87688a1ec435b2",
+        "plaquette_blob": "316dca48639b545e3a36df4d7e87688a1ec435b2",
+        "kappa_bytes": 838,
+        "plaquette_bytes": 838,
+        "kappa_sha256": "7fb25176d70b758127d8bd15beeb892ce597d49a3eb6ea131ef49b3bc9996bc4",
+        "plaquette_sha256": "7fb25176d70b758127d8bd15beeb892ce597d49a3eb6ea131ef49b3bc9996bc4"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n5.yaml",
+        "kappa_blob": "0c62c432a56eee180491394c8eef05ca177388b8",
+        "plaquette_blob": "0c62c432a56eee180491394c8eef05ca177388b8",
+        "kappa_bytes": 893,
+        "plaquette_bytes": 893,
+        "kappa_sha256": "21448e202483bdf2099dce769e65d132cc035209eacd21c0ce9677c3fcf66f7e",
+        "plaquette_sha256": "21448e202483bdf2099dce769e65d132cc035209eacd21c0ce9677c3fcf66f7e"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n6.yaml",
+        "kappa_blob": "9043f90088ef7fb4bca2eb9612e13b01e45d64a4",
+        "plaquette_blob": "9043f90088ef7fb4bca2eb9612e13b01e45d64a4",
+        "kappa_bytes": 947,
+        "plaquette_bytes": 947,
+        "kappa_sha256": "d54f678acb53169ba6bf3b4c31f7477c25323393c5ef015b43c3bfa4ec179bbf",
+        "plaquette_sha256": "d54f678acb53169ba6bf3b4c31f7477c25323393c5ef015b43c3bfa4ec179bbf"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta01/diagonal_model_ibm_fez_subgraph_n7.yaml",
+        "kappa_blob": "09f4e84c2e63d98a199ba1bab1e6f712ec8f6012",
+        "plaquette_blob": "09f4e84c2e63d98a199ba1bab1e6f712ec8f6012",
+        "kappa_bytes": 1001,
+        "plaquette_bytes": 1001,
+        "kappa_sha256": "f38509449a0f090472f88a7399d9dbb3a8898b35f5ad3665747d6b3e01017997",
+        "plaquette_sha256": "f38509449a0f090472f88a7399d9dbb3a8898b35f5ad3665747d6b3e01017997"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n2.yaml",
+        "kappa_blob": "fee1c21803e175f808a72afd8e15e813f4b04dd4",
+        "plaquette_blob": "fee1c21803e175f808a72afd8e15e813f4b04dd4",
+        "kappa_bytes": 583,
+        "plaquette_bytes": 583,
+        "kappa_sha256": "51e83a0690e61d47fc2597f501669a7cc6c6c8339013ef68248688b49594c771",
+        "plaquette_sha256": "51e83a0690e61d47fc2597f501669a7cc6c6c8339013ef68248688b49594c771"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n3.yaml",
+        "kappa_blob": "14b2dc54b95a9c78cbeb7a7d2ed2bdea126132cd",
+        "plaquette_blob": "14b2dc54b95a9c78cbeb7a7d2ed2bdea126132cd",
+        "kappa_bytes": 710,
+        "plaquette_bytes": 710,
+        "kappa_sha256": "d2cbf150680494bf05888935f6e29ac1c1de8d4b8aeb32ec2bba6b04f340f8de",
+        "plaquette_sha256": "d2cbf150680494bf05888935f6e29ac1c1de8d4b8aeb32ec2bba6b04f340f8de"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n4.yaml",
+        "kappa_blob": "a315a2fd50c8f6f569d0185d2d82364ce83dc1a5",
+        "plaquette_blob": "a315a2fd50c8f6f569d0185d2d82364ce83dc1a5",
+        "kappa_bytes": 836,
+        "plaquette_bytes": 836,
+        "kappa_sha256": "b996532eb17118a8f0f20d2c042efb7b0341ffcb90f5b8ef3909eff54e554466",
+        "plaquette_sha256": "b996532eb17118a8f0f20d2c042efb7b0341ffcb90f5b8ef3909eff54e554466"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n5.yaml",
+        "kappa_blob": "1e1f54d95fa28ce10d9683277d0546e7d0aa6f8b",
+        "plaquette_blob": "1e1f54d95fa28ce10d9683277d0546e7d0aa6f8b",
+        "kappa_bytes": 891,
+        "plaquette_bytes": 891,
+        "kappa_sha256": "9064d00368ef8a4a99b887ca40fa6bb413bc8abe6052718b0799e87e3d265c8a",
+        "plaquette_sha256": "9064d00368ef8a4a99b887ca40fa6bb413bc8abe6052718b0799e87e3d265c8a"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n6.yaml",
+        "kappa_blob": "78211761872e8167cfa49680736568388744b7a9",
+        "plaquette_blob": "78211761872e8167cfa49680736568388744b7a9",
+        "kappa_bytes": 945,
+        "plaquette_bytes": 945,
+        "kappa_sha256": "fa4a8b66da7f38c773941c686ae615a6333fccc78f7e08eed867c20f4485478d",
+        "plaquette_sha256": "fa4a8b66da7f38c773941c686ae615a6333fccc78f7e08eed867c20f4485478d"
+      },
+      {
+        "path": "src/qpu/models_ibm_fez_eta02/diagonal_model_ibm_fez_subgraph_n7.yaml",
+        "kappa_blob": "98fab28d2ee32f065b101f0dcb24e11d5cda4f6a",
+        "plaquette_blob": "98fab28d2ee32f065b101f0dcb24e11d5cda4f6a",
+        "kappa_bytes": 999,
+        "plaquette_bytes": 999,
+        "kappa_sha256": "08d15db186ae6051dddfb8bc09d16615ee00cbcf21ade8bfb0bdb58d1b0cd372",
+        "plaquette_sha256": "08d15db186ae6051dddfb8bc09d16615ee00cbcf21ade8bfb0bdb58d1b0cd372"
+      },
+      {
+        "path": "src/qpu/qiskit_runner.py",
+        "kappa_blob": "04d523f45cbbe12a11d9990955103fba08256180",
+        "plaquette_blob": "04d523f45cbbe12a11d9990955103fba08256180",
+        "kappa_bytes": 98698,
+        "plaquette_bytes": 98698,
+        "kappa_sha256": "598155a7e84e9e35c2c22e6fdeb1bbb28e6a8355e195effca403f67e4c03e5a6",
+        "plaquette_sha256": "598155a7e84e9e35c2c22e6fdeb1bbb28e6a8355e195effca403f67e4c03e5a6"
+      },
+      {
+        "path": "src/qpu/qiskit_runner.yaml",
+        "kappa_blob": "71f75849ba69f7c538199105baebb63709d983e7",
+        "plaquette_blob": "71f75849ba69f7c538199105baebb63709d983e7",
+        "kappa_bytes": 1177,
+        "plaquette_bytes": 1177,
+        "kappa_sha256": "8a1c6cd139cdaa11dee72cae414cb93dde1cb74ba6ed07f296f7f1dc2c2da8c8",
+        "plaquette_sha256": "8a1c6cd139cdaa11dee72cae414cb93dde1cb74ba6ed07f296f7f1dc2c2da8c8"
+      },
+      {
+        "path": "src/qpu/qiskit_runner_two_pairs.py",
+        "kappa_blob": "11767a7f7c84c9a093336dc19cedbcfbdea4a8ce",
+        "plaquette_blob": "11767a7f7c84c9a093336dc19cedbcfbdea4a8ce",
+        "kappa_bytes": 115629,
+        "plaquette_bytes": 115629,
+        "kappa_sha256": "553934b7fb401c3ea692ede2b7a5f319c0c443fcd513489177280827b6233e9c",
+        "plaquette_sha256": "553934b7fb401c3ea692ede2b7a5f319c0c443fcd513489177280827b6233e9c"
+      },
+      {
+        "path": "src/qpu/qiskit_runner_two_pairs.yaml",
+        "kappa_blob": "495aa231478454a664e2f127f3cefd78e153a0d8",
+        "plaquette_blob": "495aa231478454a664e2f127f3cefd78e153a0d8",
+        "kappa_bytes": 10871,
+        "plaquette_bytes": 10871,
+        "kappa_sha256": "e4c1cfdd755c189b88f3b462c6e04138263707c1b51e3d28641550953ab5c3b4",
+        "plaquette_sha256": "e4c1cfdd755c189b88f3b462c6e04138263707c1b51e3d28641550953ab5c3b4"
+      },
+      {
+        "path": "src/qpu/qiskit_runner_two_pairs_block.py",
+        "kappa_blob": "ae33b789480191c21b6f28c668bca4c26939a3e5",
+        "plaquette_blob": "ae33b789480191c21b6f28c668bca4c26939a3e5",
+        "kappa_bytes": 128769,
+        "plaquette_bytes": 128769,
+        "kappa_sha256": "070a4d5fb6c9bbf09d88853b5dfc25c009d936868df0022f2e7691469c3410bf",
+        "plaquette_sha256": "070a4d5fb6c9bbf09d88853b5dfc25c009d936868df0022f2e7691469c3410bf"
+      },
+      {
+        "path": "src/sim/diagonal_model_family_grid_BFS_Shell.py",
+        "kappa_blob": "c2e222ba537f81e4b9f8741c26cc8675193d6055",
+        "plaquette_blob": "c2e222ba537f81e4b9f8741c26cc8675193d6055",
+        "kappa_bytes": 30190,
+        "plaquette_bytes": 30190,
+        "kappa_sha256": "d21f0352c42b2a5ca492753825cdd08bd2f9af4e0769c61bc0db72af32711847",
+        "plaquette_sha256": "d21f0352c42b2a5ca492753825cdd08bd2f9af4e0769c61bc0db72af32711847"
+      },
+      {
+        "path": "src/sim/model_provider.py",
+        "kappa_blob": "f43da03f3bb6f7bc8fbeec3b7d95a61c020dfda3",
+        "plaquette_blob": "f43da03f3bb6f7bc8fbeec3b7d95a61c020dfda3",
+        "kappa_bytes": 11859,
+        "plaquette_bytes": 11859,
+        "kappa_sha256": "d09081480a9a4962b8ca205a2d606217ebac36587d1d8cf4d0305b4d4919bf25",
+        "plaquette_sha256": "d09081480a9a4962b8ca205a2d606217ebac36587d1d8cf4d0305b4d4919bf25"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n2.yaml",
+        "kappa_blob": "bdcb55a56878cc63e0ee71858996dc701dabadcc",
+        "plaquette_blob": "bdcb55a56878cc63e0ee71858996dc701dabadcc",
+        "kappa_bytes": 504,
+        "plaquette_bytes": 504,
+        "kappa_sha256": "1433d810cd5d022e042f2e88bae6d62a725ed66504bf49015e8458c35447ba1b",
+        "plaquette_sha256": "1433d810cd5d022e042f2e88bae6d62a725ed66504bf49015e8458c35447ba1b"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n3.yaml",
+        "kappa_blob": "3f93e4717f45a26713cfaef87ddbadb3032dec11",
+        "plaquette_blob": "3f93e4717f45a26713cfaef87ddbadb3032dec11",
+        "kappa_bytes": 612,
+        "plaquette_bytes": 612,
+        "kappa_sha256": "b731072c8936fba2e77e4d62872dfdefa3177adcb4cc49d03748d12f8e8f92f5",
+        "plaquette_sha256": "b731072c8936fba2e77e4d62872dfdefa3177adcb4cc49d03748d12f8e8f92f5"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n4.yaml",
+        "kappa_blob": "e74f7aa5e7291916a615d5520ad1fac6964012a3",
+        "plaquette_blob": "e74f7aa5e7291916a615d5520ad1fac6964012a3",
+        "kappa_bytes": 767,
+        "plaquette_bytes": 767,
+        "kappa_sha256": "8e181b2b6745847f55f86d991181ac9c1d454406018fcabf301fcc5aef33c5ba",
+        "plaquette_sha256": "8e181b2b6745847f55f86d991181ac9c1d454406018fcabf301fcc5aef33c5ba"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n5.yaml",
+        "kappa_blob": "9adb558c3484a0943a05e5655d7da1b1fc123165",
+        "plaquette_blob": "9adb558c3484a0943a05e5655d7da1b1fc123165",
+        "kappa_bytes": 814,
+        "plaquette_bytes": 814,
+        "kappa_sha256": "b7f7bac586d7688068d32ddb5048e9af74e50c2641a4017ddcf560e97b631f5a",
+        "plaquette_sha256": "b7f7bac586d7688068d32ddb5048e9af74e50c2641a4017ddcf560e97b631f5a"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n6.yaml",
+        "kappa_blob": "826c895ccf30c2ad3673c086c41e5fa56f310d83",
+        "plaquette_blob": "826c895ccf30c2ad3673c086c41e5fa56f310d83",
+        "kappa_bytes": 861,
+        "plaquette_bytes": 861,
+        "kappa_sha256": "fcc58591467e6364234b3842fb4cb47307571828309ab46be951d6db54c3dacf",
+        "plaquette_sha256": "fcc58591467e6364234b3842fb4cb47307571828309ab46be951d6db54c3dacf"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta00/diagonal_model_grid_BFS_Shell_n7.yaml",
+        "kappa_blob": "43e8c42de1b23896ea051e0457b8f9c432ecc86c",
+        "plaquette_blob": "43e8c42de1b23896ea051e0457b8f9c432ecc86c",
+        "kappa_bytes": 955,
+        "plaquette_bytes": 955,
+        "kappa_sha256": "f39b58d664b873ed0655c481bafc926c628be078694b1f76ed20ca192c56bb3b",
+        "plaquette_sha256": "f39b58d664b873ed0655c481bafc926c628be078694b1f76ed20ca192c56bb3b"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n2.yaml",
+        "kappa_blob": "bdcb55a56878cc63e0ee71858996dc701dabadcc",
+        "plaquette_blob": "bdcb55a56878cc63e0ee71858996dc701dabadcc",
+        "kappa_bytes": 504,
+        "plaquette_bytes": 504,
+        "kappa_sha256": "1433d810cd5d022e042f2e88bae6d62a725ed66504bf49015e8458c35447ba1b",
+        "plaquette_sha256": "1433d810cd5d022e042f2e88bae6d62a725ed66504bf49015e8458c35447ba1b"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n3.yaml",
+        "kappa_blob": "7211f04a2067f879abefda8dda28dc548042b2cc",
+        "plaquette_blob": "7211f04a2067f879abefda8dda28dc548042b2cc",
+        "kappa_bytes": 625,
+        "plaquette_bytes": 625,
+        "kappa_sha256": "d645619acb5cd1fc9f1051c75e1cfba2104dd878a7147e565e01090d44c99f44",
+        "plaquette_sha256": "d645619acb5cd1fc9f1051c75e1cfba2104dd878a7147e565e01090d44c99f44"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n4.yaml",
+        "kappa_blob": "4f6885d079fc8fda732b9bb0e74586dc741d832f",
+        "plaquette_blob": "4f6885d079fc8fda732b9bb0e74586dc741d832f",
+        "kappa_bytes": 792,
+        "plaquette_bytes": 792,
+        "kappa_sha256": "b1e24597070dd81b4ee058fcbb120c1a327f472934c63a64d371cf8c4509c126",
+        "plaquette_sha256": "b1e24597070dd81b4ee058fcbb120c1a327f472934c63a64d371cf8c4509c126"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n5.yaml",
+        "kappa_blob": "72fd46a8774312465af98e8b7baf86b9ca88f948",
+        "plaquette_blob": "72fd46a8774312465af98e8b7baf86b9ca88f948",
+        "kappa_bytes": 839,
+        "plaquette_bytes": 839,
+        "kappa_sha256": "c042c91a130e9a8dd4c7b9cc2a7fd7f1e5d8fe40fc2f497dce2b6e0aea0c37ad",
+        "plaquette_sha256": "c042c91a130e9a8dd4c7b9cc2a7fd7f1e5d8fe40fc2f497dce2b6e0aea0c37ad"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n6.yaml",
+        "kappa_blob": "bb2dfa34f2a9ebf311086c31aa310ea52c9a7cc5",
+        "plaquette_blob": "bb2dfa34f2a9ebf311086c31aa310ea52c9a7cc5",
+        "kappa_bytes": 886,
+        "plaquette_bytes": 886,
+        "kappa_sha256": "888baa5dd939d4e4f0760431b4bf6384961f6da3e27d4e2475e807606b1a88cd",
+        "plaquette_sha256": "888baa5dd939d4e4f0760431b4bf6384961f6da3e27d4e2475e807606b1a88cd"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta01/diagonal_model_grid_BFS_Shell_n7.yaml",
+        "kappa_blob": "f98994c0e1b0c4197db6d689eb8bc3adb7d08fdc",
+        "plaquette_blob": "f98994c0e1b0c4197db6d689eb8bc3adb7d08fdc",
+        "kappa_bytes": 980,
+        "plaquette_bytes": 980,
+        "kappa_sha256": "03fad01a053eb5785bc3f777412c4469055e7421ebffd3b5bebbfc05e9425e3f",
+        "plaquette_sha256": "03fad01a053eb5785bc3f777412c4469055e7421ebffd3b5bebbfc05e9425e3f"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n2.yaml",
+        "kappa_blob": "bdcb55a56878cc63e0ee71858996dc701dabadcc",
+        "plaquette_blob": "bdcb55a56878cc63e0ee71858996dc701dabadcc",
+        "kappa_bytes": 504,
+        "plaquette_bytes": 504,
+        "kappa_sha256": "1433d810cd5d022e042f2e88bae6d62a725ed66504bf49015e8458c35447ba1b",
+        "plaquette_sha256": "1433d810cd5d022e042f2e88bae6d62a725ed66504bf49015e8458c35447ba1b"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n3.yaml",
+        "kappa_blob": "411b8317f5bc49ceda9719a1b93f30d2350545a4",
+        "plaquette_blob": "411b8317f5bc49ceda9719a1b93f30d2350545a4",
+        "kappa_bytes": 624,
+        "plaquette_bytes": 624,
+        "kappa_sha256": "64fc303e774cf990168a947a061757b5fdc7e08af3e3d896003282bb233efba8",
+        "plaquette_sha256": "64fc303e774cf990168a947a061757b5fdc7e08af3e3d896003282bb233efba8"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n4.yaml",
+        "kappa_blob": "0697f2ed8abac4ce5fbdc54586a8c6cb8f05af13",
+        "plaquette_blob": "0697f2ed8abac4ce5fbdc54586a8c6cb8f05af13",
+        "kappa_bytes": 790,
+        "plaquette_bytes": 790,
+        "kappa_sha256": "04aceaba7c8525adaa6fd39d7f8ec9ebc60a256d64fe576ad1b9e3932d544f55",
+        "plaquette_sha256": "04aceaba7c8525adaa6fd39d7f8ec9ebc60a256d64fe576ad1b9e3932d544f55"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n5.yaml",
+        "kappa_blob": "a84f86414a5b7edf56a668b2807866117beec6b0",
+        "plaquette_blob": "a84f86414a5b7edf56a668b2807866117beec6b0",
+        "kappa_bytes": 837,
+        "plaquette_bytes": 837,
+        "kappa_sha256": "d4058bba0187af6ebf71462b4001e119ce9023ab6218e8ed88c7843f717ccc16",
+        "plaquette_sha256": "d4058bba0187af6ebf71462b4001e119ce9023ab6218e8ed88c7843f717ccc16"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n6.yaml",
+        "kappa_blob": "6481e14f9c84b697667ff8d19d26dd0a7c104647",
+        "plaquette_blob": "6481e14f9c84b697667ff8d19d26dd0a7c104647",
+        "kappa_bytes": 884,
+        "plaquette_bytes": 884,
+        "kappa_sha256": "43cfa7809b10bf526e5afcc682d08acaf311ad154db74e91163284e367e473ab",
+        "plaquette_sha256": "43cfa7809b10bf526e5afcc682d08acaf311ad154db74e91163284e367e473ab"
+      },
+      {
+        "path": "src/sim/models_grid_BFS_Shell_eta02/diagonal_model_grid_BFS_Shell_n7.yaml",
+        "kappa_blob": "1bef46e950926a451567fb3ff87a98fb7572e1b3",
+        "plaquette_blob": "1bef46e950926a451567fb3ff87a98fb7572e1b3",
+        "kappa_bytes": 978,
+        "plaquette_bytes": 978,
+        "kappa_sha256": "242b2697f6936522cdd325ed6fe261d236374fe7233d5c8829ef69f28974d8b9",
+        "plaquette_sha256": "242b2697f6936522cdd325ed6fe261d236374fe7233d5c8829ef69f28974d8b9"
+      },
+      {
+        "path": "src/sim/sim_runner.py",
+        "kappa_blob": "99a041615a9660491835625080f32adac4568213",
+        "plaquette_blob": "99a041615a9660491835625080f32adac4568213",
+        "kappa_bytes": 35947,
+        "plaquette_bytes": 35947,
+        "kappa_sha256": "60b8080d2ceb6a4f6a1cf772704fa4c512282c75b9ba0e50d585fe097543674d",
+        "plaquette_sha256": "60b8080d2ceb6a4f6a1cf772704fa4c512282c75b9ba0e50d585fe097543674d"
+      },
+      {
+        "path": "src/sim/sim_runner.yaml",
+        "kappa_blob": "8d07b4f96c660987a808331132ffc92f6e99ffdc",
+        "plaquette_blob": "8d07b4f96c660987a808331132ffc92f6e99ffdc",
+        "kappa_bytes": 3327,
+        "plaquette_bytes": 3327,
+        "kappa_sha256": "6d096ab1eb36c8e89c82034bd8a72fe587801997a86af0af25a2b5b6a287d313",
+        "plaquette_sha256": "6d096ab1eb36c8e89c82034bd8a72fe587801997a86af0af25a2b5b6a287d313"
+      },
+      {
+        "path": "src/sim/stats.py",
+        "kappa_blob": "3f02a4897fe230f696abbcba20a77d8eaf6658a9",
+        "plaquette_blob": "3f02a4897fe230f696abbcba20a77d8eaf6658a9",
+        "kappa_bytes": 10122,
+        "plaquette_bytes": 10122,
+        "kappa_sha256": "0d10929b3c354257ef2d9619966d798ec7e31dd829dc962b0b194b12f510bb9b",
+        "plaquette_sha256": "0d10929b3c354257ef2d9619966d798ec7e31dd829dc962b0b194b12f510bb9b"
+      }
+    ],
+    "different": [
+      {
+        "path": "README.md",
+        "kappa_blob": "e6eb9596e5b5f31811b27fb689fce24d014487d7",
+        "plaquette_blob": "60062daffb17e1d50204f6a75a739cdb208844a6",
+        "kappa_bytes": 6280,
+        "plaquette_bytes": 6282,
+        "kappa_sha256": "a4fd81592969462e9d05c236db9f0547c96cf16e2030f387ba2da12f71da79a9",
+        "plaquette_sha256": "ca181a36f0c9cab1835beb89ac8d31d8ba26a57a4ac71d4647ebd1d54e74360d"
+      },
+      {
+        "path": "tree_structure.txt",
+        "kappa_blob": "0850c5c4fde19d9581c921a2449d6894a27ec813",
+        "plaquette_blob": "46a38d41bbab739a1ca9bd8d289a7ac19a687393",
+        "kappa_bytes": 4303,
+        "plaquette_bytes": 4664,
+        "kappa_sha256": "eb25e631a2dead1c74398ee625d30614afbd389144072afb573a2efa5ddef9f9",
+        "plaquette_sha256": "a2ceeb9e33b002ba2f32dc25ee31de684ad122b8b33d74cfb0a7c8acf37eb54e"
+      }
+    ]
+  },
+  "shared_reproducibility_file_count": 78,
+  "raw_data_models_runners_dependencies_unchanged_across_kappa_releases": true,
+  "figure_renumberings": [
+    {
+      "v1_path": "figures/fig8/fig8_data.py",
+      "v2_path": "figures/fig7/fig7_data.py",
+      "purpose": "schedule ablation; data-stage edits are comments, class and function renaming",
+      "diff": "--- figures/fig8/fig8_data.py\n+++ figures/fig7/fig7_data.py\n@@ -1,6 +1,6 @@\n-# fig8_data.py\n+# fig7_data.py\n #\n-# Appendix Fig. S1: Drift / schedule ablation (blocked vs interleaved settings)\n+# Appendix Fig. 7: Drift / schedule ablation (blocked vs interleaved settings)\n #\n # Data stage only: load counts + run_meta, compute point estimates and\n # shot-bootstrap uncertainty (percentile CI).\n@@ -9,7 +9,7 @@\n #   - point estimator defaults to bootstrap median (keeps point inside percentile CI)\n #   - CI is represented as [ci_lo, ci_hi] and plotted as whiskers (not symmetric ±)\n #\n-# Plotting is intentionally separated into fig8_plot.py.\n+# Plotting is intentionally separated into fig7_plot.py.\n \n from __future__ import annotations\n \n@@ -62,7 +62,7 @@\n \n \n @dataclass(frozen=True)\n-class fig8AnalysisConfig:\n+class fig7AnalysisConfig:\n     \"\"\"Analysis hyperparameters and run ordering for Fig.S1.\"\"\"\n \n     # Which run segments we prefer to show on the x-axis (filtered to those present).\n@@ -391,7 +391,7 @@\n \n def bootstrap_run_pair_metrics(\n     counts_df_group: pd.DataFrame,\n-    cfg: fig8AnalysisConfig,\n+    cfg: fig7AnalysisConfig,\n     *,\n     trial_id: int = 0,\n     amp_min_quantile: float = 0.10,\n@@ -482,18 +482,18 @@\n # -----------------------------------------------------------------------------\n \n \n-def compute_fig8_products(\n+def compute_fig7_products(\n     *,\n     interleave_counts_json: Path,\n     interleave_meta_json: Path,\n     block_counts_json: Path,\n     block_meta_json: Path,\n-    cfg: fig8AnalysisConfig | None = None,\n+    cfg: fig7AnalysisConfig | None = None,\n ) -> Dict[str, Any]:\n     \"\"\"Compute all Fig.S1 data products.\"\"\"\n \n     if cfg is None:\n-        cfg = fig8AnalysisConfig()\n+        cfg = fig7AnalysisConfig()\n \n     # Load\n     df_I, infos_I = load_interleave(interleave_counts_json, interleave_meta_json, label_prefix=\"I\")\n@@ -588,13 +588,13 @@\n     }\n \n \n-def build_fig8_manifest(\n+def build_fig7_manifest(\n     *,\n     interleave_counts_json: Path,\n     interleave_meta_json: Path,\n     block_counts_json: Path,\n     block_meta_json: Path,\n-    cfg: fig8AnalysisConfig,\n+    cfg: fig7AnalysisConfig,\n     outputs: Dict[str, Any],\n     style_rcparams: Optional[Dict[str, Any]] = None,\n     extra_notes: Optional[Dict[str, Any]] = None,\n"
+    },
+    {
+      "v1_path": "figures/fig9/fig9_data.py",
+      "v2_path": "figures/fig8/fig8_data.py",
+      "purpose": "day-to-day repeatability; data-stage edits are comments and function renaming",
+      "diff": "--- figures/fig9/fig9_data.py\n+++ figures/fig8/fig8_data.py\n@@ -1,5 +1,5 @@\n-# fig9_data.py\n-# Data processing for Appendix Fig. 9 (run-to-run / day-to-day repeatability)\n+# fig8_data.py\n+# Data processing for Appendix fig. 8 (run-to-run / day-to-day repeatability)\n #\n # Design goal (Blueprint v1.6):\n #   - Compare two QPU datasets acquired at different times (\"Day1\" vs \"Day2\")\n@@ -8,7 +8,7 @@\n #   - Report amp_min (mean + q10) alongside dispersion to separate reproducibility from visibility collapse\n #\n # This module is *pure data*: it outputs pandas DataFrames + a small manifest dict.\n-# Plotting/styling is implemented in fig9_plot.py.\n+# Plotting/styling is implemented in fig8_plot.py.\n #\n # NOTE: This is a standalone version that does NOT depend on fig5_data.py.\n #       All necessary functions from fig5_data have been inlined here.\n@@ -459,7 +459,7 @@\n \n \n # =============================================================================\n-# Fig.9 specific functions (original fig9_data.py code)\n+# Fig.9 specific functions (original fig8_data.py code)\n # =============================================================================\n \n def select_counts_for_day(\n@@ -632,7 +632,7 @@\n     return pd.DataFrame(delta_rows).sort_values([\"eta3\", \"n\"]).reset_index(drop=True)\n \n \n-def compute_fig9_day_products(\n+def compute_fig8_day_products(\n     *,\n     counts_json: Path,\n     cfg: Fig5AnalysisConfig,\n@@ -667,7 +667,7 @@\n     )\n \n \n-def build_fig9_manifest(\n+def build_fig8_manifest(\n     *,\n     counts_json: Path,\n     cfg: Fig5AnalysisConfig,\n"
+    }
+  ],
+  "observed_runtime_metadata": {
+    "record_count": 59,
+    "counts_by_file": {
+      "data/qpu/ablation_block_run_meta.json": 1,
+      "data/qpu/ablation_interleaved_run_meta.json": 4,
+      "data/qpu/qpu_run_meta.json": 36,
+      "data/sim/grid_BFS_Shell_run_meta.json": 18
+    },
+    "earliest_start": "2026-01-02T17:10:41.716062+00:00",
+    "latest_start": "2026-01-11T16:40:46.196986+00:00",
+    "records": [
+      {
+        "source_path": "data/qpu/ablation_block_run_meta.json",
+        "json_path": "$",
+        "run_id": "S1_blk_n7_eta00",
+        "start_time": "2026-01-02T20:00:43.763386+00:00",
+        "end_time": "2026-01-02T20:04:56.011302+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/ablation_interleaved_run_meta.json",
+        "json_path": "$[0].data",
+        "run_id": "20260102_195646_qpu",
+        "start_time": "2026-01-02T19:56:46.525795+00:00",
+        "end_time": "2026-01-02T19:58:10.338152+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/ablation_interleaved_run_meta.json",
+        "json_path": "$[1].data",
+        "run_id": "20260102_195817_qpu",
+        "start_time": "2026-01-02T19:58:17.416942+00:00",
+        "end_time": "2026-01-02T19:59:35.980279+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/ablation_interleaved_run_meta.json",
+        "json_path": "$[2].data",
+        "run_id": "20260102_200507_qpu",
+        "start_time": "2026-01-02T20:05:07.954892+00:00",
+        "end_time": "2026-01-02T20:06:18.750939+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/ablation_interleaved_run_meta.json",
+        "json_path": "$[3].data",
+        "run_id": "20260102_200624_qpu",
+        "start_time": "2026-01-02T20:06:24.843199+00:00",
+        "end_time": "2026-01-02T20:07:44.613182+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[0].data[0].data[0]",
+        "run_id": "RR_R8_n2_20260103_013327",
+        "start_time": "2026-01-02T17:11:18.612192+00:00",
+        "end_time": "2026-01-02T17:11:48.994336+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[0].data[0].data[1]",
+        "run_id": "RR_R8_n3_20260103_013327",
+        "start_time": "2026-01-02T17:10:41.716062+00:00",
+        "end_time": "2026-01-02T17:11:17.106903+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[0].data[0].data[2]",
+        "run_id": "RR_R8_n4_20260103_013327",
+        "start_time": "2026-01-02T17:14:31.417000+00:00",
+        "end_time": "2026-01-02T17:15:04.272485+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[0].data[0].data[3]",
+        "run_id": "RR_R8_n5_20260103_013327",
+        "start_time": "2026-01-02T17:12:56.026705+00:00",
+        "end_time": "2026-01-02T17:13:34.104857+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[0].data[0].data[4]",
+        "run_id": "RR_R8_n6_20260103_013327",
+        "start_time": "2026-01-02T17:11:50.617737+00:00",
+        "end_time": "2026-01-02T17:12:54.578832+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[0].data[0].data[5]",
+        "run_id": "RR_R8_n7_20260103_013327",
+        "start_time": "2026-01-02T17:13:35.571687+00:00",
+        "end_time": "2026-01-02T17:14:29.902391+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[1].data[0].data[0]",
+        "run_id": "RR_R8_n2_20260103_032552",
+        "start_time": "2026-01-02T19:00:23.943709+00:00",
+        "end_time": "2026-01-02T19:01:04.569964+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[1].data[0].data[1]",
+        "run_id": "RR_R8_n3_20260103_032552",
+        "start_time": "2026-01-02T18:59:41.382361+00:00",
+        "end_time": "2026-01-02T19:00:21.880812+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[1].data[0].data[2]",
+        "run_id": "RR_R8_n4_20260103_032552",
+        "start_time": "2026-01-02T19:03:51.260768+00:00",
+        "end_time": "2026-01-02T19:04:22.805274+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[1].data[0].data[3]",
+        "run_id": "RR_R8_n5_20260103_032552",
+        "start_time": "2026-01-02T19:02:05.803872+00:00",
+        "end_time": "2026-01-02T19:02:49.851134+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[1].data[0].data[4]",
+        "run_id": "RR_R8_n6_20260103_032552",
+        "start_time": "2026-01-02T19:01:06.768441+00:00",
+        "end_time": "2026-01-02T19:02:03.776071+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[1].data[0].data[5]",
+        "run_id": "RR_R8_n7_20260103_032552",
+        "start_time": "2026-01-02T19:02:51.631225+00:00",
+        "end_time": "2026-01-02T19:03:49.798653+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[2].data[0].data[0]",
+        "run_id": "RR_R8_n2_20260103_041030",
+        "start_time": "2026-01-02T19:46:13.514636+00:00",
+        "end_time": "2026-01-02T19:46:56.227684+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[2].data[0].data[1]",
+        "run_id": "RR_R8_n3_20260103_041030",
+        "start_time": "2026-01-02T19:45:37.117924+00:00",
+        "end_time": "2026-01-02T19:46:09.875664+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[2].data[0].data[2]",
+        "run_id": "RR_R8_n4_20260103_041030",
+        "start_time": "2026-01-02T19:49:41.933035+00:00",
+        "end_time": "2026-01-02T19:50:16.174811+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[2].data[0].data[3]",
+        "run_id": "RR_R8_n5_20260103_041030",
+        "start_time": "2026-01-02T19:47:54.562816+00:00",
+        "end_time": "2026-01-02T19:48:40.466384+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[2].data[0].data[4]",
+        "run_id": "RR_R8_n6_20260103_041030",
+        "start_time": "2026-01-02T19:46:58.465556+00:00",
+        "end_time": "2026-01-02T19:47:52.048713+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[2].data[0].data[5]",
+        "run_id": "RR_R8_n7_20260103_041030",
+        "start_time": "2026-01-02T19:48:42.071083+00:00",
+        "end_time": "2026-01-02T19:49:40.349066+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[3].data[0].data[0]",
+        "run_id": "RR_R8_n2_20260104_103150",
+        "start_time": "2026-01-04T02:07:48.787773+00:00",
+        "end_time": "2026-01-04T02:08:21.366132+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[3].data[0].data[1]",
+        "run_id": "RR_R8_n3_20260104_103150",
+        "start_time": "2026-01-04T02:06:57.847989+00:00",
+        "end_time": "2026-01-04T02:07:46.714754+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[3].data[0].data[2]",
+        "run_id": "RR_R8_n4_20260104_103150",
+        "start_time": "2026-01-04T02:11:01.075159+00:00",
+        "end_time": "2026-01-04T02:11:36.005086+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[3].data[0].data[3]",
+        "run_id": "RR_R8_n5_20260104_103150",
+        "start_time": "2026-01-04T02:09:13.036098+00:00",
+        "end_time": "2026-01-04T02:09:55.373773+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[3].data[0].data[4]",
+        "run_id": "RR_R8_n6_20260104_103150",
+        "start_time": "2026-01-04T02:08:23.396409+00:00",
+        "end_time": "2026-01-04T02:09:10.709834+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[3].data[0].data[5]",
+        "run_id": "RR_R8_n7_20260104_103150",
+        "start_time": "2026-01-04T02:09:57.479639+00:00",
+        "end_time": "2026-01-04T02:10:59.049067+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[4].data[0].data[0]",
+        "run_id": "RR_R8_n2_20260104_111211",
+        "start_time": "2026-01-04T02:44:03.547250+00:00",
+        "end_time": "2026-01-04T02:44:31.125369+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[4].data[0].data[1]",
+        "run_id": "RR_R8_n3_20260104_111211",
+        "start_time": "2026-01-04T02:43:33.372121+00:00",
+        "end_time": "2026-01-04T02:44:01.962780+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[4].data[0].data[2]",
+        "run_id": "RR_R8_n4_20260104_111211",
+        "start_time": "2026-01-04T02:46:47.417811+00:00",
+        "end_time": "2026-01-04T02:47:17.099926+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[4].data[0].data[3]",
+        "run_id": "RR_R8_n5_20260104_111211",
+        "start_time": "2026-01-04T02:45:13.492152+00:00",
+        "end_time": "2026-01-04T02:45:50.327055+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[4].data[0].data[4]",
+        "run_id": "RR_R8_n6_20260104_111211",
+        "start_time": "2026-01-04T02:44:32.634356+00:00",
+        "end_time": "2026-01-04T02:45:12.031559+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[4].data[0].data[5]",
+        "run_id": "RR_R8_n7_20260104_111211",
+        "start_time": "2026-01-04T02:45:51.809851+00:00",
+        "end_time": "2026-01-04T02:46:45.383204+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[5].data[0].data[0]",
+        "run_id": "RR_R8_n2_20260104_114846",
+        "start_time": "2026-01-04T03:20:37.310781+00:00",
+        "end_time": "2026-01-04T03:21:05.524265+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[5].data[0].data[1]",
+        "run_id": "RR_R8_n3_20260104_114846",
+        "start_time": "2026-01-04T03:20:06.278676+00:00",
+        "end_time": "2026-01-04T03:20:35.613002+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[5].data[0].data[2]",
+        "run_id": "RR_R8_n4_20260104_114846",
+        "start_time": "2026-01-04T03:23:19.141691+00:00",
+        "end_time": "2026-01-04T03:23:52.072010+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[5].data[0].data[3]",
+        "run_id": "RR_R8_n5_20260104_114846",
+        "start_time": "2026-01-04T03:21:49.244490+00:00",
+        "end_time": "2026-01-04T03:22:25.100768+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[5].data[0].data[4]",
+        "run_id": "RR_R8_n6_20260104_114846",
+        "start_time": "2026-01-04T03:21:07.078537+00:00",
+        "end_time": "2026-01-04T03:21:47.697704+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/qpu/qpu_run_meta.json",
+        "json_path": "$[5].data[0].data[5]",
+        "run_id": "RR_R8_n7_20260104_114846",
+        "start_time": "2026-01-04T03:22:26.665245+00:00",
+        "end_time": "2026-01-04T03:23:17.482985+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[0].data[0]",
+        "run_id": "20260111_162814",
+        "start_time": "2026-01-11T16:28:14.531138+00:00",
+        "end_time": "2026-01-11T16:28:14.552562+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[0].data[1]",
+        "run_id": "20260111_162804",
+        "start_time": "2026-01-11T16:28:04.975822+00:00",
+        "end_time": "2026-01-11T16:28:05.005398+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[0].data[2]",
+        "run_id": "20260111_162739",
+        "start_time": "2026-01-11T16:27:39.677557+00:00",
+        "end_time": "2026-01-11T16:27:39.755339+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[0].data[3]",
+        "run_id": "20260111_162729",
+        "start_time": "2026-01-11T16:27:29.524004+00:00",
+        "end_time": "2026-01-11T16:27:29.679212+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[0].data[4]",
+        "run_id": "20260111_162717",
+        "start_time": "2026-01-11T16:27:17.305191+00:00",
+        "end_time": "2026-01-11T16:27:17.597939+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[0].data[5]",
+        "run_id": "20260111_162707",
+        "start_time": "2026-01-11T16:27:07.085289+00:00",
+        "end_time": "2026-01-11T16:27:07.640971+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[1].data[0]",
+        "run_id": "20260111_161256",
+        "start_time": "2026-01-11T16:12:56.028527+00:00",
+        "end_time": "2026-01-11T16:12:56.046256+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[1].data[1]",
+        "run_id": "20260111_161244",
+        "start_time": "2026-01-11T16:12:44.564722+00:00",
+        "end_time": "2026-01-11T16:12:44.594680+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[1].data[2]",
+        "run_id": "20260111_161159",
+        "start_time": "2026-01-11T16:11:59.158471+00:00",
+        "end_time": "2026-01-11T16:11:59.240484+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[1].data[3]",
+        "run_id": "20260111_161147",
+        "start_time": "2026-01-11T16:11:47.178732+00:00",
+        "end_time": "2026-01-11T16:11:47.313215+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[1].data[4]",
+        "run_id": "20260111_161135",
+        "start_time": "2026-01-11T16:11:35.594347+00:00",
+        "end_time": "2026-01-11T16:11:35.855654+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[1].data[5]",
+        "run_id": "20260111_161119",
+        "start_time": "2026-01-11T16:11:19.094932+00:00",
+        "end_time": "2026-01-11T16:11:19.597931+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[2].data[0]",
+        "run_id": "20260111_164046",
+        "start_time": "2026-01-11T16:40:46.196986+00:00",
+        "end_time": "2026-01-11T16:40:46.216302+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[2].data[1]",
+        "run_id": "20260111_164037",
+        "start_time": "2026-01-11T16:40:37.047745+00:00",
+        "end_time": "2026-01-11T16:40:37.075282+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[2].data[2]",
+        "run_id": "20260111_164017",
+        "start_time": "2026-01-11T16:40:17.517949+00:00",
+        "end_time": "2026-01-11T16:40:17.600241+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[2].data[3]",
+        "run_id": "20260111_164008",
+        "start_time": "2026-01-11T16:40:08.724060+00:00",
+        "end_time": "2026-01-11T16:40:08.892360+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[2].data[4]",
+        "run_id": "20260111_163959",
+        "start_time": "2026-01-11T16:39:59.262049+00:00",
+        "end_time": "2026-01-11T16:39:59.526306+00:00",
+        "explicit_git_identity_fields": {}
+      },
+      {
+        "source_path": "data/sim/grid_BFS_Shell_run_meta.json",
+        "json_path": "$[2].data[5]",
+        "run_id": "20260111_163950",
+        "start_time": "2026-01-11T16:39:50.973596+00:00",
+        "end_time": "2026-01-11T16:39:51.443078+00:00",
+        "explicit_git_identity_fields": {}
+      }
+    ]
+  },
+  "deduplication_interpretation": "The two repository snapshots preserve the same archived scientific source/data observations. These copies must not count as independent replication evidence. Distinct runtime entries within the archives remain distinct where the actual metadata/results support this.",
+  "canonical_repository": null,
+  "limits": [
+    "Separate Git roots prove neither which storage first created the files nor a physical copy direction.",
+    "Earlier import time and newer repository name do not authorize declaring an actively maintained canonical repository.",
+    "No archived run receipt supplies an explicit actual runtime Git commit in the inspected top-level run metadata. All observed execution timestamps precede both Git repository initial commits; repository commit hashes identify archive snapshots, not proved executed checkouts.",
+    "Release descriptions state submission packaging intent; they do not establish journal acceptance, independent replication or a new experiment.",
+    "Historical figure scripts were inspected and preserved; this history audit does not rerun their numerical analysis or QPU experiments."
+  ]
+}

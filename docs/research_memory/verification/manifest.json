@@ -1,0 +1,1085 @@
+{
+  "schema_version": 1,
+  "record_type": "current_offline_reuse_verification",
+  "generated_on": "2026-11-10",
+  "source_repository": "jisung-jung88/kappa-profile",
+  "source_commit": "a49a198e6327f42323e0f43c17ef58d8c535c15c",
+  "identical_peer_source": {
+    "repository": "jisung-jung88/plaquette-curvature-profiles",
+    "commit": "bd4e4f24175d71a360f86bd88fda35c91ae30219",
+    "all_figure_source_and_input_bytes_match": true
+  },
+  "scope": "Regenerated summaries using the six original README figure commands and archived inputs. No new simulation sweep or QPU acquisition. These are current derived verification outputs, not historical figure artifacts.",
+  "environment": {
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.8",
+      "PyYAML": "6.0.3"
+    },
+    "MPLBACKEND": "Agg",
+    "max_concurrent_commands": 2
+  },
+  "passed_commands": 6,
+  "total_commands": 6,
+  "scientific_files_unchanged": 78,
+  "worktree_clean_before_and_after": true,
+  "manifest_input_hash_checks": [
+    {
+      "figure": 3,
+      "path": "data/sim/grid_BFS_Shell_trial_summary.csv",
+      "matched": true
+    },
+    {
+      "figure": 3,
+      "path": "data/sim/grid_BFS_Shell_rows.csv",
+      "matched": true
+    },
+    {
+      "figure": 3,
+      "path": "data/sim/grid_BFS_Shell_run_meta.json",
+      "matched": true
+    },
+    {
+      "figure": 3,
+      "path": "data/sim/grid_BFS_Shell_stats_meta.json",
+      "matched": true
+    },
+    {
+      "figure": 4,
+      "path": "data/sim/grid_BFS_Shell_trial_summary.csv",
+      "matched": true
+    },
+    {
+      "figure": 4,
+      "path": "data/sim/grid_BFS_Shell_rows.csv",
+      "matched": true
+    },
+    {
+      "figure": 4,
+      "path": "data/sim/grid_BFS_Shell_run_meta.json",
+      "matched": true
+    },
+    {
+      "figure": 4,
+      "path": "data/sim/grid_BFS_Shell_stats_meta.json",
+      "matched": true
+    },
+    {
+      "figure": 5,
+      "path": "data/qpu/qpu_counts.json",
+      "matched": true
+    },
+    {
+      "figure": 5,
+      "path": "data/qpu/qpu_run_meta.json",
+      "matched": true
+    },
+    {
+      "figure": 6,
+      "path": "data/qpu/qpu_counts.json",
+      "matched": true
+    },
+    {
+      "figure": 6,
+      "path": "data/qpu/qpu_run_meta.json",
+      "matched": true
+    },
+    {
+      "figure": 7,
+      "path": "data/qpu/ablation_interleaved_counts.json",
+      "matched": true
+    },
+    {
+      "figure": 7,
+      "path": "data/qpu/ablation_interleaved_run_meta.json",
+      "matched": true
+    },
+    {
+      "figure": 7,
+      "path": "data/qpu/ablation_block_counts.json",
+      "matched": true
+    },
+    {
+      "figure": 7,
+      "path": "data/qpu/ablation_block_run_meta.json",
+      "matched": true
+    },
+    {
+      "figure": 8,
+      "path": "data/qpu/qpu_counts.json",
+      "matched": true
+    }
+  ],
+  "figures": [
+    {
+      "figure": 3,
+      "executed_at_utc": "2026-11-10T11:13:33.209603+00:00",
+      "duration_seconds": 3.791174101999786,
+      "exit_code": 0,
+      "command_template": [
+        "python3",
+        "figures/fig3/make_fig3.py",
+        "--trial-summary",
+        "data/sim/grid_BFS_Shell_trial_summary.csv",
+        "--rows",
+        "data/sim/grid_BFS_Shell_rows.csv",
+        "--run-meta",
+        "data/sim/grid_BFS_Shell_run_meta.json",
+        "--stats-meta",
+        "data/sim/grid_BFS_Shell_stats_meta.json",
+        "--out-dir",
+        "outputs/fig3"
+      ],
+      "command_note": "Only --out-dir is replaced by a portable relative directory; Python executable is displayed as python3. Full original argv is retained in local task verification receipts.",
+      "inputs": [
+        {
+          "path": "data/sim/grid_BFS_Shell_rows.csv",
+          "bytes": 878851,
+          "sha256": "b0b091c0c7690c4906eeb68eeef038998a6b6e791a9a384655e4c0b2f4314f4f",
+          "git_blob": "4d7935d2ce152b2df8256d135a9862ba8020b767"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_run_meta.json",
+          "bytes": 32148,
+          "sha256": "712c8729095210bb4032dbdfb1eb6014dab76345f7dde5aba05c3074c6e6213b",
+          "git_blob": "b74471f6a020ead3f1aea596c2978e21f6bd4028"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_stats_meta.json",
+          "bytes": 5759,
+          "sha256": "411f01c937bb6aa4c341de3085e186d9d195562acaf1752a4f3ba604ef4b4df2",
+          "git_blob": "9581d43a7f1edce1bf46640764b227a56eaaeeaf"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_trial_summary.csv",
+          "bytes": 56485,
+          "sha256": "966d7d6ddd0d2a2134e509bbc910fe6d26fe047f7b3377f2994eaa4cf6726ca0",
+          "git_blob": "d40cb9cd19f7a2d681a07a907855955c98ba0ef5"
+        },
+        {
+          "path": "figures/fig3/fig3_data.py",
+          "bytes": 17266,
+          "sha256": "6eab423e6143411d26016514ae0039c9cea0a7de83bcc7618f76a54bd47c7bdb",
+          "git_blob": "05ec629017cccb3a53a1e2f80402ceb35d92f387"
+        },
+        {
+          "path": "figures/fig3/fig3_plot.py",
+          "bytes": 11186,
+          "sha256": "c9d4956ea9e8c2a679510f59708e85886e301908be919a750c67f03fb07e5fb6",
+          "git_blob": "d70dbc0d9a9ac4ba121f2491b8d9be1a6c6b4fff"
+        },
+        {
+          "path": "figures/fig3/make_fig3.py",
+          "bytes": 5346,
+          "sha256": "901b747db03528c3b7c95b572b6bc2ec0a023ae43843d6b14b806d77051b59f0",
+          "git_blob": "bdd09f569941aa37a8b041ca4bd6bace51fa52d7"
+        }
+      ],
+      "analysis_config": {
+        "boot_B": 5000,
+        "seed": 12345,
+        "ci_levels": [
+          0.025,
+          0.975
+        ],
+        "point_estimator": "boot_median",
+        "bootstrap_stat": "mean"
+      },
+      "selection": null,
+      "design": null,
+      "notes": null,
+      "retained_tables": [
+        {
+          "path": "fig3/fig3_summary.csv",
+          "bytes": 6032,
+          "sha256": "fb052e163d7df9b7aca4756d405eaebb1e76a5967b0f55fac9e48506f1bd9bcb",
+          "row_count": 30,
+          "columns": [
+            "run_id",
+            "eta3",
+            "n",
+            "i",
+            "j",
+            "pair",
+            "num_trials",
+            "shots_per_setting",
+            "num_contexts",
+            "kappa_ctx_circ_var_trial",
+            "kappa_ctx_circ_var_point",
+            "kappa_ctx_circ_var_boot_mean",
+            "kappa_ctx_circ_var_boot_median",
+            "kappa_ctx_circ_var_ci95_lo",
+            "kappa_ctx_circ_var_ci95_hi",
+            "amp_min_mean_ctx_trial",
+            "amp_min_q10_ctx_trial"
+          ]
+        },
+        {
+          "path": "fig3/fig3_deltaV.csv",
+          "bytes": 2638,
+          "sha256": "dbdaf96d268f440394e5bda964e1242a91608953297fa03298fbb6dcf467c3ce",
+          "row_count": 12,
+          "columns": [
+            "eta3",
+            "n",
+            "signal_kappa_ctx_circ_var_point",
+            "signal_kappa_ctx_circ_var_trial",
+            "signal_kappa_ctx_circ_var_ci95_lo",
+            "signal_kappa_ctx_circ_var_ci95_hi",
+            "control_kappa_ctx_circ_var_point",
+            "control_kappa_ctx_circ_var_trial",
+            "control_kappa_ctx_circ_var_ci95_lo",
+            "control_kappa_ctx_circ_var_ci95_hi",
+            "deltaV_point",
+            "deltaV_trial"
+          ]
+        }
+      ],
+      "unretained_original_output_hashes": [
+        {
+          "path": "fig3/cache/fig3_deltaV.csv",
+          "bytes": 2638,
+          "sha256": "dbdaf96d268f440394e5bda964e1242a91608953297fa03298fbb6dcf467c3ce"
+        },
+        {
+          "path": "fig3/cache/fig3_summary.csv",
+          "bytes": 6032,
+          "sha256": "fb052e163d7df9b7aca4756d405eaebb1e76a5967b0f55fac9e48506f1bd9bcb"
+        },
+        {
+          "path": "fig3/figure_3_manifest.json",
+          "bytes": 13352,
+          "sha256": "e3152704a5ab89a2e25570d188cf1a26cd728e603156d2de82da212a83858a30"
+        },
+        {
+          "path": "fig3/figure_3_sim_scaling.pdf",
+          "bytes": 22582,
+          "sha256": "3deb99f6c72ad03032ccab76bc61f925fb8092827dbb322ba71554cf696482f2"
+        },
+        {
+          "path": "fig3/figure_3_sim_scaling.png",
+          "bytes": 85184,
+          "sha256": "4e243a1348bcd2e3bb04490b7a452338b76d896762530bd6b7fdb446b2de8c5d"
+        }
+      ],
+      "stderr_warning_lines": [
+        "'created' timestamp seems very low; regarding as unix timestamp",
+        "'modified' timestamp seems very low; regarding as unix timestamp"
+      ]
+    },
+    {
+      "figure": 4,
+      "executed_at_utc": "2026-11-10T11:13:33.231038+00:00",
+      "duration_seconds": 7.187214745001256,
+      "exit_code": 0,
+      "command_template": [
+        "python3",
+        "figures/fig4/make_fig4.py",
+        "--trial-summary-csv",
+        "data/sim/grid_BFS_Shell_trial_summary.csv",
+        "--rows-csv",
+        "data/sim/grid_BFS_Shell_rows.csv",
+        "--run-meta-json",
+        "data/sim/grid_BFS_Shell_run_meta.json",
+        "--stats-meta-json",
+        "data/sim/grid_BFS_Shell_stats_meta.json",
+        "--out-dir",
+        "outputs/fig4",
+        "--png"
+      ],
+      "command_note": "Only --out-dir is replaced by a portable relative directory; Python executable is displayed as python3. Full original argv is retained in local task verification receipts.",
+      "inputs": [
+        {
+          "path": "data/sim/grid_BFS_Shell_rows.csv",
+          "bytes": 878851,
+          "sha256": "b0b091c0c7690c4906eeb68eeef038998a6b6e791a9a384655e4c0b2f4314f4f",
+          "git_blob": "4d7935d2ce152b2df8256d135a9862ba8020b767"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_run_meta.json",
+          "bytes": 32148,
+          "sha256": "712c8729095210bb4032dbdfb1eb6014dab76345f7dde5aba05c3074c6e6213b",
+          "git_blob": "b74471f6a020ead3f1aea596c2978e21f6bd4028"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_stats_meta.json",
+          "bytes": 5759,
+          "sha256": "411f01c937bb6aa4c341de3085e186d9d195562acaf1752a4f3ba604ef4b4df2",
+          "git_blob": "9581d43a7f1edce1bf46640764b227a56eaaeeaf"
+        },
+        {
+          "path": "data/sim/grid_BFS_Shell_trial_summary.csv",
+          "bytes": 56485,
+          "sha256": "966d7d6ddd0d2a2134e509bbc910fe6d26fe047f7b3377f2994eaa4cf6726ca0",
+          "git_blob": "d40cb9cd19f7a2d681a07a907855955c98ba0ef5"
+        },
+        {
+          "path": "figures/fig4/fig4_sim_data.py",
+          "bytes": 14791,
+          "sha256": "1409c3bf0da7a6bbe957116ef485a973ca7f647c3a72dfa6c1bd5f288200f611",
+          "git_blob": "18f2698951aa5bd57b54c8ed32de160393babd02"
+        },
+        {
+          "path": "figures/fig4/fig4_sim_plot.py",
+          "bytes": 11269,
+          "sha256": "ab05fdc16a689745bf415bdb0926b17b9dd43ec06379cabc5d6fc140644a1e02",
+          "git_blob": "8d2b7c342ace158dc27bdfbcb49d64d614ef2fbe"
+        },
+        {
+          "path": "figures/fig4/make_fig4.py",
+          "bytes": 6459,
+          "sha256": "233597e584abd6b5dc201f5acc3deed8291ac74c77350ad5fffeec398399865a",
+          "git_blob": "d03284f57fa3420935afa1d6764efbb6ae282566"
+        }
+      ],
+      "analysis_config": {
+        "trial_policy": "median_by_signal",
+        "trial_id": null,
+        "trial_select_eta3": 0.2,
+        "wrap_phase_to_pi": true,
+        "amp_min_threshold": 0.0,
+        "col_kappa_hat": "kappa_hat",
+        "col_kappa_true": "kappa_true",
+        "col_amp_a": "amp_a",
+        "col_amp_b": "amp_b"
+      },
+      "selection": null,
+      "design": null,
+      "notes": null,
+      "retained_tables": [
+        {
+          "path": "fig4/fig4_sim_panel_stats_df.csv",
+          "bytes": 771,
+          "sha256": "aa94f0d6b25c32413ad652bae77304ad0325820ba1f47ba0f758229a29bcdf3f",
+          "row_count": 6,
+          "columns": [
+            "eta3",
+            "role",
+            "n",
+            "pair",
+            "i",
+            "j",
+            "trial_id",
+            "kappa_eff",
+            "V_circ",
+            "kappa_parking",
+            "q90_abs",
+            "num_contexts_total",
+            "num_contexts_used"
+          ]
+        }
+      ],
+      "unretained_original_output_hashes": [
+        {
+          "path": "fig4/fig4_sim_cache/fig4_sim_panel_df.csv",
+          "bytes": 14231,
+          "sha256": "49eb9e2dc3d9d5d33e2712c1a25419fc8def12ab62476a9fa683ef874f44a673"
+        },
+        {
+          "path": "fig4/fig4_sim_cache/fig4_sim_panel_stats_df.csv",
+          "bytes": 771,
+          "sha256": "aa94f0d6b25c32413ad652bae77304ad0325820ba1f47ba0f758229a29bcdf3f"
+        },
+        {
+          "path": "fig4/figure_4_sim_eta_sweep.pdf",
+          "bytes": 36001,
+          "sha256": "96f1b2e73e215712e8001741a489db57d0ca39b2897f3147329b5bf000fac7b2"
+        },
+        {
+          "path": "fig4/figure_4_sim_eta_sweep.png",
+          "bytes": 324894,
+          "sha256": "2677271d9f2ad2aa7f9760e44b84382ad66559ffe45843ad01a222c072773ca9"
+        },
+        {
+          "path": "fig4/figure_4_sim_manifest.json",
+          "bytes": 26074,
+          "sha256": "74a9c4ab8c909b3adf56864f486dca8d036b93f1c2716bcaada7daf20bec6b65"
+        }
+      ],
+      "stderr_warning_lines": [
+        "'created' timestamp seems very low; regarding as unix timestamp",
+        "'modified' timestamp seems very low; regarding as unix timestamp"
+      ]
+    },
+    {
+      "figure": 5,
+      "executed_at_utc": "2026-11-10T11:13:37.033762+00:00",
+      "duration_seconds": 9.029069273001369,
+      "exit_code": 0,
+      "command_template": [
+        "python3",
+        "figures/fig5/make_fig5.py",
+        "--counts",
+        "data/qpu/qpu_counts.json",
+        "--run-meta",
+        "data/qpu/qpu_run_meta.json",
+        "--eta-run",
+        "0:6",
+        "--eta-run",
+        "0.1:8",
+        "--eta-run",
+        "0.2:5",
+        "--out-dir",
+        "outputs/fig5"
+      ],
+      "command_note": "Only --out-dir is replaced by a portable relative directory; Python executable is displayed as python3. Full original argv is retained in local task verification receipts.",
+      "inputs": [
+        {
+          "path": "data/qpu/qpu_counts.json",
+          "bytes": 770751,
+          "sha256": "c9ac526aa50e42335749049b338dd6e341d0a3189a4450a99ac03ebd9510bae0",
+          "git_blob": "1ec96689c3c80e8a86b824e09258e23492500d41"
+        },
+        {
+          "path": "data/qpu/qpu_run_meta.json",
+          "bytes": 290277,
+          "sha256": "01cddbf79c380eabb824a71ca00099a0ec604da272ede053de50a41013c3ccc8",
+          "git_blob": "bce6f72a3980f57c48d0fa48b1b78b505cf80383"
+        },
+        {
+          "path": "figures/fig5/fig5_data.py",
+          "bytes": 32498,
+          "sha256": "2b924a29b6214fb7fe5266836d8e72db671d4f602cb9fc57085902557d0e1321",
+          "git_blob": "8b7f438b0236a2ba606b2b731cb2e6c35d8067c8"
+        },
+        {
+          "path": "figures/fig5/fig5_plot.py",
+          "bytes": 10203,
+          "sha256": "45561c92fb175bccfeda0680df67a23f9f919e86ee54c18cf4021838678b4cc2",
+          "git_blob": "dc1f745acbe706e2c001e3c22400f6a775006983"
+        },
+        {
+          "path": "figures/fig5/make_fig5.py",
+          "bytes": 5825,
+          "sha256": "026c863a21bbdc26f9708ecc977efd4406319f5a1dd0e9965074bf55f9dfeea1",
+          "git_blob": "a90be4c1781ae20936a8ed6d7a604f7828ea8cff"
+        }
+      ],
+      "analysis_config": {
+        "boot_B": 5000,
+        "seed": 12345,
+        "ci_levels": [
+          0.025,
+          0.975
+        ],
+        "amp_min_threshold": 0.0,
+        "point_estimator": "boot_median",
+        "drop_policy": "per_pair",
+        "amp_threshold_mode": "fixed_from_csv"
+      },
+      "selection": [
+        {
+          "eta3": 0.0,
+          "run": 6
+        },
+        {
+          "eta3": 0.1,
+          "run": 8
+        },
+        {
+          "eta3": 0.2,
+          "run": 5
+        }
+      ],
+      "design": null,
+      "notes": null,
+      "retained_tables": [
+        {
+          "path": "fig5/fig5_summary.csv",
+          "bytes": 7275,
+          "sha256": "1e7c1836d8d665905b59d80bdebde7a38e02a9a1b0311bde9bf5384eb563c7bf",
+          "row_count": 27,
+          "columns": [
+            "eta3",
+            "n",
+            "pair",
+            "kappa_ctx_circ_var_point",
+            "kappa_ctx_circ_var_trial",
+            "kappa_ctx_circ_var_shotbs_ci95_lo",
+            "kappa_ctx_circ_var_shotbs_ci95_hi",
+            "kappa_ctx_circ_var_shotbs_median",
+            "kappa_ctx_circ_var_shotbs_mean",
+            "amp_min_mean_ctx_trial",
+            "amp_min_q10_ctx_trial",
+            "kappa_ctx_circ_mean_trial",
+            "kappa_abs_q90_ctx_trial",
+            "num_contexts_total",
+            "num_contexts_used",
+            "kappa_ctx_circ_var_shotbs_std",
+            "boot_empty_frac",
+            "boot_group_seed"
+          ]
+        },
+        {
+          "path": "fig5/fig5_deltaV.csv",
+          "bytes": 689,
+          "sha256": "0553b9150aaa37bee1dc11b5352b58f5a1342ebdadffffa98ea81f0508763179",
+          "row_count": 9,
+          "columns": [
+            "eta3",
+            "n",
+            "delta_V_circ",
+            "delta_shotbs_ci_lo",
+            "delta_shotbs_ci_hi"
+          ]
+        }
+      ],
+      "unretained_original_output_hashes": [
+        {
+          "path": "fig5/cache/fig5_context_level.csv",
+          "bytes": 50544,
+          "sha256": "e8f571d1fcb9c305acdb7ce0ea13b3247f375c7b9f14278048243479a2814432"
+        },
+        {
+          "path": "fig5/cache/fig5_deltaV.csv",
+          "bytes": 689,
+          "sha256": "0553b9150aaa37bee1dc11b5352b58f5a1342ebdadffffa98ea81f0508763179"
+        },
+        {
+          "path": "fig5/cache/fig5_summary.csv",
+          "bytes": 7275,
+          "sha256": "1e7c1836d8d665905b59d80bdebde7a38e02a9a1b0311bde9bf5384eb563c7bf"
+        },
+        {
+          "path": "fig5/figure_5_manifest.json",
+          "bytes": 13312,
+          "sha256": "16ad0e2e052c862176111ae9fe11665a15cc2a3825763c51be3d4ab36ba66549"
+        },
+        {
+          "path": "fig5/figure_5_qpu_AB.pdf",
+          "bytes": 22450,
+          "sha256": "79463f7b1ce36c41d3d7e1ccda1600c9325adb7f856be76a30e45160025e22bf"
+        },
+        {
+          "path": "fig5/figure_5_qpu_AB.png",
+          "bytes": 101771,
+          "sha256": "585600579b4676f57e42cd9d42f3f454f209828775519dfb08ca9b56a09c1395"
+        }
+      ],
+      "stderr_warning_lines": [
+        "'created' timestamp seems very low; regarding as unix timestamp",
+        "'modified' timestamp seems very low; regarding as unix timestamp"
+      ]
+    },
+    {
+      "figure": 6,
+      "executed_at_utc": "2026-11-10T11:13:40.447031+00:00",
+      "duration_seconds": 6.185029807998944,
+      "exit_code": 0,
+      "command_template": [
+        "python3",
+        "figures/fig6/make_fig6.py",
+        "--counts",
+        "data/qpu/qpu_counts.json",
+        "--run-meta",
+        "data/qpu/qpu_run_meta.json",
+        "--eta-run",
+        "0:6",
+        "--eta-run",
+        "0.1:8",
+        "--eta-run",
+        "0.2:5",
+        "--out-dir",
+        "outputs/fig6"
+      ],
+      "command_note": "Only --out-dir is replaced by a portable relative directory; Python executable is displayed as python3. Full original argv is retained in local task verification receipts.",
+      "inputs": [
+        {
+          "path": "data/qpu/qpu_counts.json",
+          "bytes": 770751,
+          "sha256": "c9ac526aa50e42335749049b338dd6e341d0a3189a4450a99ac03ebd9510bae0",
+          "git_blob": "1ec96689c3c80e8a86b824e09258e23492500d41"
+        },
+        {
+          "path": "data/qpu/qpu_run_meta.json",
+          "bytes": 290277,
+          "sha256": "01cddbf79c380eabb824a71ca00099a0ec604da272ede053de50a41013c3ccc8",
+          "git_blob": "bce6f72a3980f57c48d0fa48b1b78b505cf80383"
+        },
+        {
+          "path": "figures/fig6/fig6_data.py",
+          "bytes": 21374,
+          "sha256": "cf35880cfbca72c2b86f37ccd1faaab7288cfe1e22497ecb6cbfae1771545210",
+          "git_blob": "f8049bdec4fdbe3692f40d7d29d01af0e024f112"
+        },
+        {
+          "path": "figures/fig6/fig6_plot.py",
+          "bytes": 11370,
+          "sha256": "d98c9c3311071ec2b557709fe13982620ccd8f13a577a23d7508d05be45de218",
+          "git_blob": "9e1c1e1db5fbc0cc3a4172988820c42ade01fd47"
+        },
+        {
+          "path": "figures/fig6/make_fig6.py",
+          "bytes": 5907,
+          "sha256": "33a8184de7c3b1edacd16c653c87044f4a7c0b984af85677181ec0589e9c2eb2",
+          "git_blob": "c228179345a4e574a10bb6af1d87252e7388729b"
+        }
+      ],
+      "analysis_config": {
+        "amp_min_threshold": 0.0
+      },
+      "selection": [
+        {
+          "eta3": 0.0,
+          "run": 6
+        },
+        {
+          "eta3": 0.1,
+          "run": 8
+        },
+        {
+          "eta3": 0.2,
+          "run": 5
+        }
+      ],
+      "design": null,
+      "notes": null,
+      "retained_tables": [
+        {
+          "path": "fig6/fig6_panel_stats.csv",
+          "bytes": 759,
+          "sha256": "abdd4dcbd7d214422d8ae2f048b1e23a7fbe7570eb58c741d815582b0b4954fd",
+          "row_count": 6,
+          "columns": [
+            "eta3",
+            "role",
+            "n",
+            "pair",
+            "i",
+            "j",
+            "kappa_eff",
+            "V_circ",
+            "kappa_parking",
+            "q90_abs",
+            "num_contexts_total",
+            "num_contexts_used"
+          ]
+        }
+      ],
+      "unretained_original_output_hashes": [
+        {
+          "path": "fig6/cache/fig6_panel_context_level.csv",
+          "bytes": 30297,
+          "sha256": "e4a110c39c0561d3eee8d012007384ae4fc8887604fdfa1df742547d17ca9e60"
+        },
+        {
+          "path": "fig6/cache/fig6_panel_stats.csv",
+          "bytes": 759,
+          "sha256": "abdd4dcbd7d214422d8ae2f048b1e23a7fbe7570eb58c741d815582b0b4954fd"
+        },
+        {
+          "path": "fig6/figure_6_manifest.json",
+          "bytes": 22695,
+          "sha256": "c4cdbd765adb87fb93e7a94f9c7d508526b5483da6da9adc48eb2925a77a077a"
+        },
+        {
+          "path": "fig6/figure_6_scalar_vs_profile.pdf",
+          "bytes": 36040,
+          "sha256": "081a784b69c892bb30824af5e6e0852698581a5fa34e6c99340233e680c56ae9"
+        },
+        {
+          "path": "fig6/figure_6_scalar_vs_profile.png",
+          "bytes": 335156,
+          "sha256": "2d986ff8517bb24ca0624b91dc00b202b343eedb5d97d28a8cb0c58fd6ba58c6"
+        }
+      ],
+      "stderr_warning_lines": [
+        "'created' timestamp seems very low; regarding as unix timestamp",
+        "'modified' timestamp seems very low; regarding as unix timestamp"
+      ]
+    },
+    {
+      "figure": 7,
+      "executed_at_utc": "2026-11-10T11:13:46.097492+00:00",
+      "duration_seconds": 15.136070526001276,
+      "exit_code": 0,
+      "command_template": [
+        "python3",
+        "figures/fig7/make_fig7.py",
+        "--interleave-counts",
+        "data/qpu/ablation_interleaved_counts.json",
+        "--interleave-meta",
+        "data/qpu/ablation_interleaved_run_meta.json",
+        "--block-counts",
+        "data/qpu/ablation_block_counts.json",
+        "--block-meta",
+        "data/qpu/ablation_block_run_meta.json",
+        "--out-dir",
+        "outputs/fig7"
+      ],
+      "command_note": "Only --out-dir is replaced by a portable relative directory; Python executable is displayed as python3. Full original argv is retained in local task verification receipts.",
+      "inputs": [
+        {
+          "path": "data/qpu/ablation_block_counts.json",
+          "bytes": 52665,
+          "sha256": "b1b4f3a1e51fe9033bbfdc78930d0df7527a62c0c310fc27e81cf4969fe84469",
+          "git_blob": "7a67a0b1fec9eac8ae0b59392ffbec94bc973d9d"
+        },
+        {
+          "path": "data/qpu/ablation_block_run_meta.json",
+          "bytes": 8072,
+          "sha256": "002495a22913989675d56f7746fb2c817ee7e3643d8af2513e9ad8e30e88ed16",
+          "git_blob": "fb3418f5f44fac549272a58d6a01f891b786b589"
+        },
+        {
+          "path": "data/qpu/ablation_interleaved_counts.json",
+          "bytes": 248482,
+          "sha256": "b9b0cb874e196b5171419c4756a69543e1fbea2555c27002638deb64f26037de",
+          "git_blob": "aed78252b5c177950a5d81c8b370bc9182f05f3e"
+        },
+        {
+          "path": "data/qpu/ablation_interleaved_run_meta.json",
+          "bytes": 29902,
+          "sha256": "eb1cbc3b80fd63c1c18d53a058b4f6dd968d5ac517404dbcb1ee7b6957a91101",
+          "git_blob": "5366a6779184c94e240dc9f4677fdbff99be5339"
+        },
+        {
+          "path": "figures/fig7/fig7_data.py",
+          "bytes": 22540,
+          "sha256": "30018925fe0330ca2ffb47b7f54eb8f05895336fa5520cc4ec73475e911af18c",
+          "git_blob": "af5ee595df552eb053641f1c6f856e4e9ce4aab9"
+        },
+        {
+          "path": "figures/fig7/fig7_plot.py",
+          "bytes": 11471,
+          "sha256": "5bb30b6c286a685b424e6fc5914ae4d0fd4ac2eaaad0942c2653d9814e8056e5",
+          "git_blob": "c0232e6709e54e923db33ce7fff3ce413d9f3014"
+        },
+        {
+          "path": "figures/fig7/make_fig7.py",
+          "bytes": 4462,
+          "sha256": "6426a768aaa28ef681fc242eb1244ca6e51b488b3237395ec971e5d366f19936",
+          "git_blob": "f191ef444911a478936217aab653773397ea4c7d"
+        }
+      ],
+      "analysis_config": {
+        "run_order_plot": [
+          "I1",
+          "I2",
+          "B",
+          "I3",
+          "I4",
+          "I_sum"
+        ],
+        "include_I12": true,
+        "include_I34": true,
+        "include_I_sum": true,
+        "amp_min_quantile": 0.1,
+        "boot_B": 5000,
+        "seed": 12345,
+        "ci_levels": [
+          0.025,
+          0.975
+        ],
+        "point_estimator": "boot_median"
+      },
+      "selection": null,
+      "design": null,
+      "notes": {
+        "I_sum_definition": "I_sum pools I1–I4 into a shot-matched (2048 shots/circuit) estimate at the raw-count level; it is not an additional run.",
+        "uncertainty": "Error bars are percentile (95%) shot-bootstrap CIs computed via per-circuit binomial resampling from raw counts.",
+        "schedule_annotation": "Blocked segment is highlighted; boundaries mark interleaved→blocked→interleaved transitions."
+      },
+      "retained_tables": [
+        {
+          "path": "fig7/summary_metrics.csv",
+          "bytes": 6816,
+          "sha256": "f24c1d75c5f85f97dfa16c108d64ce7feafcd38d245bd4435d10877c75766645",
+          "row_count": 16,
+          "columns": [
+            "run_label",
+            "n",
+            "i",
+            "j",
+            "pair",
+            "shots_per_circuit",
+            "V_circ",
+            "R",
+            "circ_mean_rad",
+            "circ_mean_deg",
+            "amp_min_mean",
+            "amp_min_q10",
+            "V_circ_ci95_lo",
+            "V_circ_ci95_hi",
+            "V_circ_shotbs_mean",
+            "V_circ_shotbs_median",
+            "V_circ_shotbs_std",
+            "amp_min_q10_ci95_lo",
+            "amp_min_q10_ci95_hi",
+            "amp_min_q10_shotbs_mean",
+            "amp_min_q10_shotbs_median",
+            "amp_min_q10_shotbs_std",
+            "boot_group_seed",
+            "boot_empty_frac",
+            "num_contexts_used_in_bootstrap",
+            "V_circ_point",
+            "amp_min_q10_point"
+          ]
+        }
+      ],
+      "unretained_original_output_hashes": [
+        {
+          "path": "fig7/Fig_7.pdf",
+          "bytes": 19414,
+          "sha256": "5bec09482979ead4e80d0aba0a4a65e9daff9ce806789bc8dd52b178d03d873a"
+        },
+        {
+          "path": "fig7/Fig_7.png",
+          "bytes": 116917,
+          "sha256": "4759e6b010d1af3659cf2eff5182c05d5fbd3d775d5ef80e206c6cf1a10d5a79"
+        },
+        {
+          "path": "fig7/cache/derived_context_kappa.csv",
+          "bytes": 83033,
+          "sha256": "ff7d57320730299f229b860c5e85672600e79319835172b765eae5f296032b3d"
+        },
+        {
+          "path": "fig7/cache/summary_metrics.csv",
+          "bytes": 6816,
+          "sha256": "f24c1d75c5f85f97dfa16c108d64ce7feafcd38d245bd4435d10877c75766645"
+        },
+        {
+          "path": "fig7/derived_context_kappa.csv",
+          "bytes": 83033,
+          "sha256": "ff7d57320730299f229b860c5e85672600e79319835172b765eae5f296032b3d"
+        },
+        {
+          "path": "fig7/figure_7_manifest.json",
+          "bytes": 2773,
+          "sha256": "b3e62de46870afca0969f14b4a91253f34d1774e1cdace818d1d0d24edf40ed7"
+        },
+        {
+          "path": "fig7/summary_metrics.csv",
+          "bytes": 6816,
+          "sha256": "f24c1d75c5f85f97dfa16c108d64ce7feafcd38d245bd4435d10877c75766645"
+        }
+      ],
+      "stderr_warning_lines": [
+        "'created' timestamp seems very low; regarding as unix timestamp",
+        "'modified' timestamp seems very low; regarding as unix timestamp"
+      ]
+    },
+    {
+      "figure": 8,
+      "executed_at_utc": "2026-11-10T11:13:46.681978+00:00",
+      "duration_seconds": 8.092383809002058,
+      "exit_code": 0,
+      "command_template": [
+        "python3",
+        "figures/fig8/make_fig8.py",
+        "--counts",
+        "data/qpu/qpu_counts.json",
+        "--day1-eta-run",
+        "0.2:5",
+        "--day1-eta-run",
+        "0.1:8",
+        "--day1-eta-run",
+        "0.0:6",
+        "--day2-eta-run",
+        "0.2:7",
+        "--day2-eta-run",
+        "0.1:9",
+        "--day2-eta-run",
+        "0.0:8",
+        "--n",
+        "7",
+        "--out-dir",
+        "outputs/fig8"
+      ],
+      "command_note": "Only --out-dir is replaced by a portable relative directory; Python executable is displayed as python3. Full original argv is retained in local task verification receipts.",
+      "inputs": [
+        {
+          "path": "data/qpu/qpu_counts.json",
+          "bytes": 770751,
+          "sha256": "c9ac526aa50e42335749049b338dd6e341d0a3189a4450a99ac03ebd9510bae0",
+          "git_blob": "1ec96689c3c80e8a86b824e09258e23492500d41"
+        },
+        {
+          "path": "figures/fig8/fig8_data.py",
+          "bytes": 26437,
+          "sha256": "f2ab5c618cb76fda287d61e1eb09181f10a626a2b1e699a3d5a32abc8c8d959c",
+          "git_blob": "cee1dba3c1b18ffc5968dd746a0b581214da4d68"
+        },
+        {
+          "path": "figures/fig8/fig8_plot.py",
+          "bytes": 12722,
+          "sha256": "73ea89500ca371896607647d7ada680e84bfc9985e26fb89a4a5d0f5992144aa",
+          "git_blob": "242385869078f2b1fb85be7a61c45c7c46094e34"
+        },
+        {
+          "path": "figures/fig8/make_fig8.py",
+          "bytes": 7736,
+          "sha256": "177ec975d50b48bbeaf3852ebd88b949d2bbee62ec9bbc0bc2cf08af02da3911",
+          "git_blob": "2130ef5ed28567787450321f69b78687070b2722"
+        }
+      ],
+      "analysis_config": {
+        "boot_B": 5000,
+        "seed": 12345,
+        "ci_levels": [
+          0.025,
+          0.975
+        ],
+        "amp_min_threshold": 0.0,
+        "point_estimator": "boot_median",
+        "drop_policy": "per_pair",
+        "amp_threshold_mode": "fixed_from_csv"
+      },
+      "selection": {
+        "day1": {
+          "0.2": 5,
+          "0.1": 8,
+          "0.0": 6
+        },
+        "day2": {
+          "0.2": 7,
+          "0.1": 9,
+          "0.0": 8
+        }
+      },
+      "design": {
+        "n_key": 7,
+        "metric_mode": "delta",
+        "signal_pair": [
+          0,
+          1
+        ],
+        "control_pair": [
+          1,
+          4
+        ]
+      },
+      "notes": null,
+      "retained_tables": [
+        {
+          "path": "fig8/fig8_day1_summary.csv",
+          "bytes": 6210,
+          "sha256": "5cc4d2b01fec0cefab34cd7c4ab1a96a18835076d63ac02f81cc768874fdbf01",
+          "row_count": 27,
+          "columns": [
+            "eta3",
+            "n",
+            "pair",
+            "kappa_ctx_circ_var_point",
+            "kappa_ctx_circ_var_trial",
+            "kappa_ctx_circ_var_shotbs_ci95_lo",
+            "kappa_ctx_circ_var_shotbs_ci95_hi",
+            "kappa_ctx_circ_var_shotbs_median",
+            "kappa_ctx_circ_var_shotbs_mean",
+            "amp_min_mean_ctx_trial",
+            "amp_min_q10_ctx_trial",
+            "num_contexts_total",
+            "num_contexts_used",
+            "kappa_ctx_circ_var_shotbs_std",
+            "boot_empty_frac",
+            "boot_group_seed"
+          ]
+        },
+        {
+          "path": "fig8/fig8_day1_deltaV.csv",
+          "bytes": 689,
+          "sha256": "0553b9150aaa37bee1dc11b5352b58f5a1342ebdadffffa98ea81f0508763179",
+          "row_count": 9,
+          "columns": [
+            "eta3",
+            "n",
+            "delta_V_circ",
+            "delta_shotbs_ci_lo",
+            "delta_shotbs_ci_hi"
+          ]
+        },
+        {
+          "path": "fig8/fig8_day2_summary.csv",
+          "bytes": 6194,
+          "sha256": "60c16ec954aa962a338a5328f4de6adf55fdfa9655df838d11cd20215c49e559",
+          "row_count": 27,
+          "columns": [
+            "eta3",
+            "n",
+            "pair",
+            "kappa_ctx_circ_var_point",
+            "kappa_ctx_circ_var_trial",
+            "kappa_ctx_circ_var_shotbs_ci95_lo",
+            "kappa_ctx_circ_var_shotbs_ci95_hi",
+            "kappa_ctx_circ_var_shotbs_median",
+            "kappa_ctx_circ_var_shotbs_mean",
+            "amp_min_mean_ctx_trial",
+            "amp_min_q10_ctx_trial",
+            "num_contexts_total",
+            "num_contexts_used",
+            "kappa_ctx_circ_var_shotbs_std",
+            "boot_empty_frac",
+            "boot_group_seed"
+          ]
+        },
+        {
+          "path": "fig8/fig8_day2_deltaV.csv",
+          "bytes": 696,
+          "sha256": "53576bc87a82f78ea751c685c0d5e58682d2b118c6ab22351092ecd9e5e162b5",
+          "row_count": 9,
+          "columns": [
+            "eta3",
+            "n",
+            "delta_V_circ",
+            "delta_shotbs_ci_lo",
+            "delta_shotbs_ci_hi"
+          ]
+        }
+      ],
+      "unretained_original_output_hashes": [
+        {
+          "path": "fig8/cache/fig8_day1_deltaV.csv",
+          "bytes": 689,
+          "sha256": "0553b9150aaa37bee1dc11b5352b58f5a1342ebdadffffa98ea81f0508763179"
+        },
+        {
+          "path": "fig8/cache/fig8_day1_summary.csv",
+          "bytes": 6210,
+          "sha256": "5cc4d2b01fec0cefab34cd7c4ab1a96a18835076d63ac02f81cc768874fdbf01"
+        },
+        {
+          "path": "fig8/cache/fig8_day2_deltaV.csv",
+          "bytes": 696,
+          "sha256": "53576bc87a82f78ea751c685c0d5e58682d2b118c6ab22351092ecd9e5e162b5"
+        },
+        {
+          "path": "fig8/cache/fig8_day2_summary.csv",
+          "bytes": 6194,
+          "sha256": "60c16ec954aa962a338a5328f4de6adf55fdfa9655df838d11cd20215c49e559"
+        },
+        {
+          "path": "fig8/figure_8_manifest.json",
+          "bytes": 2122,
+          "sha256": "397f38f94a02bbfec33af152d45b410b33415427fb47ec9528035798ddd7c136"
+        },
+        {
+          "path": "fig8/figure_8_repeatability.pdf",
+          "bytes": 18387,
+          "sha256": "3aa8c7c56705016d3946aee12abc6300e08468ed8d5b46fc6925a0ca58d0e3bc"
+        },
+        {
+          "path": "fig8/figure_8_repeatability.png",
+          "bytes": 85401,
+          "sha256": "f8db39efb6579c3d255eb46336438ae44a3e6efe0351fc402c211884f26f976c"
+        }
+      ],
+      "stderr_warning_lines": [
+        "'created' timestamp seems very low; regarding as unix timestamp",
+        "'modified' timestamp seems very low; regarding as unix timestamp"
+      ]
+    }
+  ],
+  "retained_table_count": 11,
+  "retained_table_total_bytes": 38769,
+  "limits": [
+    "Successful execution verifies the documented offline reuse path, not the validity of historical scientific conclusions.",
+    "Only one copy was run because all source and input bytes are identical across repositories.",
+    "New render files were produced but PDFs, PNGs, large context tables, logs and font caches are not retained in this compact bundle.",
+    "No comparison with original historical rendered figures was possible because those outputs are not archived in the observed Git trees.",
+    "Font metadata emitted low timestamp warnings; all six commands returned exit code 0.",
+    "I12, I34 and I_sum are pooled raw-count derivatives of four interleaved acquisitions; they are not additional independent runs.",
+    "Historical metadata gaps and naming inconsistencies remain unresolved by re-running plotting scripts."
+  ]
+}
